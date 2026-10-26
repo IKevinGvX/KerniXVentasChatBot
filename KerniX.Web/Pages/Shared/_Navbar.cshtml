@@ -1,0 +1,868 @@
+﻿<header class="kx-header kx-premium-header" id="inicio">
+
+    <div class="kx-navbar">
+
+        <!-- =====================================================
+             BRAND
+        ====================================================== -->
+
+        <a asp-page="/Index"
+           class="kx-brand kx-brand-premium">
+
+            <div class="kx-brand-main">
+                Kerni<span>X</span><small>S.A.C</small>
+            </div>
+
+            <div class="kx-brand-sub">
+                SOLUCIONES EMPRESARIALES
+            </div>
+
+        </a>
+
+
+        <!-- =====================================================
+             DESKTOP NAVIGATION
+        ====================================================== -->
+
+        <nav class="kx-nav kx-premium-nav">
+
+            <a asp-page="/Index">
+                Inicio
+            </a>
+
+
+            <!-- =================================================
+                 PRODUCTOS
+            ================================================== -->
+
+            <div class="kx-nav-dropdown kx-products-dropdown">
+
+                <button type="button"
+                        class="kx-nav-trigger">
+
+                    Productos
+
+                    <span class="kx-nav-chevron"
+                          uk-icon="icon: chevron-down; ratio: .65">
+                    </span>
+
+                </button>
+
+
+                <div class="kx-mega-menu">
+
+                    <div class="kx-mega-top">
+
+                        <div>
+
+                            <span class="kx-mega-eyebrow">
+                                CATÁLOGO EMPRESARIAL
+                            </span>
+
+                            <h3>
+                                Tecnología para
+                                <span>hacer crecer tu empresa</span>
+                            </h3>
+
+                        </div>
+
+
+                        <a asp-page="/Productos/Index"
+                           class="kx-mega-all">
+
+                            Ver todos
+
+                            <span uk-icon="arrow-right"></span>
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="kx-product-menu-grid">
+
+                        <a asp-page="/Productos/Index"
+                           class="kx-menu-product">
+
+                            <div class="kx-menu-product-image">
+
+                                <img src="~/images/kernix_categoria_oficina.webp"
+                                     alt="Laptops y computadoras" />
+
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Laptops y computadoras
+                                </strong>
+
+                                <small>
+                                    Equipos para productividad
+                                </small>
+
+                            </div>
+
+                            <span uk-icon="chevron-right"></span>
+
+                        </a>
+
+
+                        <a asp-page="/Productos/Index"
+                           class="kx-menu-product">
+
+                            <div class="kx-menu-product-image">
+
+                                <img src="~/images/kernix_categoria_oficina.webp"
+                                     alt="Equipos de oficina" />
+
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Equipos de oficina
+                                </strong>
+
+                                <small>
+                                    Tecnología para tu equipo
+                                </small>
+
+                            </div>
+
+                            <span uk-icon="chevron-right"></span>
+
+                        </a>
+
+
+                        <a asp-page="/Productos/Index"
+                           class="kx-menu-product">
+
+                            <div class="kx-menu-product-image">
+
+                                <img src="~/images/kernix_categoria_redes.webp"
+                                     alt="Redes y seguridad" />
+
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Redes y seguridad
+                                </strong>
+
+                                <small>
+                                    Conectividad empresarial
+                                </small>
+
+                            </div>
+
+                            <span uk-icon="chevron-right"></span>
+
+                        </a>
+
+
+                        <a asp-page="/Productos/Index"
+                           class="kx-menu-product">
+
+                            <div class="kx-menu-product-image">
+
+                                <img src="~/images/kernix_categoria_accesorios.webp"
+                                     alt="Accesorios" />
+
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Accesorios
+                                </strong>
+
+                                <small>
+                                    Complementa tus equipos
+                                </small>
+
+                            </div>
+
+                            <span uk-icon="chevron-right"></span>
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="kx-mega-footer">
+
+                        <div>
+
+                            <span uk-icon="database"></span>
+
+                            <span>
+                                <strong>
+                                    Productos disponibles
+                                </strong>
+
+                                <small>
+                                    Consulta nuestro catálogo
+                                </small>
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <span uk-icon="file-edit"></span>
+
+                            <span>
+                                <strong>
+                                    Cotización rápida
+                                </strong>
+
+                                <small>
+                                    Solicita información comercial
+                                </small>
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <span uk-icon="receiver"></span>
+
+                            <span>
+                                <strong>
+                                    Asesor comercial
+                                </strong>
+
+                                <small>
+                                    Atención personalizada
+                                </small>
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 SOLUCIONES
+            ================================================== -->
+
+            <div class="kx-nav-dropdown">
+
+                <button type="button"
+                        class="kx-nav-trigger">
+
+                    Soluciones
+
+                    <span class="kx-nav-chevron"
+                          uk-icon="icon: chevron-down; ratio: .65">
+                    </span>
+
+                </button>
+
+
+                <div class="kx-dropdown-menu">
+
+                    <div class="kx-dropdown-title">
+                        SOLUCIONES KERNIX
+                    </div>
+
+
+                    <a asp-page="/Index"
+                       asp-fragment="soluciones">
+
+                        <span class="kx-dropdown-icon"
+                              uk-icon="settings">
+                        </span>
+
+                        <span>
+
+                            <strong>
+                                Soluciones empresariales
+                            </strong>
+
+                            <small>
+                                Tecnología para tu empresa
+                            </small>
+
+                        </span>
+
+                    </a>
+
+
+                    <a asp-page="/Index"
+                       asp-fragment="kernix-ia">
+
+                        <span class="kx-dropdown-icon"
+                              uk-icon="bolt">
+                        </span>
+
+                        <span>
+
+                            <strong>
+                                KerniX IA
+                            </strong>
+
+                            <small>
+                                Asistencia inteligente
+                            </small>
+
+                        </span>
+
+                    </a>
+
+
+                    <a asp-page="/Index"
+                       asp-fragment="ventas">
+
+                        <span class="kx-dropdown-icon"
+                              uk-icon="cart">
+                        </span>
+
+                        <span>
+
+                            <strong>
+                                Ventas
+                            </strong>
+
+                            <small>
+                                Cotizaciones y oportunidades
+                            </small>
+
+                        </span>
+
+                    </a>
+
+
+                    <a asp-page="/Productos/Index">
+
+                        <span class="kx-dropdown-icon"
+                              uk-icon="database">
+                        </span>
+
+                        <span>
+
+                            <strong>
+                                Productos
+                            </strong>
+
+                            <small>
+                                Catálogo empresarial
+                            </small>
+
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 VENTAS
+            ================================================== -->
+
+            <a asp-page="/Index"
+               asp-fragment="ventas">
+
+                Ventas
+
+            </a>
+
+
+            <!-- =================================================
+                 NOSOTROS
+            ================================================== -->
+
+            <a asp-page="/Nosotros/Index"
+               class="kx-nav-about">
+
+                Nosotros
+
+            </a>
+
+
+            <!-- =================================================
+                 IA
+            ================================================== -->
+
+            <a asp-page="/Index"
+               asp-fragment="kernix-ia"
+               class="kx-nav-ai">
+
+                <span class="kx-nav-ai-dot"></span>
+
+                KerniX IA
+
+            </a>
+
+
+            <!-- =================================================
+                 RECURSOS
+            ================================================== -->
+
+            <div class="kx-nav-dropdown">
+
+                <button type="button"
+                        class="kx-nav-trigger">
+
+                    Recursos
+
+                    <span class="kx-nav-chevron"
+                          uk-icon="icon: chevron-down; ratio: .65">
+                    </span>
+
+                </button>
+
+
+                <div class="kx-dropdown-menu kx-dropdown-small">
+
+                    <div class="kx-dropdown-title">
+                        AYUDA Y RECURSOS
+                    </div>
+
+
+                    <a asp-page="/Index"
+                       asp-fragment="promociones">
+
+                        <span class="kx-dropdown-icon"
+                              uk-icon="tag">
+                        </span>
+
+                        <span>
+
+                            <strong>
+                                Promociones
+                            </strong>
+
+                            <small>
+                                Oportunidades disponibles
+                            </small>
+
+                        </span>
+
+                    </a>
+
+
+                    <button type="button"
+                            onclick="openKernixChat()">
+
+                        <span class="kx-dropdown-icon"
+                              uk-icon="comment">
+                        </span>
+
+                        <span>
+
+                            <strong>
+                                Centro de ayuda
+                            </strong>
+
+                            <small>
+                                Consulta con KerniX IA
+                            </small>
+
+                        </span>
+
+                    </button>
+
+
+                    <a asp-page="/Nosotros/Index">
+
+                        <span class="kx-dropdown-icon"
+                              uk-icon="info">
+                        </span>
+
+                        <span>
+
+                            <strong>
+                                Sobre KerniX
+                            </strong>
+
+                            <small>
+                                Conoce nuestra empresa
+                            </small>
+
+                        </span>
+
+                    </a>
+
+
+                    <a asp-page="/Index"
+                       asp-fragment="contacto">
+
+                        <span class="kx-dropdown-icon"
+                              uk-icon="lifesaver">
+                        </span>
+
+                        <span>
+
+                            <strong>
+                                Soporte
+                            </strong>
+
+                            <small>
+                                Estamos para ayudarte
+                            </small>
+
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 CONTACTO
+            ================================================== -->
+
+            <a asp-page="/Index"
+               asp-fragment="contacto">
+
+                Contacto
+
+            </a>
+
+        </nav>
+
+
+        <!-- =====================================================
+             SOCIAL
+        ====================================================== -->
+
+        <div class="kx-social">
+
+            <a href="#"
+               aria-label="Facebook">
+
+                <span uk-icon="facebook"></span>
+
+            </a>
+
+
+            <a href="#"
+               aria-label="Instagram">
+
+                <span uk-icon="instagram"></span>
+
+            </a>
+
+
+            <a href="#"
+               aria-label="YouTube">
+
+                <span uk-icon="youtube"></span>
+
+            </a>
+
+        </div>
+
+
+        <!-- =====================================================
+             WHATSAPP
+        ====================================================== -->
+
+        <a href="https://wa.me/51930338447?text=Hola%20KerniX%2C%20deseo%20informaci%C3%B3n%20sobre%20sus%20productos%20y%20soluciones."
+           target="_blank"
+           rel="noopener noreferrer"
+           class="kx-seller kx-seller-premium">
+
+            <span class="kx-seller-pulse"></span>
+
+            <span class="kx-seller-icon"
+                  uk-icon="receiver">
+            </span>
+
+
+            <span class="kx-seller-copy">
+
+                <small>
+                    Habla con un vendedor
+                </small>
+
+                <strong>
+                    WhatsApp
+                </strong>
+
+            </span>
+
+
+            <span uk-icon="arrow-right"></span>
+
+        </a>
+
+
+        <!-- =====================================================
+             MOBILE BUTTON
+        ====================================================== -->
+
+        <button class="kx-menu-toggle"
+                type="button"
+                aria-label="Abrir menú"
+                uk-toggle="target: #kx-mobile-menu">
+
+            <span uk-navbar-toggle-icon></span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     MOBILE MENU
+========================================================== -->
+
+<div id="kx-mobile-menu"
+     uk-offcanvas="overlay: true; flip: true">
+
+    <div class="uk-offcanvas-bar kx-mobile-menu">
+
+        <button class="uk-offcanvas-close"
+                type="button"
+                uk-close>
+        </button>
+
+
+        <div class="kx-mobile-brand">
+
+            Kerni<span>X</span>
+
+            <small>S.A.C</small>
+
+            <p>
+                SOLUCIONES EMPRESARIALES
+            </p>
+
+        </div>
+
+
+        <ul class="uk-nav uk-nav-default"
+            uk-nav="multiple: true">
+
+
+            <li>
+
+                <a asp-page="/Index">
+                    Inicio
+                </a>
+
+            </li>
+
+
+            <!-- PRODUCTOS -->
+
+            <li class="uk-parent">
+
+                <a href="#">
+
+                    Productos
+
+                    <span uk-nav-parent-icon></span>
+
+                </a>
+
+
+                <ul class="uk-nav-sub">
+
+                    <li>
+                        <a asp-page="/Productos/Index">
+                            Ver todos los productos
+                        </a>
+                    </li>
+
+                    <li>
+                        <a asp-page="/Productos/Index">
+                            Laptops y computadoras
+                        </a>
+                    </li>
+
+                    <li>
+                        <a asp-page="/Productos/Index">
+                            Equipos de oficina
+                        </a>
+                    </li>
+
+                    <li>
+                        <a asp-page="/Productos/Index">
+                            Redes y seguridad
+                        </a>
+                    </li>
+
+                    <li>
+                        <a asp-page="/Productos/Index">
+                            Accesorios
+                        </a>
+                    </li>
+
+                </ul>
+
+            </li>
+
+
+            <!-- SOLUCIONES -->
+
+            <li class="uk-parent">
+
+                <a href="#">
+
+                    Soluciones
+
+                    <span uk-nav-parent-icon></span>
+
+                </a>
+
+
+                <ul class="uk-nav-sub">
+
+                    <li>
+
+                        <a asp-page="/Index"
+                           asp-fragment="soluciones">
+
+                            Soluciones empresariales
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a asp-page="/Index"
+                           asp-fragment="kernix-ia">
+
+                            KerniX IA
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a asp-page="/Index"
+                           asp-fragment="ventas">
+
+                            Ventas
+
+                        </a>
+
+                    </li>
+
+
+                    <li>
+
+                        <a asp-page="/Productos/Index">
+
+                            Productos
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </li>
+
+
+            <li>
+
+                <a asp-page="/Index"
+                   asp-fragment="ventas">
+
+                    Ventas
+
+                </a>
+
+            </li>
+
+
+            <!-- NOSOTROS -->
+
+            <li>
+
+                <a asp-page="/Nosotros/Index">
+
+                    Nosotros
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a asp-page="/Index"
+                   asp-fragment="kernix-ia">
+
+                    KerniX IA
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a asp-page="/Index"
+                   asp-fragment="promociones">
+
+                    Promociones
+
+                </a>
+
+            </li>
+
+
+            <li>
+
+                <a asp-page="/Index"
+                   asp-fragment="contacto">
+
+                    Contacto
+
+                </a>
+
+            </li>
+
+        </ul>
+
+
+        <div class="kx-mobile-cta">
+
+            <button type="button"
+                    onclick="openKernixChat()">
+
+                <span uk-icon="comment"></span>
+
+                Hablar con KerniX IA
+
+            </button>
+
+
+            <a href="https://wa.me/51930338447?text=Hola%20KerniX%2C%20deseo%20hablar%20con%20un%20asesor."
+               target="_blank"
+               rel="noopener noreferrer">
+
+                <span uk-icon="receiver"></span>
+
+                Hablar con vendedor
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>

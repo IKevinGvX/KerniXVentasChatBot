@@ -1,0 +1,1148 @@
+﻿@page
+@model KerniX.Web.Pages.Cotizacion.IndexModel
+
+@{
+    ViewData["Title"] = "Solicitar cotización | KerniX";
+}
+
+<section class="kxquote">
+
+    <div class="kxquote-grid"></div>
+    <div class="kxquote-orb kxquote-orb-blue"></div>
+    <div class="kxquote-orb kxquote-orb-gold"></div>
+
+    <div class="uk-container">
+
+        <!-- ================================================
+             HEADER
+        ================================================= -->
+
+        <div class="kxquote-header">
+
+            <a asp-page="/Productos/Index"
+               class="kxquote-back">
+
+                <span uk-icon="arrow-left"></span>
+
+                Volver a productos
+
+            </a>
+
+            <div class="kxquote-secure">
+
+                <span uk-icon="lock"></span>
+
+                Solicitud comercial
+
+            </div>
+
+        </div>
+
+
+        <!-- ================================================
+             HERO
+        ================================================= -->
+
+        <div class="kxquote-hero">
+
+            <div>
+
+                <div class="kxquote-eyebrow">
+                    <span></span>
+                    KERNIX BUSINESS
+                </div>
+
+                <h1>
+                    Solicita una
+                    <strong>cotización.</strong>
+                </h1>
+
+                <p>
+                    Cuéntanos qué necesita tu empresa y prepara
+                    una solicitud comercial para nuestro equipo.
+                </p>
+
+            </div>
+
+
+            <div class="kxquote-progress">
+
+                <div class="kxquote-progress-item active">
+
+                    <span>01</span>
+
+                    <div>
+                        <small>PASO</small>
+                        <strong>Empresa</strong>
+                    </div>
+
+                </div>
+
+
+                <i></i>
+
+
+                <div class="kxquote-progress-item">
+
+                    <span>02</span>
+
+                    <div>
+                        <small>PASO</small>
+                        <strong>Productos</strong>
+                    </div>
+
+                </div>
+
+
+                <i></i>
+
+
+                <div class="kxquote-progress-item">
+
+                    <span>03</span>
+
+                    <div>
+                        <small>PASO</small>
+                        <strong>Enviar</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================================================
+             MAIN
+        ================================================= -->
+
+        <div class="kxquote-layout">
+
+            <!-- ============================================
+                 FORMULARIO
+            ============================================= -->
+
+            <div class="kxquote-form-panel">
+
+                <div class="kxquote-panel-header">
+
+                    <div>
+
+                        <small>
+                            SOLICITUD COMERCIAL
+                        </small>
+
+                        <h2>
+                            Datos de cotización
+                        </h2>
+
+                    </div>
+
+
+                    <div class="kxquote-status">
+
+                        <i></i>
+
+                        LISTO
+
+                    </div>
+
+                </div>
+
+
+                <form id="kxquote-form"
+                      autocomplete="on">
+
+                    <!-- ====================================
+                         EMPRESA
+                    ===================================== -->
+
+                    <div class="kxquote-section">
+
+                        <div class="kxquote-section-title">
+
+                            <span>01</span>
+
+                            <div>
+                                <small>INFORMACIÓN</small>
+                                <strong>Datos del cliente</strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="kxquote-fields">
+
+                            <div class="kxquote-field">
+
+                                <label for="kxquote-name">
+                                    Nombre completo *
+                                </label>
+
+                                <div class="kxquote-input">
+
+                                    <span uk-icon="user"></span>
+
+                                    <input id="kxquote-name"
+                                           name="nombre"
+                                           type="text"
+                                           maxlength="80"
+                                           placeholder="Ej. Carlos Mendoza"
+                                           required />
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="kxquote-field">
+
+                                <label for="kxquote-company">
+                                    Empresa
+                                </label>
+
+                                <div class="kxquote-input">
+
+                                    <span uk-icon="home"></span>
+
+                                    <input id="kxquote-company"
+                                           name="empresa"
+                                           type="text"
+                                           maxlength="100"
+                                           placeholder="Ej. Empresa S.A.C." />
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="kxquote-field">
+
+                                <label for="kxquote-phone">
+                                    Teléfono / WhatsApp *
+                                </label>
+
+                                <div class="kxquote-input">
+
+                                    <span uk-icon="receiver"></span>
+
+                                    <input id="kxquote-phone"
+                                           name="telefono"
+                                           type="tel"
+                                           maxlength="20"
+                                           placeholder="+51 999 999 999"
+                                           required />
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="kxquote-field">
+
+                                <label for="kxquote-email">
+                                    Correo
+                                </label>
+
+                                <div class="kxquote-input">
+
+                                    <span uk-icon="mail"></span>
+
+                                    <input id="kxquote-email"
+                                           name="correo"
+                                           type="email"
+                                           maxlength="120"
+                                           placeholder="empresa@correo.com" />
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ====================================
+                         PRODUCTO
+                    ===================================== -->
+
+                    <div class="kxquote-section">
+
+                        <div class="kxquote-section-title">
+
+                            <span>02</span>
+
+                            <div>
+                                <small>REQUERIMIENTO</small>
+                                <strong>Producto solicitado</strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="kxquote-product-selector">
+
+                            <div class="kxquote-field">
+
+                                <label for="kxquote-product">
+                                    Producto *
+                                </label>
+
+                                <div class="kxquote-input">
+
+                                    <span uk-icon="cart"></span>
+
+                                    <select id="kxquote-product"
+                                            name="producto"
+                                            required>
+
+                                        <option value="">
+                                            Selecciona un producto
+                                        </option>
+
+                                        <option value="Laptop Empresarial Pro">
+                                            Laptop Empresarial Pro
+                                        </option>
+
+                                        <option value="Monitor Profesional">
+                                            Monitor Profesional
+                                        </option>
+
+                                        <option value="Kit Teclado y Mouse">
+                                            Kit Teclado y Mouse
+                                        </option>
+
+                                        <option value="Router Empresarial">
+                                            Router Empresarial
+                                        </option>
+
+                                        <option value="Switch de Red">
+                                            Switch de Red
+                                        </option>
+
+                                        <option value="Equipamiento de Oficina">
+                                            Equipamiento de Oficina
+                                        </option>
+
+                                        <option value="Otro producto">
+                                            Otro producto
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="kxquote-field kxquote-quantity-field">
+
+                                <label>
+                                    Cantidad *
+                                </label>
+
+                                <div class="kxquote-quantity">
+
+                                    <button type="button"
+                                            id="kxquote-minus"
+                                            aria-label="Disminuir cantidad">
+                                        −
+                                    </button>
+
+                                    <input id="kxquote-quantity"
+                                           type="number"
+                                           value="@Model.Cantidad"
+                                           min="1"
+                                           max="99"
+                                           readonly />
+
+                                    <button type="button"
+                                            id="kxquote-plus"
+                                            aria-label="Aumentar cantidad">
+                                        +
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- OTRO PRODUCTO -->
+
+                        <div id="kxquote-other-wrapper"
+                             class="kxquote-other-wrapper">
+
+                            <div class="kxquote-field">
+
+                                <label for="kxquote-other">
+                                    Especifica el producto
+                                </label>
+
+                                <div class="kxquote-input">
+
+                                    <span uk-icon="pencil"></span>
+
+                                    <input id="kxquote-other"
+                                           type="text"
+                                           maxlength="120"
+                                           placeholder="Describe el producto que necesitas" />
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- URGENCIA -->
+
+                        <div class="kxquote-field kxquote-full">
+
+                            <label>
+                                Prioridad
+                            </label>
+
+
+                            <div class="kxquote-priorities">
+
+                                <label>
+
+                                    <input type="radio"
+                                           name="prioridad"
+                                           value="Normal"
+                                           checked />
+
+                                    <span>
+                                        <i></i>
+
+                                        <strong>Normal</strong>
+
+                                        <small>
+                                            Consulta comercial
+                                        </small>
+                                    </span>
+
+                                </label>
+
+
+                                <label>
+
+                                    <input type="radio"
+                                           name="prioridad"
+                                           value="Prioritaria" />
+
+                                    <span>
+                                        <i></i>
+
+                                        <strong>Prioritaria</strong>
+
+                                        <small>
+                                            Necesito respuesta rápida
+                                        </small>
+                                    </span>
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- MENSAJE -->
+
+                        <div class="kxquote-field kxquote-full">
+
+                            <label for="kxquote-message">
+                                Información adicional
+                            </label>
+
+                            <div class="kxquote-textarea">
+
+                                <textarea id="kxquote-message"
+                                          maxlength="600"
+                                          rows="5"
+                                          placeholder="Ej. Necesitamos equipos para una nueva oficina, instalación, características específicas, etc."></textarea>
+
+                                <div>
+                                    <span uk-icon="comment"></span>
+                                    Agrega detalles que puedan ayudar al vendedor.
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ====================================
+                         VENDEDOR
+                    ===================================== -->
+
+                    <div class="kxquote-section">
+
+                        <div class="kxquote-section-title">
+
+                            <span>03</span>
+
+                            <div>
+                                <small>ATENCIÓN</small>
+                                <strong>Selecciona un asesor</strong>
+                            </div>
+
+                        </div>
+
+
+                        <div class="kxquote-sellers">
+
+                            <label>
+
+                                <input type="radio"
+                                       name="vendedor"
+                                       value="51930338447"
+                                       data-name="Vendedor 01"
+                                       checked />
+
+                                <span class="kxquote-seller-card">
+
+                                    <span class="kxquote-seller-avatar">
+                                        V1
+                                        <i></i>
+                                    </span>
+
+                                    <span>
+
+                                        <small>
+                                            ASESOR COMERCIAL
+                                        </small>
+
+                                        <strong>
+                                            Vendedor 01
+                                        </strong>
+
+                                        <em>
+                                            +51 930 338 447
+                                        </em>
+
+                                    </span>
+
+                                    <span uk-icon="check"></span>
+
+                                </span>
+
+                            </label>
+
+
+                            <label>
+
+                                <input type="radio"
+                                       name="vendedor"
+                                       value="51937213913"
+                                       data-name="Vendedor 02" />
+
+                                <span class="kxquote-seller-card">
+
+                                    <span class="kxquote-seller-avatar">
+                                        V2
+                                        <i></i>
+                                    </span>
+
+                                    <span>
+
+                                        <small>
+                                            ASESOR COMERCIAL
+                                        </small>
+
+                                        <strong>
+                                            Vendedor 02
+                                        </strong>
+
+                                        <em>
+                                            +51 937 213 913
+                                        </em>
+
+                                    </span>
+
+                                    <span uk-icon="check"></span>
+
+                                </span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ====================================
+                         SUBMIT
+                    ===================================== -->
+
+                    <div class="kxquote-submit-area">
+
+                        <div>
+
+                            <span uk-icon="lock"></span>
+
+                            <p>
+                                Al continuar se abrirá WhatsApp con
+                                tu solicitud preparada.
+                            </p>
+
+                        </div>
+
+
+                        <button type="submit"
+                                class="kxquote-submit">
+
+                            <span uk-icon="file-text"></span>
+
+                            <span>
+                                <small>FINALIZAR</small>
+                                Enviar cotización
+                            </span>
+
+                            <span uk-icon="arrow-right"></span>
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <!-- ============================================
+                 RESUMEN
+            ============================================= -->
+
+            <aside class="kxquote-summary">
+
+                <div class="kxquote-summary-top">
+
+                    <div>
+
+                        <small>
+                            KERNIX QUOTE
+                        </small>
+
+                        <strong>
+                            Resumen
+                        </strong>
+
+                    </div>
+
+                    <span>
+                        PREVIEW
+                    </span>
+
+                </div>
+
+
+                <div class="kxquote-summary-product">
+
+                    <div class="kxquote-product-icon">
+                        <span uk-icon="cart"></span>
+                    </div>
+
+                    <div>
+
+                        <small>
+                            PRODUCTO
+                        </small>
+
+                        <strong id="kxquote-summary-product">
+                            Sin seleccionar
+                        </strong>
+
+                        <span id="kxquote-summary-quantity">
+                            Cantidad: @Model.Cantidad
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="kxquote-summary-lines">
+
+                    <div>
+
+                        <span>
+                            Cliente
+                        </span>
+
+                        <strong id="kxquote-summary-name">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Empresa
+                        </span>
+
+                        <strong id="kxquote-summary-company">
+                            —
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Prioridad
+                        </span>
+
+                        <strong id="kxquote-summary-priority">
+                            Normal
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Asesor
+                        </span>
+
+                        <strong id="kxquote-summary-seller">
+                            Vendedor 01
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="kxquote-summary-status">
+
+                    <div>
+
+                        <i></i>
+
+                        <span>
+                            <small>ESTADO</small>
+                            <strong>Solicitud preparada</strong>
+                        </span>
+
+                    </div>
+
+                    <span uk-icon="check"></span>
+
+                </div>
+
+
+                <div class="kxquote-summary-help">
+
+                    <span uk-icon="info"></span>
+
+                    <p>
+                        Los precios mostrados en el catálogo son
+                        referenciales. Nuestro asesor confirmará
+                        precio y disponibilidad.
+                    </p>
+
+                </div>
+
+
+                <a asp-page="/Productos/Index"
+                   class="kxquote-summary-catalog">
+
+                    <span uk-icon="grid"></span>
+
+                    Seguir viendo productos
+
+                    <span uk-icon="arrow-right"></span>
+
+                </a>
+
+            </aside>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+@section Scripts {
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const initialProduct =
+                @Html.Raw(
+                        System.Text.Json.JsonSerializer.Serialize(
+                                Model.Producto ?? ""
+                )
+                );
+
+
+            const form =
+                document.getElementById("kxquote-form");
+
+            const name =
+                document.getElementById("kxquote-name");
+
+            const company =
+                document.getElementById("kxquote-company");
+
+            const phone =
+                document.getElementById("kxquote-phone");
+
+            const email =
+                document.getElementById("kxquote-email");
+
+            const product =
+                document.getElementById("kxquote-product");
+
+            const otherWrapper =
+                document.getElementById("kxquote-other-wrapper");
+
+            const other =
+                document.getElementById("kxquote-other");
+
+            const quantity =
+                document.getElementById("kxquote-quantity");
+
+            const minus =
+                document.getElementById("kxquote-minus");
+
+            const plus =
+                document.getElementById("kxquote-plus");
+
+            const message =
+                document.getElementById("kxquote-message");
+
+
+            const summaryProduct =
+                document.getElementById("kxquote-summary-product");
+
+            const summaryQuantity =
+                document.getElementById("kxquote-summary-quantity");
+
+            const summaryName =
+                document.getElementById("kxquote-summary-name");
+
+            const summaryCompany =
+                document.getElementById("kxquote-summary-company");
+
+            const summaryPriority =
+                document.getElementById("kxquote-summary-priority");
+
+            const summarySeller =
+                document.getElementById("kxquote-summary-seller");
+
+
+            function safeValue(value, fallback = "—") {
+
+                const text =
+                    (value || "").trim();
+
+                return text || fallback;
+
+            }
+
+
+            function getQuantity() {
+
+                let value =
+                    parseInt(quantity.value) || 1;
+
+                value =
+                    Math.max(
+                        1,
+                        Math.min(99, value)
+                    );
+
+                quantity.value = value;
+
+                return value;
+
+            }
+
+
+            function getSelectedProduct() {
+
+                if (product.value === "Otro producto") {
+
+                    return safeValue(
+                        other.value,
+                        "Otro producto"
+                    );
+
+                }
+
+                return safeValue(
+                    product.value,
+                    "Sin seleccionar"
+                );
+
+            }
+
+
+            function getPriority() {
+
+                return document.querySelector(
+                    'input[name="prioridad"]:checked'
+                )?.value || "Normal";
+
+            }
+
+
+            function getSeller() {
+
+                return document.querySelector(
+                    'input[name="vendedor"]:checked'
+                );
+
+            }
+
+
+            function updateSummary() {
+
+                summaryProduct.textContent =
+                    getSelectedProduct();
+
+                summaryQuantity.textContent =
+                    `Cantidad: ${getQuantity()}`;
+
+                summaryName.textContent =
+                    safeValue(name.value);
+
+                summaryCompany.textContent =
+                    safeValue(company.value);
+
+                summaryPriority.textContent =
+                    getPriority();
+
+
+                const seller =
+                    getSeller();
+
+                summarySeller.textContent =
+                    seller?.dataset.name || "Vendedor 01";
+
+            }
+
+
+            function updateOtherProduct() {
+
+                const visible =
+                    product.value === "Otro producto";
+
+                otherWrapper.classList.toggle(
+                    "active",
+                    visible
+                );
+
+                other.required = visible;
+
+                updateSummary();
+
+            }
+
+
+            minus.addEventListener(
+                "click",
+                function () {
+
+                    quantity.value =
+                        Math.max(
+                            1,
+                            getQuantity() - 1
+                        );
+
+                    updateSummary();
+
+                }
+            );
+
+
+            plus.addEventListener(
+                "click",
+                function () {
+
+                    quantity.value =
+                        Math.min(
+                            99,
+                            getQuantity() + 1
+                        );
+
+                    updateSummary();
+
+                }
+            );
+
+
+            [
+                name,
+                company,
+                phone,
+                email,
+                other,
+                message
+            ].forEach(element => {
+
+                element?.addEventListener(
+                    "input",
+                    updateSummary
+                );
+
+            });
+
+
+            product.addEventListener(
+                "change",
+                updateOtherProduct
+            );
+
+
+            document
+                .querySelectorAll(
+                    'input[name="prioridad"], input[name="vendedor"]'
+                )
+                .forEach(element => {
+
+                    element.addEventListener(
+                        "change",
+                        updateSummary
+                    );
+
+                });
+
+
+            /*
+             * PRESELECCIONAR PRODUCTO RECIBIDO DESDE DETALLE
+             */
+
+            if (initialProduct) {
+
+                const exists =
+                    Array.from(product.options)
+                        .some(option =>
+                            option.value === initialProduct
+                        );
+
+
+                if (exists) {
+
+                    product.value =
+                        initialProduct;
+
+                }
+                else {
+
+                    product.value =
+                        "Otro producto";
+
+                    other.value =
+                        initialProduct;
+
+                }
+
+            }
+
+
+            updateOtherProduct();
+            updateSummary();
+
+
+            /*
+             * ENVIAR COTIZACIÓN
+             */
+
+            form.addEventListener(
+                "submit",
+                function (event) {
+
+                    event.preventDefault();
+
+
+                    if (!form.checkValidity()) {
+
+                        form.reportValidity();
+
+                        return;
+
+                    }
+
+
+                    const selectedProduct =
+                        getSelectedProduct();
+
+                    const selectedQuantity =
+                        getQuantity();
+
+                    const selectedPriority =
+                        getPriority();
+
+                    const seller =
+                        getSeller();
+
+
+                    if (!seller) {
+
+                        alert(
+                            "Selecciona un asesor comercial."
+                        );
+
+                        return;
+
+                    }
+
+
+                    const sellerNumber =
+                        seller.value;
+
+
+                    const quoteText =
+                        `Hola KerniX, deseo solicitar una cotización empresarial.
+
+        DATOS DEL CLIENTE
+        Nombre: ${safeValue(name.value)}
+        Empresa: ${safeValue(company.value, "No especificada")}
+        Teléfono: ${safeValue(phone.value)}
+        Correo: ${safeValue(email.value, "No especificado")}
+
+        REQUERIMIENTO
+        Producto: ${selectedProduct}
+        Cantidad: ${selectedQuantity}
+        Prioridad: ${selectedPriority}
+
+        INFORMACIÓN ADICIONAL
+        ${safeValue(message.value, "Sin información adicional")}
+
+        Quedo atento(a) a la confirmación de precio y disponibilidad.`;
+
+
+                    const whatsappUrl =
+                        `https://wa.me/${sellerNumber}?text=${encodeURIComponent(quoteText)}`;
+
+
+                    window.open(
+                        whatsappUrl,
+                        "_blank",
+                        "noopener,noreferrer"
+                    );
+
+                }
+            );
+
+        });
+
+    </script>
+
+}

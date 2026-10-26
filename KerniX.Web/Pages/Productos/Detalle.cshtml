@@ -1,0 +1,937 @@
+﻿@page "{id:int?}"
+@model KerniX.Web.Pages.Productos.DetalleModel
+
+@{
+    ViewData["Title"] = "Detalle del producto | KerniX";
+
+    var id = RouteData.Values["id"]?.ToString() ?? "1";
+
+    // =========================================================
+    // PRODUCTOS DEMOSTRATIVOS - SIN API / SIN BASE DE DATOS
+    // =========================================================
+
+    var nombre = "Laptop Empresarial Pro";
+    var categoria = "Cómputo";
+    var descripcion = "Equipo empresarial diseñado para productividad, gestión administrativa y trabajo profesional.";
+    var precio = "S/ 3,499";
+    var imagen = "/images/kernix_categoria_oficina.webp";
+    var codigo = "KX-LAP-001";
+
+    var caracteristicas = new[]
+  {
+    "Procesador Intel Core i7-13620H de 13.ª generación",
+    "10 núcleos y 16 hilos de procesamiento",
+    "Frecuencia turbo de hasta 4.9 GHz",
+    "16 GB de memoria RAM DDR5",
+    "Memoria RAM ampliable hasta 32 GB",
+    "SSD NVMe PCIe de 512 GB",
+    "Gráficos Intel UHD integrados",
+    "Pantalla IPS Full HD de 15.6 pulgadas",
+    "Resolución 1920 × 1080 píxeles",
+    "Frecuencia de pantalla de 60 Hz",
+    "Cámara web HD integrada",
+    "Micrófono integrado",
+    "Altavoces estéreo",
+    "Wi-Fi 6",
+    "Bluetooth 5.2",
+    "Puerto Ethernet RJ-45",
+    "2 puertos USB-A 3.2",
+    "1 puerto USB-C",
+    "1 puerto HDMI",
+    "Conector combinado de audio 3.5 mm",
+    "Teclado español de tamaño completo",
+    "Touchpad multitáctil",
+    "Batería de ion de litio",
+    "Adaptador de corriente incluido",
+    "Windows 11 Pro 64 bits",
+    "Compatible con Microsoft 365",
+    "Compatible con aplicaciones empresariales",
+    "Código KerniX: KX-LAP-001"
+};
+
+
+    if (id == "2")
+    {
+        nombre = "Monitor Profesional";
+        categoria = "Cómputo";
+        descripcion = "Monitor para estaciones de trabajo, productividad empresarial y oficinas modernas.";
+        precio = "S/ 899";
+        imagen = "/images/kernix_categoria_oficina.webp";
+        codigo = "KX-MON-002";
+        caracteristicas = new[]
+        {
+    "Pantalla IPS de 24 pulgadas",
+    "Resolución Full HD 1920 × 1080",
+    "Relación de aspecto 16:9",
+    "Frecuencia de actualización de 75 Hz",
+    "Tiempo de respuesta de 5 ms",
+    "Ángulo de visión de 178°",
+    "Tecnología de protección visual",
+    "Modo Low Blue Light",
+    "Tecnología Flicker-Free",
+    "Entrada HDMI",
+    "Entrada DisplayPort",
+    "Entrada VGA",
+    "Salida de audio 3.5 mm",
+    "Compatibilidad con montaje VESA",
+    "Base ajustable en inclinación",
+    "Diseño de bordes reducidos",
+    "Compatible con Windows",
+    "Compatible con laptops y computadoras de escritorio",
+    "Consumo energético optimizado",
+    "Código KerniX: KX-MON-002"
+};
+    }
+    else if (id == "3")
+    {
+        nombre = "Kit Teclado y Mouse";
+        categoria = "Accesorios";
+        descripcion = "Kit de periféricos para estaciones de trabajo y equipamiento corporativo.";
+        precio = "S/ 149";
+        imagen = "/images/kernix_categoria_accesorios.webp";
+        codigo = "KX-ACC-003";
+
+        caracteristicas = new[]
+        {
+    "Teclado empresarial de tamaño completo",
+    "Distribución de teclado en español",
+    "Teclado numérico independiente",
+    "Teclas multimedia",
+    "Diseño resistente para uso de oficina",
+    "Mouse óptico empresarial",
+    "Sensor óptico de 1600 DPI",
+    "3 botones",
+    "Rueda de desplazamiento",
+    "Diseño ergonómico",
+    "Conexión USB Plug & Play",
+    "No requiere instalación de drivers adicionales",
+    "Compatible con Windows 10",
+    "Compatible con Windows 11",
+    "Compatible con laptops y computadoras de escritorio",
+    "Ideal para estaciones de trabajo",
+    "Código KerniX: KX-ACC-003"
+};
+    }
+    else if (id == "4")
+    {
+        nombre = "Router Empresarial";
+        categoria = "Redes";
+        descripcion = "Solución de conectividad para oficinas, empresas y redes corporativas.";
+        precio = "S/ 599";
+        imagen = "/images/kernix_categoria_redes.webp";
+        codigo = "KX-NET-004";
+
+        caracteristicas = new[]
+        {
+    "Router empresarial de doble banda",
+    "Wi-Fi 6",
+    "Bandas inalámbricas de 2.4 GHz y 5 GHz",
+    "Velocidad inalámbrica combinada de hasta 1800 Mbps",
+    "Tecnología MU-MIMO",
+    "Tecnología Beamforming",
+    "4 antenas externas",
+    "1 puerto WAN Gigabit Ethernet",
+    "4 puertos LAN Gigabit Ethernet",
+    "Soporte DHCP",
+    "Soporte NAT",
+    "Red Wi-Fi para invitados",
+    "Control de acceso de dispositivos",
+    "Firewall integrado",
+    "Seguridad WPA2",
+    "Seguridad WPA3",
+    "Administración mediante interfaz web",
+    "Control parental y políticas de acceso",
+    "QoS para priorización de tráfico",
+    "Compatible con IPv4 e IPv6",
+    "Orientado a oficinas y pequeñas empresas",
+    "Código KerniX: KX-NET-004"
+};
+    }
+    else if (id == "5")
+    {
+        nombre = "Switch de Red";
+        categoria = "Redes";
+        descripcion = "Infraestructura de red para conectar múltiples dispositivos dentro de una organización.";
+        precio = "S/ 449";
+        imagen = "/images/kernix_categoria_redes.webp";
+        codigo = "KX-NET-005";
+        caracteristicas = new[]
+        {
+    "Switch empresarial Gigabit Ethernet",
+    "16 puertos RJ-45 Gigabit",
+    "Velocidad de 10/100/1000 Mbps por puerto",
+    "Detección automática de velocidad",
+    "Auto MDI/MDIX",
+    "Modo Full Duplex",
+    "Arquitectura Store-and-Forward",
+    "Tabla MAC para múltiples dispositivos",
+    "Indicadores LED de actividad por puerto",
+    "Control de flujo IEEE 802.3x",
+    "Instalación Plug & Play",
+    "No requiere configuración inicial",
+    "Diseño para funcionamiento continuo",
+    "Sistema de bajo consumo energético",
+    "Chasis empresarial",
+    "Compatible con routers y puntos de acceso",
+    "Ideal para computadoras, impresoras y servidores",
+    "Orientado a redes LAN empresariales",
+    "Código KerniX: KX-NET-005"
+};
+    }
+    else if (id == "6")
+    {
+        nombre = "Equipamiento de Oficina";
+        categoria = "Oficina";
+        descripcion = "Tecnología y herramientas diseñadas para mejorar la productividad de tu empresa.";
+        precio = "Consultar";
+        imagen = "/images/kernix_categoria_oficina.webp";
+        codigo = "KX-OFF-006";
+        caracteristicas = new[]
+        {
+    "Solución empresarial configurable",
+    "Laptops y equipos de cómputo según requerimiento",
+    "Monitores para estaciones de trabajo",
+    "Teclados y mouse empresariales",
+    "Equipamiento de conectividad",
+    "Routers empresariales",
+    "Switches de red",
+    "Implementación de estaciones de trabajo",
+    "Configuración según cantidad de colaboradores",
+    "Soluciones para áreas administrativas",
+    "Soluciones para áreas comerciales",
+    "Soluciones para áreas tecnológicas",
+    "Evaluación de requerimientos",
+    "Configuración según presupuesto",
+    "Asesoría para selección de equipamiento",
+    "Cotización empresarial personalizada",
+    "Precio sujeto a configuración",
+    "Código KerniX: KX-OFF-006"
+};
+    }
+}
+
+<section class="kxdetail">
+
+    <div class="kxdetail-grid"></div>
+    <div class="kxdetail-orb kxdetail-orb-blue"></div>
+    <div class="kxdetail-orb kxdetail-orb-gold"></div>
+
+    <div class="uk-container">
+
+        <!-- =====================================================
+             NAVEGACIÓN
+        ====================================================== -->
+
+        <div class="kxdetail-navigation">
+
+            <a asp-page="/Productos/Index"
+               class="kxdetail-back">
+
+                <span uk-icon="arrow-left"></span>
+
+                Volver al catálogo
+
+            </a>
+
+            <div class="kxdetail-breadcrumb">
+
+                <span>Productos</span>
+
+                <i>/</i>
+
+                <strong>@categoria</strong>
+
+                <i>/</i>
+
+                <span>@codigo</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             PRODUCTO PRINCIPAL
+        ====================================================== -->
+
+        <div class="kxdetail-layout">
+
+            <!-- =================================================
+                 VISUAL
+            ================================================== -->
+
+            <div class="kxdetail-visual">
+
+                <div class="kxdetail-image-card">
+
+                    <div class="kxdetail-image-grid"></div>
+
+                    <img src="@imagen"
+                         alt="@nombre"
+                         class="kxdetail-image" />
+
+                    <div class="kxdetail-image-overlay"></div>
+                    <div class="kxdetail-image-shine"></div>
+
+
+                    <div class="kxdetail-category-badge">
+
+                        <span uk-icon="bolt"></span>
+
+                        @categoria
+
+                    </div>
+
+
+                    <div class="kxdetail-available">
+
+                        <i></i>
+
+                        DISPONIBLE
+
+                    </div>
+
+
+                    <div class="kxdetail-image-info">
+
+                        <small>KERNIX BUSINESS</small>
+
+                        <strong>
+                            Tecnología empresarial
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- MINI INFORMACIÓN -->
+
+                <div class="kxdetail-visual-stats">
+
+                    <article>
+
+                        <span uk-icon="database"></span>
+
+                        <div>
+                            <small>STOCK</small>
+                            <strong>Disponible</strong>
+                        </div>
+
+                    </article>
+
+
+                    <article>
+
+                        <span uk-icon="check"></span>
+
+                        <div>
+                            <small>CONDICIÓN</small>
+                            <strong>Nuevo</strong>
+                        </div>
+
+                    </article>
+
+
+                    <article>
+
+                        <span uk-icon="receiver"></span>
+
+                        <div>
+                            <small>ATENCIÓN</small>
+                            <strong>Empresas</strong>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 INFORMACIÓN
+            ================================================== -->
+
+            <div class="kxdetail-content">
+
+                <div class="kxdetail-eyebrow">
+
+                    <span></span>
+
+                    PRODUCTO KERNIX
+
+                </div>
+
+
+                <div class="kxdetail-code">
+                    @codigo
+                </div>
+
+
+                <h1>
+                    @nombre
+                </h1>
+
+
+                <p class="kxdetail-description">
+                    @descripcion
+                </p>
+
+
+                <!-- PRECIO -->
+
+                <div class="kxdetail-price-box">
+
+                    <div>
+
+                        <small>
+                            PRECIO REFERENCIAL
+                        </small>
+
+                        <strong>
+                            @precio
+                        </strong>
+
+                        <span>
+                            Cotización empresarial disponible
+                        </span>
+
+                    </div>
+
+
+                    <div class="kxdetail-price-status">
+
+                        <i></i>
+
+                        EN STOCK
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     CARACTERÍSTICAS
+                ================================================== -->
+
+                <div class="kxdetail-section-title">
+
+                    <span uk-icon="settings"></span>
+
+                    Características principales
+
+                </div>
+
+
+                <div class="kxdetail-features">
+
+                    @foreach (var caracteristica in caracteristicas)
+                    {
+                        <div>
+
+                            <span uk-icon="check"></span>
+
+                            @caracteristica
+
+                        </div>
+                    }
+
+                </div>
+
+
+                <!-- =================================================
+                     CANTIDAD
+                ================================================== -->
+
+                <div class="kxdetail-purchase">
+
+                    <div>
+
+                        <small>
+                            CANTIDAD
+                        </small>
+
+                        <div class="kxdetail-quantity">
+
+                            <button type="button"
+                                    id="kxdetail-minus"
+                                    aria-label="Disminuir cantidad">
+
+                                −
+
+                            </button>
+
+                            <input type="number"
+                                   id="kxdetail-quantity"
+                                   value="1"
+                                   min="1"
+                                   max="99"
+                                   readonly />
+
+                            <button type="button"
+                                    id="kxdetail-plus"
+                                    aria-label="Aumentar cantidad">
+
+                                +
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="kxdetail-stock-info">
+
+                        <i></i>
+
+                        <div>
+                            <small>DISPONIBILIDAD</small>
+                            <strong>Producto disponible</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =================================================
+                     ACCIONES
+                ================================================== -->
+
+                <div class="kxdetail-actions">
+
+                    <button type="button"
+                            id="kxdetail-quote"
+                            class="kxdetail-quote">
+
+                        <span uk-icon="file-text"></span>
+
+                        <span>
+                            <small>SOLICITAR</small>
+                            Cotización
+                        </span>
+
+                        <span uk-icon="arrow-right"></span>
+
+                    </button>
+
+
+                    <button type="button"
+                            id="kxdetail-whatsapp"
+                            class="kxdetail-whatsapp">
+
+                        <span uk-icon="receiver"></span>
+
+                        <span>
+                            <small>CONTACTAR</small>
+                            WhatsApp
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+                <!-- =================================================
+                     VENDEDORES
+                ================================================== -->
+
+                <div class="kxdetail-sellers-header">
+
+                    <span>
+                        ASESORES DISPONIBLES
+                    </span>
+
+                    <div>
+                        <i></i>
+                        En línea
+                    </div>
+
+                </div>
+
+
+                <div class="kxdetail-sellers">
+
+                    <a href="https://wa.me/51930338447?text=Hola%20KerniX%2C%20deseo%20realizar%20una%20consulta."
+                       target="_blank"
+                       rel="noopener noreferrer">
+
+                        <div class="kxdetail-seller-avatar">
+                            V1
+                            <span></span>
+                        </div>
+
+                        <div>
+                            <small>ASESOR COMERCIAL</small>
+                            <strong>Vendedor 01</strong>
+                            <span>+51 930 338 447</span>
+                        </div>
+
+                        <span uk-icon="receiver"></span>
+
+                    </a>
+
+
+                    <a href="https://wa.me/51937213913?text=Hola%20KerniX%2C%20deseo%20realizar%20una%20consulta."
+                       target="_blank"
+                       rel="noopener noreferrer">
+
+                        <div class="kxdetail-seller-avatar">
+                            V2
+                            <span></span>
+                        </div>
+
+                        <div>
+                            <small>ASESOR COMERCIAL</small>
+                            <strong>Vendedor 02</strong>
+                            <span>+51 937 213 913</span>
+                        </div>
+
+                        <span uk-icon="receiver"></span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             INFORMACIÓN EMPRESARIAL
+        ====================================================== -->
+
+        <div class="kxdetail-benefits">
+
+            <article>
+
+                <div>
+                    <span uk-icon="file-text"></span>
+                </div>
+
+                <small>VENTAS EMPRESARIALES</small>
+
+                <strong>
+                    Cotizaciones personalizadas
+                </strong>
+
+                <p>
+                    Solicita información comercial según
+                    la cantidad que necesita tu empresa.
+                </p>
+
+            </article>
+
+
+            <article>
+
+                <div>
+                    <span uk-icon="receiver"></span>
+                </div>
+
+                <small>ATENCIÓN DIRECTA</small>
+
+                <strong>
+                    Asesor comercial
+                </strong>
+
+                <p>
+                    Comunícate directamente con nuestro
+                    equipo comercial mediante WhatsApp.
+                </p>
+
+            </article>
+
+
+            <article>
+
+                <div>
+                    <span uk-icon="database"></span>
+                </div>
+
+                <small>DISPONIBILIDAD</small>
+
+                <strong>
+                    Consulta de productos
+                </strong>
+
+                <p>
+                    Confirma disponibilidad y características
+                    antes de realizar tu solicitud.
+                </p>
+
+            </article>
+
+        </div>
+
+
+        <!-- =====================================================
+             PRODUCTOS RELACIONADOS
+        ====================================================== -->
+
+        <div class="kxdetail-related-header">
+
+            <div>
+
+                <small>
+                    TAMBIÉN TE PUEDE INTERESAR
+                </small>
+
+                <h2>
+                    Productos relacionados
+                </h2>
+
+            </div>
+
+
+            <a asp-page="/Productos/Index">
+
+                Ver catálogo
+
+                <span uk-icon="arrow-right"></span>
+
+            </a>
+
+        </div>
+
+
+        <div class="kxdetail-related">
+
+            <a asp-page="/Productos/Detalle"
+               asp-route-id="2"
+               class="kxdetail-related-card">
+
+                <div class="kxdetail-related-image">
+
+                    <img src="~/images/kernix_categoria_oficina.webp"
+                         alt="Monitor profesional" />
+
+                </div>
+
+                <div>
+
+                    <small>CÓMPUTO</small>
+
+                    <strong>
+                        Monitor profesional
+                    </strong>
+
+                    <span>
+                        Ver producto
+                        <i uk-icon="arrow-right"></i>
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <a asp-page="/Productos/Detalle"
+               asp-route-id="3"
+               class="kxdetail-related-card">
+
+                <div class="kxdetail-related-image">
+
+                    <img src="~/images/kernix_categoria_accesorios.webp"
+                         alt="Accesorios empresariales" />
+
+                </div>
+
+                <div>
+
+                    <small>ACCESORIOS</small>
+
+                    <strong>
+                        Kit teclado y mouse
+                    </strong>
+
+                    <span>
+                        Ver producto
+                        <i uk-icon="arrow-right"></i>
+                    </span>
+
+                </div>
+
+            </a>
+
+
+            <a asp-page="/Productos/Detalle"
+               asp-route-id="4"
+               class="kxdetail-related-card">
+
+                <div class="kxdetail-related-image">
+
+                    <img src="~/images/kernix_categoria_redes.webp"
+                         alt="Router empresarial" />
+
+                </div>
+
+                <div>
+
+                    <small>REDES</small>
+
+                    <strong>
+                        Router empresarial
+                    </strong>
+
+                    <span>
+                        Ver producto
+                        <i uk-icon="arrow-right"></i>
+                    </span>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+@section Scripts {
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const quantityInput =
+                document.getElementById("kxdetail-quantity");
+
+            const minus =
+                document.getElementById("kxdetail-minus");
+
+            const plus =
+                document.getElementById("kxdetail-plus");
+
+            const quote =
+                document.getElementById("kxdetail-quote");
+
+            const whatsapp =
+                document.getElementById("kxdetail-whatsapp");
+
+
+            const productName =
+                @Html.Raw(System.Text.Json.JsonSerializer.Serialize(nombre));
+
+            const productCode =
+                @Html.Raw(System.Text.Json.JsonSerializer.Serialize(codigo));
+
+
+            function getQuantity() {
+
+                let value =
+                    parseInt(quantityInput.value) || 1;
+
+                value =
+                    Math.max(
+                        1,
+                        Math.min(99, value)
+                    );
+
+                quantityInput.value = value;
+
+                return value;
+            }
+
+
+            minus?.addEventListener("click", function () {
+
+                const current =
+                    getQuantity();
+
+                quantityInput.value =
+                    Math.max(1, current - 1);
+
+            });
+
+
+            plus?.addEventListener("click", function () {
+
+                const current =
+                    getQuantity();
+
+                quantityInput.value =
+                    Math.min(99, current + 1);
+
+            });
+
+
+            function openWhatsApp(number, type) {
+
+                const quantity =
+                    getQuantity();
+
+
+                let message;
+
+
+                if (type === "cotizacion") {
+
+                    message =
+                        `Hola KerniX, deseo solicitar una cotización.
+
+        Producto: ${productName}
+        Código: ${productCode}
+        Cantidad: ${quantity}
+
+        ¿Podrían brindarme información comercial?`;
+
+                }
+                else {
+
+                    message =
+                        `Hola KerniX, deseo consultar este producto.
+
+        Producto: ${productName}
+        Código: ${productCode}
+        Cantidad: ${quantity}
+
+        ¿Podrían ayudarme con disponibilidad e información?`;
+
+                }
+
+
+                const url =
+                    `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+
+
+                window.open(
+                    url,
+                    "_blank",
+                    "noopener,noreferrer"
+                );
+
+            }
+
+        quote?.addEventListener("click", function () {
+
+            const quantity =
+                getQuantity();
+
+            const url =
+            `/Cotizacion?producto=${encodeURIComponent(productName)}&cantidad=${quantity}`;
+
+          window.location.href = url;
+
+        });
+
+
+            whatsapp?.addEventListener("click", function () {
+
+                openWhatsApp(
+                    "51937213913",
+                    "consulta"
+                );
+
+            });
+
+        });
+
+    </script>
+
+}

@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="utf-8" />
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0" />
+
+    <title>
+        @ViewData["Title"] | KerniX S.A.C.
+    </title>
+
+    <meta name="description"
+          content="KerniX S.A.C. - ERP, Inteligencia Artificial y soluciones empresariales." />
+
+
+    <!-- =========================================================
+         UIKIT
+    ========================================================== -->
+
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/uikit@3.21.16/dist/css/uikit.min.css" />
+
+
+    <!-- =========================================================
+         GOOGLE FONT - INTER
+    ========================================================== -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+          rel="stylesheet">
+
+
+    <!-- =========================================================
+         KERNIX - ESTILOS PRINCIPALES
+    ========================================================== -->
+
+ <link rel="stylesheet"
+      href="~/css/kernix.css"
+      asp-append-version="true" />
+
+<link rel="stylesheet"
+      href="~/css/kernix-3d.css"
+      asp-append-version="true" />
+
+<link rel="stylesheet"
+      href="~/css/sections.css"
+      asp-append-version="true" />
+
+<!-- CHAT AL FINAL -->
+<link rel="stylesheet"
+      href="~/css/chat.css"
+      asp-append-version="true" />
+    <!-- =========================================================
+         KERNIX IA - PANEL 3D
+         
+         IMPORTANTE:
+         Este archivo debe ir DESPUÉS de chat.css
+         para sobrescribir el diseño anterior.
+    ========================================================== -->
+
+    <link rel="stylesheet"
+          href="~/css/kernix-chat.css"
+          asp-append-version="true" />
+
+
+    <!-- =========================================================
+         SECCIONES
+    ========================================================== -->
+
+    <link rel="stylesheet"
+          href="~/css/sections.css"
+          asp-append-version="true" />
+
+</head>
+
+
+<body>
+
+    <div class="kx-page">
+
+
+        <!-- =====================================================
+             NAVBAR
+        ====================================================== -->
+
+        <partial name="_Navbar" />
+
+
+        <!-- =====================================================
+             CONTENIDO
+        ====================================================== -->
+
+        <main>
+
+            @RenderBody()
+
+        </main>
+
+
+        <!-- =====================================================
+             FOOTER
+        ====================================================== -->
+
+        <partial name="_Footer" />
+
+
+        <!-- =====================================================
+             KERNIX IA
+        ====================================================== -->
+
+        <partial name="_KernixChat" />
+
+
+    </div>
+
+
+    <!-- =========================================================
+         UIKIT
+    ========================================================== -->
+
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.16/dist/js/uikit.min.js">
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.21.16/dist/js/uikit-icons.min.js">
+    </script>
+
+
+    <!-- =========================================================
+         KERNIX JS
+    ========================================================== -->
+
+    <script src="~/js/kernix-ui.js"
+            asp-append-version="true">
+    </script>
+
+
+    <!-- =========================================================
+         KERNIX IA
+    ========================================================== -->
+
+    <script src="~/js/kernix-chat.js"
+            asp-append-version="true">
+    </script>
+
+
+    <!-- =========================================================
+         SCRIPTS POR PÁGINA
+    ========================================================== -->
+
+    @await RenderSectionAsync(
+        "Scripts",
+        required: false
+    )
+
+
+</body>
+
+</html>

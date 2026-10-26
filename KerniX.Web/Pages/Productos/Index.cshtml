@@ -1,0 +1,856 @@
+﻿@page
+@model KerniX.Web.Pages.Productos.IndexModel
+
+@{
+    ViewData["Title"] = "Productos | KerniX";
+}
+
+<section class="kxpdt-page">
+
+    <!-- FONDO -->
+    <div class="kxpdt-grid"></div>
+    <div class="kxpdt-orb kxpdt-orb-blue"></div>
+    <div class="kxpdt-orb kxpdt-orb-gold"></div>
+
+    <div class="uk-container">
+
+        <!-- =====================================================
+             HERO PRODUCTOS
+        ====================================================== -->
+        <header class="kxpdt-header">
+
+            <div class="kxpdt-header-copy">
+
+                <div class="kxpdt-eyebrow">
+                    <span></span>
+                    CATÁLOGO EMPRESARIAL
+                </div>
+
+                <h1>
+                    Tecnología para
+                    <strong>hacer crecer tu empresa</strong>
+                </h1>
+
+                <p>
+                    Explora productos, equipamiento y soluciones
+                    tecnológicas para las necesidades de tu negocio.
+                </p>
+
+            </div>
+
+
+            <div class="kxpdt-header-status">
+
+                <div class="kxpdt-status-icon">
+                    <span uk-icon="database"></span>
+                </div>
+
+                <div>
+                    <small>CATÁLOGO KERNIX</small>
+                    <strong>Productos disponibles</strong>
+
+                    <span>
+                        <i></i>
+                        Inventario activo
+                    </span>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =====================================================
+             BUSCADOR
+        ====================================================== -->
+        <div class="kxpdt-toolbar">
+
+            <div class="kxpdt-search">
+
+                <span uk-icon="search"></span>
+
+                <input type="search"
+                       id="kernix-product-search"
+                       placeholder="Buscar productos, categorías o tecnología..."
+                       autocomplete="off" />
+
+                <kbd>Buscar</kbd>
+
+            </div>
+
+
+            <button type="button"
+                    id="kernix-clear-search"
+                    class="kxpdt-clear">
+
+                <span uk-icon="refresh"></span>
+                Limpiar
+
+            </button>
+
+        </div>
+
+
+        <!-- =====================================================
+             CATEGORÍAS
+        ====================================================== -->
+        <div class="kxpdt-categories">
+
+            <button type="button"
+                    class="kxpdt-category active"
+                    data-category="todos">
+
+                <span uk-icon="grid"></span>
+
+                <div>
+                    <strong>Todos</strong>
+                    <small>Ver catálogo</small>
+                </div>
+
+            </button>
+
+
+            <button type="button"
+                    class="kxpdt-category"
+                    data-category="computo">
+
+                <span uk-icon="desktop"></span>
+
+                <div>
+                    <strong>Cómputo</strong>
+                    <small>Equipos</small>
+                </div>
+
+            </button>
+
+
+            <button type="button"
+                    class="kxpdt-category"
+                    data-category="accesorios">
+
+                <span uk-icon="settings"></span>
+
+                <div>
+                    <strong>Accesorios</strong>
+                    <small>Complementos</small>
+                </div>
+
+            </button>
+
+
+            <button type="button"
+                    class="kxpdt-category"
+                    data-category="redes">
+
+                <span uk-icon="wifi"></span>
+
+                <div>
+                    <strong>Redes</strong>
+                    <small>Conectividad</small>
+                </div>
+
+            </button>
+
+
+            <button type="button"
+                    class="kxpdt-category"
+                    data-category="oficina">
+
+                <span uk-icon="file-text"></span>
+
+                <div>
+                    <strong>Oficina</strong>
+                    <small>Productividad</small>
+                </div>
+
+            </button>
+
+        </div>
+
+
+        <!-- =====================================================
+             INFORMACIÓN DEL CATÁLOGO
+        ====================================================== -->
+        <div class="kxpdt-catalog-header">
+
+            <div>
+                <small>PRODUCTOS KERNIX</small>
+
+                <h2>
+                    Explora nuestro catálogo
+                </h2>
+            </div>
+
+            <div class="kxpdt-result-counter">
+                Mostrando
+                <strong id="kernix-product-count">6</strong>
+                productos
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             PRODUCTOS
+        ====================================================== -->
+        <div class="kxpdt-products"
+             id="kernix-products-grid">
+
+
+            <!-- PRODUCTO 01 -->
+            <article class="kxpdt-product"
+                     data-name="Laptop empresarial"
+                     data-category="computo">
+
+                <div class="kxpdt-product-image">
+
+                    <img src="~/images/kernix_categoria_oficina.webp"
+                         alt="Laptop empresarial" />
+
+                    <span class="kxpdt-product-badge">
+                        DESTACADO
+                    </span>
+
+                    <span class="kxpdt-stock">
+                        <i></i>
+                        Disponible
+                    </span>
+
+                </div>
+
+
+                <div class="kxpdt-product-body">
+
+                    <div class="kxpdt-product-category">
+                        CÓMPUTO
+                    </div>
+
+                    <h3>
+                        Laptop empresarial
+                    </h3>
+
+                    <p>
+                        Equipamiento para productividad,
+                        oficina y trabajo empresarial.
+                    </p>
+
+
+                    <div class="kxpdt-product-info">
+
+                        <div>
+                            <small>DISPONIBILIDAD</small>
+                            <strong>En stock</strong>
+                        </div>
+
+                        <div>
+                            <small>ATENCIÓN</small>
+                            <strong>Empresas</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="kxpdt-product-actions">
+
+                        <a asp-page="/Productos/Detalle"
+                           asp-route-id="1"
+                           class="kxpdt-details">
+
+                            Ver detalles
+
+                            <span uk-icon="arrow-right"></span>
+
+                        </a>
+
+                        <a href="https://wa.me/51930338447?text=Hola%20KerniX%2C%20deseo%20cotizar%20una%20Laptop%20empresarial."
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="kxpdt-quote">
+
+                            <span uk-icon="file-text"></span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUCTO 02 -->
+            <article class="kxpdt-product"
+                     data-name="Monitor profesional"
+                     data-category="computo">
+
+                <div class="kxpdt-product-image">
+
+                    <img src="~/images/kernix_categoria_oficina.webp"
+                         alt="Monitor profesional" />
+
+                    <span class="kxpdt-stock">
+                        <i></i>
+                        Disponible
+                    </span>
+
+                </div>
+
+
+                <div class="kxpdt-product-body">
+
+                    <div class="kxpdt-product-category">
+                        CÓMPUTO
+                    </div>
+
+                    <h3>
+                        Monitor profesional
+                    </h3>
+
+                    <p>
+                        Pantallas para estaciones de trabajo,
+                        oficinas y productividad.
+                    </p>
+
+
+                    <div class="kxpdt-product-info">
+
+                        <div>
+                            <small>DISPONIBILIDAD</small>
+                            <strong>En stock</strong>
+                        </div>
+
+                        <div>
+                            <small>USO</small>
+                            <strong>Oficina</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="kxpdt-product-actions">
+
+                        <a asp-page="/Productos/Detalle"
+                           asp-route-id="2"
+                           class="kxpdt-details">
+
+                            Ver detalles
+
+                            <span uk-icon="arrow-right"></span>
+
+                        </a>
+
+                        <a href="https://wa.me/51930338447?text=Hola%20KerniX%2C%20deseo%20cotizar%20un%20Monitor%20profesional."
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="kxpdt-quote">
+
+                            <span uk-icon="file-text"></span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUCTO 03 -->
+            <article class="kxpdt-product"
+                     data-name="Kit teclado y mouse"
+                     data-category="accesorios">
+
+                <div class="kxpdt-product-image">
+
+                    <img src="~/images/kernix_categoria_accesorios.webp"
+                         alt="Kit teclado y mouse" />
+
+                    <span class="kxpdt-stock">
+                        <i></i>
+                        Disponible
+                    </span>
+
+                </div>
+
+
+                <div class="kxpdt-product-body">
+
+                    <div class="kxpdt-product-category">
+                        ACCESORIOS
+                    </div>
+
+                    <h3>
+                        Kit teclado y mouse
+                    </h3>
+
+                    <p>
+                        Accesorios para estaciones de trabajo
+                        y equipamiento corporativo.
+                    </p>
+
+
+                    <div class="kxpdt-product-info">
+
+                        <div>
+                            <small>DISPONIBILIDAD</small>
+                            <strong>En stock</strong>
+                        </div>
+
+                        <div>
+                            <small>CATEGORÍA</small>
+                            <strong>Accesorios</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="kxpdt-product-actions">
+
+                        <a asp-page="/Productos/Detalle"
+                           asp-route-id="3"
+                           class="kxpdt-details">
+
+                            Ver detalles
+
+                            <span uk-icon="arrow-right"></span>
+
+                        </a>
+
+                        <a href="https://wa.me/51937213913?text=Hola%20KerniX%2C%20deseo%20cotizar%20un%20Kit%20de%20teclado%20y%20mouse."
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="kxpdt-quote">
+
+                            <span uk-icon="file-text"></span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUCTO 04 -->
+            <article class="kxpdt-product"
+                     data-name="Router empresarial"
+                     data-category="redes">
+
+                <div class="kxpdt-product-image">
+
+                    <img src="~/images/kernix_categoria_redes.webp"
+                         alt="Router empresarial" />
+
+                    <span class="kxpdt-product-badge kxpdt-blue-badge">
+                        EMPRESARIAL
+                    </span>
+
+                    <span class="kxpdt-stock">
+                        <i></i>
+                        Disponible
+                    </span>
+
+                </div>
+
+
+                <div class="kxpdt-product-body">
+
+                    <div class="kxpdt-product-category">
+                        REDES
+                    </div>
+
+                    <h3>
+                        Router empresarial
+                    </h3>
+
+                    <p>
+                        Conectividad estable para oficinas,
+                        empresas y redes corporativas.
+                    </p>
+
+
+                    <div class="kxpdt-product-info">
+
+                        <div>
+                            <small>DISPONIBILIDAD</small>
+                            <strong>En stock</strong>
+                        </div>
+
+                        <div>
+                            <small>USO</small>
+                            <strong>Empresarial</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="kxpdt-product-actions">
+
+                        <a asp-page="/Productos/Detalle"
+                           asp-route-id="4"
+                           class="kxpdt-details">
+
+                            Ver detalles
+
+                            <span uk-icon="arrow-right"></span>
+
+                        </a>
+
+                        <a href="https://wa.me/51937213913?text=Hola%20KerniX%2C%20deseo%20cotizar%20un%20Router%20empresarial."
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="kxpdt-quote">
+
+                            <span uk-icon="file-text"></span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUCTO 05 -->
+            <article class="kxpdt-product"
+                     data-name="Switch de red"
+                     data-category="redes">
+
+                <div class="kxpdt-product-image">
+
+                    <img src="~/images/kernix_categoria_redes.webp"
+                         alt="Switch de red" />
+
+                    <span class="kxpdt-stock">
+                        <i></i>
+                        Disponible
+                    </span>
+
+                </div>
+
+
+                <div class="kxpdt-product-body">
+
+                    <div class="kxpdt-product-category">
+                        REDES
+                    </div>
+
+                    <h3>
+                        Switch de red
+                    </h3>
+
+                    <p>
+                        Infraestructura para conectar dispositivos
+                        dentro de tu organización.
+                    </p>
+
+
+                    <div class="kxpdt-product-info">
+
+                        <div>
+                            <small>DISPONIBILIDAD</small>
+                            <strong>En stock</strong>
+                        </div>
+
+                        <div>
+                            <small>CATEGORÍA</small>
+                            <strong>Redes</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="kxpdt-product-actions">
+
+                        <a asp-page="/Productos/Detalle"
+                           asp-route-id="5"
+                           class="kxpdt-details">
+
+                            Ver detalles
+
+                            <span uk-icon="arrow-right"></span>
+
+                        </a>
+
+                        <a href="https://wa.me/51937213913?text=Hola%20KerniX%2C%20deseo%20cotizar%20un%20Switch%20de%20red."
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="kxpdt-quote">
+
+                            <span uk-icon="file-text"></span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- PRODUCTO 06 -->
+            <article class="kxpdt-product"
+                     data-name="Equipamiento de oficina"
+                     data-category="oficina">
+
+                <div class="kxpdt-product-image">
+
+                    <img src="~/images/kernix_categoria_oficina.webp"
+                         alt="Equipamiento de oficina" />
+
+                    <span class="kxpdt-stock">
+                        <i></i>
+                        Disponible
+                    </span>
+
+                </div>
+
+
+                <div class="kxpdt-product-body">
+
+                    <div class="kxpdt-product-category">
+                        OFICINA
+                    </div>
+
+                    <h3>
+                        Equipamiento de oficina
+                    </h3>
+
+                    <p>
+                        Tecnología y herramientas para mejorar
+                        la productividad de tu equipo.
+                    </p>
+
+
+                    <div class="kxpdt-product-info">
+
+                        <div>
+                            <small>DISPONIBILIDAD</small>
+                            <strong>Consultar</strong>
+                        </div>
+
+                        <div>
+                            <small>USO</small>
+                            <strong>Corporativo</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="kxpdt-product-actions">
+
+                        <a asp-page="/Productos/Detalle"
+                           asp-route-id="6"
+                           class="kxpdt-details">
+
+                            Ver detalles
+
+                            <span uk-icon="arrow-right"></span>
+
+                        </a>
+
+                        <a href="https://wa.me/51930338447?text=Hola%20KerniX%2C%20deseo%20informaci%C3%B3n%20sobre%20equipamiento%20de%20oficina."
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="kxpdt-quote">
+
+                            <span uk-icon="file-text"></span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- SIN RESULTADOS -->
+        <div id="kernix-no-products"
+             class="kxpdt-empty">
+
+            <span uk-icon="search"></span>
+
+            <strong>
+                No encontramos productos
+            </strong>
+
+            <p>
+                Prueba con otro nombre o selecciona
+                una categoría diferente.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+@section Scripts {
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const search =
+                document.getElementById("kernix-product-search");
+
+            const clear =
+                document.getElementById("kernix-clear-search");
+
+            const products =
+                Array.from(
+                    document.querySelectorAll(".kxpdt-product")
+                );
+
+            const categories =
+                document.querySelectorAll(".kxpdt-category");
+
+            const count =
+                document.getElementById("kernix-product-count");
+
+            const empty =
+                document.getElementById("kernix-no-products");
+
+
+            let currentCategory = "todos";
+
+
+            function normalizeText(value) {
+
+                return (value || "")
+                    .toLowerCase()
+                    .normalize("NFD")
+                    .replace(/[\u0300-\u036f]/g, "");
+
+            }
+
+
+            function filterProducts() {
+
+                const term =
+                    normalizeText(search.value);
+
+
+                let visible = 0;
+
+
+                products.forEach(product => {
+
+                    const name =
+                        normalizeText(
+                            product.dataset.name
+                        );
+
+                    const category =
+                        product.dataset.category;
+
+
+                    const matchesSearch =
+                        name.includes(term) ||
+                        normalizeText(category)
+                            .includes(term);
+
+
+                    const matchesCategory =
+                        currentCategory === "todos" ||
+                        category === currentCategory;
+
+
+                    const show =
+                        matchesSearch &&
+                        matchesCategory;
+
+
+                    product.hidden = !show;
+
+
+                    if (show) {
+                        visible++;
+                    }
+
+                });
+
+
+                count.textContent = visible;
+
+                empty.classList.toggle(
+                    "show",
+                    visible === 0
+                );
+
+            }
+
+
+            categories.forEach(button => {
+
+                button.addEventListener(
+                    "click",
+                    function () {
+
+                        categories.forEach(item =>
+                            item.classList.remove("active")
+                        );
+
+
+                        this.classList.add("active");
+
+
+                        currentCategory =
+                            this.dataset.category;
+
+
+                        filterProducts();
+
+                    }
+                );
+
+            });
+
+
+            search.addEventListener(
+                "input",
+                filterProducts
+            );
+
+
+            clear.addEventListener(
+                "click",
+                function () {
+
+                    search.value = "";
+
+                    currentCategory = "todos";
+
+
+                    categories.forEach(item =>
+                        item.classList.remove("active")
+                    );
+
+
+                    document
+                        .querySelector(
+                            '[data-category="todos"]'
+                        )
+                        ?.classList.add("active");
+
+
+                    filterProducts();
+
+                    search.focus();
+
+                }
+            );
+
+
+            filterProducts();
+
+        });
+
+    </script>
+
+}

@@ -1,0 +1,694 @@
+﻿@page
+@model KerniX.Web.Pages.Nosotros.IndexModel
+
+@{
+    ViewData["Title"] = "Nosotros | KerniX";
+}
+
+<section class="kxabout">
+
+    <div class="kxabout-grid"></div>
+    <div class="kxabout-orb kxabout-orb-blue"></div>
+    <div class="kxabout-orb kxabout-orb-gold"></div>
+
+    <div class="uk-container">
+
+        <!-- =====================================================
+             HERO
+        ====================================================== -->
+
+        <div class="kxabout-hero">
+
+            <div class="kxabout-copy">
+
+                <div class="kxabout-eyebrow">
+                    <span></span>
+                    KERNIX S.A.C.
+                </div>
+
+                <h1>
+                    Tecnología que conecta
+                    <strong>empresas con el futuro.</strong>
+                </h1>
+
+                <p>
+                    En KerniX desarrollamos soluciones tecnológicas
+                    orientadas a mejorar la gestión, productividad y
+                    crecimiento de las empresas.
+                </p>
+
+                <div class="kxabout-actions">
+
+                    <a asp-page="/Productos/Index"
+                       class="kxabout-primary">
+
+                        <span uk-icon="grid"></span>
+
+                        Explorar productos
+
+                        <span uk-icon="arrow-right"></span>
+
+                    </a>
+
+                    <a href="#kxabout-contact"
+                       class="kxabout-secondary">
+
+                        <span uk-icon="receiver"></span>
+
+                        Contactar
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PANEL 3D -->
+
+            <div class="kxabout-command">
+
+                <div class="kxabout-command-top">
+
+                    <div>
+                        <small>KERNIX BUSINESS</small>
+                        <strong>Centro tecnológico</strong>
+                    </div>
+
+                    <div class="kxabout-live">
+                        <i></i>
+                        ACTIVO
+                    </div>
+
+                </div>
+
+
+                <div class="kxabout-core">
+
+                    <div class="kxabout-core-ring ring-one"></div>
+                    <div class="kxabout-core-ring ring-two"></div>
+                    <div class="kxabout-core-ring ring-three"></div>
+
+                    <div class="kxabout-core-center">
+
+                        <img src="~/images/kernix_icon.png"
+                             alt="KerniX" />
+
+                    </div>
+
+                </div>
+
+
+                <div class="kxabout-system">
+
+                    <article>
+                        <span uk-icon="desktop"></span>
+
+                        <div>
+                            <small>TECNOLOGÍA</small>
+                            <strong>Productos</strong>
+                        </div>
+
+                        <i></i>
+                    </article>
+
+
+                    <article>
+                        <span uk-icon="database"></span>
+
+                        <div>
+                            <small>GESTIÓN</small>
+                            <strong>Soluciones</strong>
+                        </div>
+
+                        <i></i>
+                    </article>
+
+
+                    <article>
+                        <span uk-icon="bolt"></span>
+
+                        <div>
+                            <small>INTELIGENCIA</small>
+                            <strong>KerniX IA</strong>
+                        </div>
+
+                        <i></i>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             IDENTIDAD
+        ====================================================== -->
+
+        <div class="kxabout-identity">
+
+            <div class="kxabout-identity-title">
+
+                <small>
+                    NUESTRA IDENTIDAD
+                </small>
+
+                <h2>
+                    ¿Qué es KerniX?
+                </h2>
+
+            </div>
+
+
+            <div class="kxabout-identity-text">
+
+                <p>
+                    <strong>KerniX S.A.C.</strong> es una empresa
+                    orientada al desarrollo y comercialización de
+                    soluciones tecnológicas para organizaciones que
+                    buscan modernizar sus procesos y fortalecer su
+                    infraestructura.
+                </p>
+
+                <p>
+                    Combinamos tecnología, productos, automatización
+                    y herramientas digitales para construir un
+                    ecosistema empresarial más conectado.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             ECOSISTEMA
+        ====================================================== -->
+
+        <div class="kxabout-section-heading">
+
+            <div>
+                <small>ECOSISTEMA KERNIX</small>
+
+                <h2>
+                    Una empresa.
+                    <span>Múltiples soluciones.</span>
+                </h2>
+            </div>
+
+            <p>
+                Nuestro enfoque integra diferentes áreas tecnológicas
+                dentro de una misma experiencia empresarial.
+            </p>
+
+        </div>
+
+
+        <div class="kxabout-ecosystem">
+
+            <!-- PRODUCTOS -->
+
+            <a asp-page="/Productos/Index"
+               class="kxabout-service">
+
+                <div class="kxabout-service-number">
+                    01
+                </div>
+
+                <div class="kxabout-service-icon">
+                    <span uk-icon="desktop"></span>
+                </div>
+
+                <small>
+                    KERNIX PRODUCTS
+                </small>
+
+                <h3>
+                    Tecnología y productos
+                </h3>
+
+                <p>
+                    Equipamiento, accesorios, conectividad
+                    y soluciones para empresas.
+                </p>
+
+                <span class="kxabout-service-link">
+                    Explorar catálogo
+                    <i uk-icon="arrow-right"></i>
+                </span>
+
+            </a>
+
+
+            <!-- SOLUCIONES -->
+
+            <a href="/#soluciones"
+               class="kxabout-service">
+
+                <div class="kxabout-service-number">
+                    02
+                </div>
+
+                <div class="kxabout-service-icon">
+                    <span uk-icon="settings"></span>
+                </div>
+
+                <small>
+                    KERNIX SOLUTIONS
+                </small>
+
+                <h3>
+                    Soluciones empresariales
+                </h3>
+
+                <p>
+                    Herramientas diseñadas para optimizar
+                    procesos y operaciones empresariales.
+                </p>
+
+                <span class="kxabout-service-link">
+                    Ver soluciones
+                    <i uk-icon="arrow-right"></i>
+                </span>
+
+            </a>
+
+
+            <!-- IA -->
+
+            <button type="button"
+                    id="kxabout-open-ai"
+                    class="kxabout-service">
+
+                <div class="kxabout-service-number">
+                    03
+                </div>
+
+                <div class="kxabout-service-icon">
+                    <span uk-icon="bolt"></span>
+                </div>
+
+                <small>
+                    KERNIX INTELLIGENCE
+                </small>
+
+                <h3>
+                    Inteligencia artificial
+                </h3>
+
+                <p>
+                    Asistencia inteligente para consultas,
+                    productos y atención empresarial.
+                </p>
+
+                <span class="kxabout-service-link">
+                    Hablar con KerniX IA
+                    <i uk-icon="arrow-right"></i>
+                </span>
+
+            </button>
+
+        </div>
+
+
+        <!-- =====================================================
+             MISIÓN / VISIÓN
+        ====================================================== -->
+
+        <div class="kxabout-purpose">
+
+            <article class="kxabout-purpose-card">
+
+                <div class="kxabout-purpose-top">
+
+                    <div class="kxabout-purpose-icon">
+                        <span uk-icon="bolt"></span>
+                    </div>
+
+                    <span>
+                        01 / MISIÓN
+                    </span>
+
+                </div>
+
+                <h3>
+                    Impulsar empresas mediante tecnología.
+                </h3>
+
+                <p>
+                    Brindar soluciones tecnológicas accesibles,
+                    eficientes y modernas que ayuden a las empresas
+                    a mejorar sus procesos, productividad y capacidad
+                    de crecimiento.
+                </p>
+
+                <div class="kxabout-purpose-line"></div>
+
+            </article>
+
+
+            <article class="kxabout-purpose-card kxabout-purpose-gold">
+
+                <div class="kxabout-purpose-top">
+
+                    <div class="kxabout-purpose-icon">
+                        <span uk-icon="world"></span>
+                    </div>
+
+                    <span>
+                        02 / VISIÓN
+                    </span>
+
+                </div>
+
+                <h3>
+                    Construir un ecosistema empresarial conectado.
+                </h3>
+
+                <p>
+                    Consolidar a KerniX como una empresa tecnológica
+                    capaz de integrar productos, software e
+                    inteligencia artificial dentro de una experiencia
+                    empresarial moderna.
+                </p>
+
+                <div class="kxabout-purpose-line"></div>
+
+            </article>
+
+        </div>
+
+
+        <!-- =====================================================
+             PRINCIPIOS
+        ====================================================== -->
+
+        <div class="kxabout-values">
+
+            <div class="kxabout-values-copy">
+
+                <small>
+                    PRINCIPIOS KERNIX
+                </small>
+
+                <h2>
+                    La tecnología cambia.
+                    <strong>Nuestra forma de trabajar también.</strong>
+                </h2>
+
+                <p>
+                    Construimos KerniX sobre principios orientados
+                    a crear soluciones útiles y experiencias
+                    empresariales modernas.
+                </p>
+
+            </div>
+
+
+            <div class="kxabout-values-grid">
+
+                <article>
+
+                    <span>01</span>
+
+                    <div>
+                        <strong>Innovación</strong>
+                        <p>
+                            Buscamos nuevas formas de utilizar
+                            tecnología para resolver necesidades reales.
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <article>
+
+                    <span>02</span>
+
+                    <div>
+                        <strong>Eficiencia</strong>
+                        <p>
+                            Diseñamos soluciones enfocadas en simplificar
+                            y mejorar los procesos empresariales.
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <article>
+
+                    <span>03</span>
+
+                    <div>
+                        <strong>Confianza</strong>
+                        <p>
+                            Construimos relaciones comerciales basadas
+                            en comunicación y atención directa.
+                        </p>
+                    </div>
+
+                </article>
+
+
+                <article>
+
+                    <span>04</span>
+
+                    <div>
+                        <strong>Evolución</strong>
+                        <p>
+                            Adaptamos nuestras soluciones a las nuevas
+                            necesidades del entorno tecnológico.
+                        </p>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             TECNOLOGÍA / IA
+        ====================================================== -->
+
+        <div class="kxabout-intelligence">
+
+            <div class="kxabout-intelligence-visual">
+
+                <div class="kxabout-ai-orbit orbit-a"></div>
+                <div class="kxabout-ai-orbit orbit-b"></div>
+
+                <div class="kxabout-ai-center">
+
+                    <img src="~/images/kernix_robot_mascota.png"
+                         alt="KerniX IA" />
+
+                </div>
+
+
+                <div class="kxabout-ai-node node-products">
+                    <span uk-icon="cart"></span>
+                    PRODUCTOS
+                </div>
+
+                <div class="kxabout-ai-node node-business">
+                    <span uk-icon="database"></span>
+                    EMPRESA
+                </div>
+
+                <div class="kxabout-ai-node node-ai">
+                    <span uk-icon="bolt"></span>
+                    IA
+                </div>
+
+            </div>
+
+
+            <div class="kxabout-intelligence-copy">
+
+                <small>
+                    KERNIX INTELLIGENCE
+                </small>
+
+                <h2>
+                    Tecnología con una
+                    <strong>capa de inteligencia.</strong>
+                </h2>
+
+                <p>
+                    KerniX IA forma parte de nuestra visión de construir
+                    una experiencia empresarial donde la tecnología
+                    pueda asistir al usuario de manera rápida y natural.
+                </p>
+
+
+                <div class="kxabout-ai-features">
+
+                    <div>
+                        <span uk-icon="check"></span>
+                        Consultas empresariales
+                    </div>
+
+                    <div>
+                        <span uk-icon="check"></span>
+                        Búsqueda de productos
+                    </div>
+
+                    <div>
+                        <span uk-icon="check"></span>
+                        Asistencia comercial
+                    </div>
+
+                    <div>
+                        <span uk-icon="check"></span>
+                        Atención inteligente
+                    </div>
+
+                </div>
+
+
+                <button type="button"
+                        id="kxabout-ai-button"
+                        class="kxabout-ai-button">
+
+                    <span uk-icon="bolt"></span>
+
+                    Probar KerniX IA
+
+                    <span uk-icon="arrow-right"></span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             CONTACTO
+        ====================================================== -->
+
+        <div id="kxabout-contact"
+             class="kxabout-contact">
+
+            <div>
+
+                <div class="kxabout-eyebrow">
+                    <span></span>
+                    KERNIX BUSINESS
+                </div>
+
+                <h2>
+                    ¿Tu empresa necesita
+                    <strong>tecnología?</strong>
+                </h2>
+
+                <p>
+                    Nuestro equipo puede ayudarte a encontrar
+                    productos y soluciones para tu negocio.
+                </p>
+
+            </div>
+
+
+            <div class="kxabout-contact-actions">
+
+                <a href="https://wa.me/51930338447?text=Hola%20KerniX%2C%20deseo%20informaci%C3%B3n%20sobre%20sus%20productos%20y%20soluciones."
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="kxabout-contact-primary">
+
+                    <span uk-icon="receiver"></span>
+
+                    Hablar con un asesor
+
+                </a>
+
+
+                <a asp-page="/Productos/Index"
+                   class="kxabout-contact-secondary">
+
+                    Ver productos
+
+                    <span uk-icon="arrow-right"></span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+@section Scripts {
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const aiButtons = [
+                document.getElementById("kxabout-open-ai"),
+                document.getElementById("kxabout-ai-button")
+            ];
+
+
+            function openKernixAI() {
+
+                /*
+                 * Usamos la función global que ya tiene
+                 * nuestro chatbot KerniX.
+                 */
+
+                if (typeof openKernixChat === "function") {
+
+                    openKernixChat();
+
+                    return;
+
+                }
+
+
+                /*
+                 * Fallback:
+                 * si openKernixChat todavía no está disponible,
+                 * usamos directamente la ventana.
+                 */
+
+                const chat =
+                    document.getElementById(
+                        "kernix-chat-window"
+                    );
+
+
+                if (chat) {
+
+                    chat.classList.add("open");
+
+                }
+
+            }
+
+
+            aiButtons.forEach(button => {
+
+                button?.addEventListener(
+                    "click",
+                    openKernixAI
+                );
+
+            });
+
+        });
+
+    </script>
+
+}

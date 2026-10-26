@@ -1,0 +1,1829 @@
+﻿/* ============================================================
+   KERNIX S.A.C.
+   PREMIUM 3D UI V3
+   ============================================================
+   IMPORTANTE:
+   - Este archivo NO reemplaza kernix.css
+   - Este archivo va DESPUÉS de kernix.css
+   - chat.css va después de este archivo
+============================================================ */
+
+:root {
+    --kx3-gold: #ffb400;
+    --kx3-gold-light: #ffe477;
+    --kx3-blue: #087cff;
+    --kx3-cyan: #00ddff;
+    --kx3-dark: #020713;
+    --kx3-panel: #071426;
+    --kx3-border: rgba(255, 255, 255, .09);
+}
+
+
+/* ============================================================
+   1. NAVBAR PREMIUM
+============================================================ */
+
+.kx-premium-header {
+    position: sticky;
+    top: 0;
+    z-index: 5000;
+    width: 100%;
+    overflow: visible;
+    background: linear-gradient( 180deg, rgba(4, 10, 22, .97), rgba(2, 7, 17, .96) );
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    transition: background .3s ease, box-shadow .3s ease, backdrop-filter .3s ease;
+}
+
+    .kx-premium-header::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -1px;
+        height: 1px;
+        pointer-events: none;
+        background: linear-gradient( 90deg, transparent, rgba(0, 140, 255, .65), rgba(255, 180, 0, .85), rgba(0, 140, 255, .65), transparent );
+        box-shadow: 0 0 14px rgba(0, 119, 255, .25);
+    }
+
+    .kx-premium-header.kx-header-scrolled {
+        background: linear-gradient( 180deg, rgba(3, 9, 20, .99), rgba(2, 7, 16, .98) );
+        box-shadow: 0 10px 35px rgba(0, 0, 0, .38), 0 1px 0 rgba(0, 132, 255, .12);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+    }
+
+
+/* ============================================================
+   2. LOGO
+============================================================ */
+
+.kx-brand-premium {
+    perspective: 600px;
+}
+
+    .kx-brand-premium .kx-brand-main {
+        text-shadow: 0 1px 0 #c7d0db, 0 2px 0 #768290, 0 5px 10px rgba(0, 0, 0, .55);
+        transition: transform .25s ease;
+    }
+
+    .kx-brand-premium:hover .kx-brand-main {
+        transform: translateY(-2px) rotateX(4deg);
+    }
+
+    .kx-brand-premium .kx-brand-main > span {
+        background: linear-gradient( 180deg, #fff6b7, #ffd44d 28%, #ffad00 58%, #d96d00 100% );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        filter: drop-shadow( 0 0 7px rgba(255, 180, 0, .28) );
+    }
+
+
+/* ============================================================
+   3. NAV DESKTOP
+============================================================ */
+
+.kx-premium-nav {
+    overflow: visible;
+}
+
+    .kx-premium-nav > a,
+    .kx-nav-trigger {
+        position: relative;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        padding: 0 10px;
+        border: 0;
+        background: transparent;
+        color: #e5ebf4;
+        font-size: 12px;
+        font-weight: 700;
+        white-space: nowrap;
+        cursor: pointer;
+        transition: color .2s ease, transform .2s ease;
+    }
+
+        .kx-premium-nav > a:hover,
+        .kx-nav-trigger:hover {
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+.kx-nav-chevron {
+    transition: transform .25s ease;
+}
+
+.kx-nav-dropdown {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+}
+
+    .kx-nav-dropdown:hover .kx-nav-chevron,
+    .kx-nav-dropdown.kx-open .kx-nav-chevron {
+        transform: rotate(180deg);
+    }
+
+
+/* ============================================================
+   4. KERNIX IA NAV
+============================================================ */
+
+.kx-nav-ai {
+    gap: 7px !important;
+}
+
+.kx-nav-ai-dot {
+    width: 7px;
+    height: 7px;
+    flex: 0 0 7px;
+    border-radius: 50%;
+    background: #23ef80;
+    box-shadow: 0 0 9px #23ef80;
+    animation: kxOnline 2s infinite;
+}
+
+@keyframes kxOnline {
+
+    0%, 100% {
+        box-shadow: 0 0 5px #23ef80;
+    }
+
+    50% {
+        box-shadow: 0 0 14px #23ef80;
+    }
+}
+
+
+/* ============================================================
+   5. DROPDOWN NORMAL
+============================================================ */
+
+.kx-dropdown-menu {
+    position: absolute;
+    z-index: 6000;
+    top: calc(100% + 8px);
+    left: 50%;
+    width: 310px;
+    padding: 12px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateX(-50%) translateY(12px);
+    border: 1px solid rgba(0, 130, 255, .32);
+    border-radius: 14px;
+    background: linear-gradient( 145deg, rgba(10, 29, 57, .99), rgba(3, 10, 23, .995) );
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .08), 0 25px 60px rgba(0, 0, 0, .60), 0 0 25px rgba(0, 119, 255, .13);
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+    transition: opacity .2s ease, transform .2s ease, visibility .2s ease;
+}
+
+.kx-nav-dropdown:hover > .kx-dropdown-menu,
+.kx-nav-dropdown.kx-open > .kx-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateX(-50%) translateY(0);
+}
+
+.kx-dropdown-title {
+    padding: 6px 8px 10px;
+    color: var(--kx3-cyan);
+    font-size: 9px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+}
+
+.kx-dropdown-menu > a,
+.kx-dropdown-menu > button {
+    width: 100%;
+    min-height: 64px;
+    padding: 9px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    background: transparent;
+    color: white;
+    text-align: left;
+    cursor: pointer;
+    transition: background .2s ease, border-color .2s ease, transform .2s ease;
+}
+
+    .kx-dropdown-menu > a:hover,
+    .kx-dropdown-menu > button:hover {
+        border-color: rgba(255, 180, 0, .25);
+        background: linear-gradient( 90deg, rgba(255, 180, 0, .08), rgba(0, 119, 255, .06) );
+        transform: translateX(3px);
+    }
+
+.kx-dropdown-icon {
+    width: 38px;
+    height: 38px;
+    flex: 0 0 38px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255, 180, 0, .35);
+    border-radius: 9px;
+    color: #ffc936;
+    background: rgba(255, 180, 0, .06);
+}
+
+.kx-dropdown-menu strong,
+.kx-dropdown-menu small {
+    display: block;
+}
+
+.kx-dropdown-menu strong {
+    margin-bottom: 3px;
+    color: white;
+    font-size: 12px;
+}
+
+.kx-dropdown-menu small {
+    color: #8798ad;
+    font-size: 9px;
+}
+
+
+/* ============================================================
+   6. MEGA MENU PRODUCTOS
+   FIX COMPLETO
+============================================================ */
+
+.kx-products-dropdown {
+    position: relative !important;
+}
+
+
+    /*
+   MUY IMPORTANTE:
+   El panel pertenece al dropdown Productos.
+   Nunca puede ocupar el Hero.
+*/
+
+    .kx-products-dropdown > .kx-mega-menu {
+        position: absolute !important;
+        z-index: 9999 !important;
+        top: calc(100% + 8px) !important;
+        left: 50% !important;
+        width: 760px !important;
+        max-width: calc(100vw - 40px) !important;
+        height: auto !important;
+        max-height: 520px !important;
+        padding: 18px !important;
+        margin: 0 !important;
+        overflow: hidden !important;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateX(-50%) translateY(12px) !important;
+        transform-origin: center top;
+        border: 1px solid rgba(0, 136, 255, .45) !important;
+        border-radius: 18px !important;
+        background: radial-gradient( circle at 20% 0%, rgba(0, 119, 255, .15), transparent 35% ), linear-gradient( 145deg, #081a34 0%, #030b18 60%, #020711 100% ) !important;
+        box-shadow: 0 30px 70px rgba(0, 0, 0, .75), 0 0 30px rgba(0, 119, 255, .15), inset 0 1px 0 rgba(255, 255, 255, .08) !important;
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        transition: opacity .2s ease, visibility .2s ease, transform .2s ease !important;
+    }
+
+
+    /* ABRIR */
+
+    .kx-products-dropdown:hover > .kx-mega-menu,
+    .kx-products-dropdown.kx-open > .kx-mega-menu {
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        transform: translateX(-50%) translateY(0) !important;
+    }
+
+
+/* ============================================================
+   7. CABECERA MEGA MENU
+============================================================ */
+
+.kx-mega-top {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 20px !important;
+    padding: 0 0 14px !important;
+    margin: 0 0 14px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, .08) !important;
+}
+
+.kx-mega-eyebrow {
+    display: block;
+    color: var(--kx3-cyan) !important;
+    font-size: 9px !important;
+    font-weight: 900 !important;
+    letter-spacing: 1.5px !important;
+}
+
+.kx-mega-top h3 {
+    margin: 5px 0 0 !important;
+    color: #fff !important;
+    font-size: 19px !important;
+    font-weight: 900 !important;
+    line-height: 1.2 !important;
+}
+
+    .kx-mega-top h3 span {
+        color: #ffc42d !important;
+    }
+
+.kx-mega-all {
+    flex: 0 0 auto !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    color: #ffc42d !important;
+    font-size: 10px !important;
+    font-weight: 800 !important;
+}
+
+
+/* ============================================================
+   8. GRID DEL MEGA MENU
+============================================================ */
+
+.kx-product-menu-grid {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+/* ============================================================
+   9. TARJETAS PRODUCTOS
+============================================================ */
+
+.kx-menu-product {
+    position: relative !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    height: 82px !important;
+    min-height: 82px !important;
+    max-height: 82px !important;
+    padding: 9px !important;
+    display: grid !important;
+    grid-template-columns: 75px minmax(0, 1fr) 20px !important;
+    align-items: center !important;
+    gap: 11px !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(255, 255, 255, .08) !important;
+    border-radius: 11px !important;
+    background: linear-gradient( 145deg, rgba(13, 34, 63, .92), rgba(4, 13, 28, .98) ) !important;
+    transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+
+    .kx-menu-product:hover {
+        border-color: rgba(255, 180, 0, .42) !important;
+        transform: translateY(-3px) !important;
+        box-shadow: 0 12px 25px rgba(0, 0, 0, .30), 0 0 15px rgba(255, 180, 0, .06);
+    }
+
+
+/* ============================================================
+   10. IMÁGENES MEGA MENU
+   ESTE ES EL FIX PRINCIPAL
+============================================================ */
+
+.kx-menu-product-image {
+    position: relative !important;
+    width: 75px !important;
+    height: 58px !important;
+    min-width: 75px !important;
+    min-height: 58px !important;
+    max-width: 75px !important;
+    max-height: 58px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border-radius: 7px !important;
+    background: #061020 !important;
+}
+
+    .kx-menu-product-image img {
+        position: static !important;
+        display: block !important;
+        width: 75px !important;
+        height: 58px !important;
+        min-width: 75px !important;
+        min-height: 58px !important;
+        max-width: 75px !important;
+        max-height: 58px !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        object-fit: cover !important;
+        object-position: center !important;
+        transform: none !important;
+        filter: none;
+    }
+
+
+/* TEXTO PRODUCTO */
+
+.kx-menu-product > div:nth-child(2) {
+    min-width: 0 !important;
+}
+
+.kx-menu-product strong,
+.kx-menu-product small {
+    display: block !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+}
+
+.kx-menu-product strong {
+    margin: 0 0 4px !important;
+    color: white !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+}
+
+.kx-menu-product small {
+    color: #8595aa !important;
+    font-size: 8px !important;
+}
+
+
+/* ============================================================
+   11. FOOTER MEGA MENU
+============================================================ */
+
+.kx-mega-footer {
+    width: 100% !important;
+    margin: 14px 0 0 !important;
+    padding: 13px 0 0 !important;
+    display: grid !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+    border-top: 1px solid rgba(255, 255, 255, .07) !important;
+}
+
+    .kx-mega-footer > div {
+        min-width: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        color: #ffc632;
+    }
+
+    .kx-mega-footer strong,
+    .kx-mega-footer small {
+        display: block;
+    }
+
+    .kx-mega-footer strong {
+        color: #eaf1fa;
+        font-size: 9px;
+    }
+
+    .kx-mega-footer small {
+        color: #77889d;
+        font-size: 7px;
+    }
+
+
+/* ============================================================
+   12. SOCIAL
+============================================================ */
+
+.kx-social a {
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+@media (hover: hover) {
+
+    .kx-social a:hover {
+        border-color: rgba(0, 150, 255, .65);
+        transform: translateY(-3px) rotateX(7deg);
+        box-shadow: 0 7px 15px rgba(0, 0, 0, .35), 0 0 12px rgba(0, 119, 255, .22);
+    }
+}
+
+
+/* ============================================================
+   13. VENDEDOR / WHATSAPP
+============================================================ */
+
+.kx-seller-premium {
+    position: relative;
+    overflow: hidden;
+    transition: translate .18s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+    .kx-seller-premium::before {
+        content: "";
+        position: absolute;
+        top: -100%;
+        left: -60%;
+        width: 40%;
+        height: 300%;
+        pointer-events: none;
+        transform: rotate(25deg);
+        background: linear-gradient( 90deg, transparent, rgba(255, 255, 255, .25), transparent );
+        transition: left .6s ease;
+    }
+
+    .kx-seller-premium:hover::before {
+        left: 130%;
+    }
+
+    .kx-seller-premium:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 7px 0 #573700, 0 14px 30px rgba(0, 0, 0, .38), 0 0 24px rgba(255, 180, 0, .22);
+    }
+
+.kx-seller-pulse {
+    position: absolute;
+    left: 7px;
+    top: 7px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #2bef7d;
+    box-shadow: 0 0 8px #2bef7d;
+}
+
+
+/* ============================================================
+   14. HERO 3D
+============================================================ */
+
+@media (min-width: 1200px) and (hover: hover) and (pointer: fine) {
+
+    .kx-hero {
+        --kx-mouse-x: 50%;
+        --kx-mouse-y: 50%;
+        position: relative;
+        isolation: isolate;
+        perspective: 1500px;
+        perspective-origin: center center;
+    }
+
+        .kx-hero::after {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            inset: 0;
+            pointer-events: none;
+            background: radial-gradient( 520px circle at var(--kx-mouse-x) var(--kx-mouse-y), rgba(0, 153, 255, .10), transparent 42% );
+        }
+
+    .kx-hero-grid {
+        position: relative;
+        z-index: 2;
+        transform-style: preserve-3d;
+    }
+
+
+    /* COPY */
+
+    .kx-hero-copy {
+        position: relative;
+        transform-style: preserve-3d;
+    }
+
+    .kx-eyebrow {
+        transform: translateZ(16px);
+    }
+
+    .kx-hero-copy h1 {
+        transform: translateZ(25px);
+        text-shadow: 0 10px 30px rgba(0, 0, 0, .42);
+    }
+
+    .kx-hero-description {
+        transform: translateZ(15px);
+    }
+
+
+    /* BENEFICIOS */
+
+    .kx-benefits > div {
+        transform-style: preserve-3d;
+        transition: transform .22s ease, color .22s ease;
+    }
+
+        .kx-benefits > div:hover {
+            color: white;
+            transform: translateY(-3px) translateZ(20px);
+        }
+
+        .kx-benefits > div .uk-icon {
+            transition: transform .22s ease, filter .22s ease;
+        }
+
+        .kx-benefits > div:hover .uk-icon {
+            transform: scale(1.12) rotateY(8deg);
+            filter: drop-shadow( 0 0 8px rgba(255, 190, 45, .45) );
+        }
+
+
+    /* BOTONES */
+
+    .kx-button-ai,
+    .kx-button-whatsapp {
+        position: relative;
+        overflow: hidden;
+        transform-style: preserve-3d;
+        transition: translate .18s ease, transform .18s ease, box-shadow .22s ease;
+    }
+
+        .kx-button-ai::after,
+        .kx-button-whatsapp::after {
+            content: "";
+            position: absolute;
+            top: -90%;
+            left: -55%;
+            width: 32%;
+            height: 280%;
+            pointer-events: none;
+            transform: rotate(24deg);
+            background: linear-gradient( 90deg, transparent, rgba(255, 255, 255, .38), transparent );
+            transition: left .65s ease;
+        }
+
+        .kx-button-ai:hover::after,
+        .kx-button-whatsapp:hover::after {
+            left: 135%;
+        }
+
+
+    /* ========================================================
+       PERSONAJE
+    ======================================================== */
+
+    .kx-hero-character {
+        position: relative;
+        transform-style: preserve-3d;
+        perspective: 1100px;
+        will-change: transform;
+    }
+
+    .kx-character-glow {
+        transform: translateZ(-30px) scale(1.06);
+        filter: blur(3px);
+    }
+
+    .kx-empress {
+        transform-origin: center bottom;
+        will-change: transform;
+        filter: drop-shadow( 0 25px 30px rgba(0, 0, 0, .50) ) drop-shadow( 0 0 18px rgba(0, 119, 255, .10) );
+    }
+
+
+    /* ROBOT */
+
+    .kx-robot {
+        transform-origin: center center;
+        filter: drop-shadow( 0 14px 18px rgba(0, 0, 0, .50) ) drop-shadow( 0 0 14px rgba(0, 183, 255, .25) );
+        animation: kxRobotFloat 4s ease-in-out infinite;
+    }
+
+
+    /* ========================================================
+       SALES WIDGET
+    ======================================================== */
+
+    .kx-sales-widget {
+        position: relative;
+        overflow: hidden;
+        transform-style: preserve-3d;
+        will-change: transform;
+        backdrop-filter: blur(12px);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .14), 0 15px 30px rgba(0, 0, 0, .38), 0 0 25px rgba(0, 119, 255, .15);
+    }
+
+        .kx-sales-widget::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            background: linear-gradient( 115deg, transparent 15%, rgba(0, 216, 255, .10) 42%, rgba(255, 196, 47, .10) 52%, transparent 72% );
+            transform: translateX(-110%);
+            animation: kxHologramSweep 5s ease-in-out infinite;
+        }
+
+
+    /* ========================================================
+       PANEL IA
+    ======================================================== */
+
+    .kx-hero-ai {
+        perspective: 1300px;
+        transform-style: preserve-3d;
+    }
+
+    .kx-ai-card {
+        --kx-card-rx: 0deg;
+        --kx-card-ry: 0deg;
+        position: relative;
+        transform: perspective(1300px) rotateX(var(--kx-card-rx)) rotateY(var(--kx-card-ry));
+        transform-style: preserve-3d;
+        will-change: transform;
+        transition: transform .16s ease-out, border-color .25s ease, box-shadow .25s ease;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .11), 0 30px 65px rgba(0, 0, 0, .50), 0 0 28px rgba(0, 119, 255, .13);
+    }
+
+        .kx-ai-card::before {
+            content: "";
+            position: absolute;
+            z-index: 10;
+            inset: 0;
+            pointer-events: none;
+            border-radius: inherit;
+            background: radial-gradient( 350px circle at var(--kx-ai-light-x, 50%) var(--kx-ai-light-y, 20%), rgba(0, 190, 255, .10), transparent 50% );
+        }
+
+        .kx-ai-card:hover {
+            border-color: rgba(0, 164, 255, .75);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, .14), 0 35px 75px rgba(0, 0, 0, .56), 0 0 38px rgba(0, 132, 255, .20);
+        }
+
+    .kx-ai-header {
+        position: relative;
+        z-index: 3;
+        transform: translateZ(18px);
+    }
+
+    .kx-ai-body {
+        position: relative;
+        z-index: 2;
+        transform: translateZ(12px);
+    }
+
+    .kx-ai-actions,
+    .kx-ai-input {
+        position: relative;
+        z-index: 3;
+        transform: translateZ(16px);
+    }
+
+
+    /* PRODUCTOS IA */
+
+    .kx-ai-products article {
+        position: relative;
+        transform-style: preserve-3d;
+        transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+    }
+
+        .kx-ai-products article:hover {
+            z-index: 10;
+            transform: translateY(-6px) translateZ(30px) rotateX(3deg);
+            border-color: rgba(255, 190, 45, .70);
+            box-shadow: 0 14px 25px rgba(0, 0, 0, .40), 0 0 16px rgba(255, 180, 0, .10);
+        }
+
+
+    /* ========================================================
+       HERRAMIENTAS
+    ======================================================== */
+
+    .kx-tools {
+        transform-style: preserve-3d;
+    }
+
+        .kx-tools > a,
+        .kx-tools > button {
+            transition: transform .2s ease, background .2s ease, color .2s ease, box-shadow .2s ease;
+        }
+
+            .kx-tools > a:hover,
+            .kx-tools > button:hover {
+                z-index: 4;
+                transform: translateX(-5px) translateZ(22px);
+                color: #ffd24b;
+                background: linear-gradient( 90deg, rgba(255, 180, 0, .08), rgba(0, 119, 255, .07) );
+                box-shadow: 8px 10px 25px rgba(0, 0, 0, .22);
+            }
+
+
+    /* ========================================================
+       FEATURES INFERIORES
+    ======================================================== */
+
+    .kx-bottom-features {
+        position: relative;
+        z-index: 5;
+        perspective: 1000px;
+    }
+
+        .kx-bottom-features article {
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform .22s ease, background .22s ease, box-shadow .22s ease;
+        }
+
+            .kx-bottom-features article:hover {
+                z-index: 5;
+                transform: translateY(-7px) translateZ(24px) rotateX(3deg);
+                background: linear-gradient( 145deg, rgba(19, 38, 66, .94), rgba(5, 13, 27, .98) );
+                box-shadow: 0 18px 32px rgba(0, 0, 0, .38), 0 0 18px rgba(255, 180, 0, .07);
+            }
+}
+
+
+/* ============================================================
+   15. ANIMACIONES
+============================================================ */
+
+@keyframes kxRobotFloat {
+
+    0%, 100% {
+        translate: 0 0;
+    }
+
+    50% {
+        translate: 0 -9px;
+    }
+}
+
+@keyframes kxHologramSweep {
+
+    0%, 55% {
+        transform: translateX(-110%);
+    }
+
+    80%, 100% {
+        transform: translateX(120%);
+    }
+}
+
+
+/* ============================================================
+   16. SCROLL REVEAL
+============================================================ */
+
+.kx-reveal {
+    opacity: 0;
+    transform: translateY(34px) scale(.985);
+    transition: opacity .75s cubic-bezier(.2, .8, .2, 1), transform .75s cubic-bezier(.2, .8, .2, 1);
+}
+
+    .kx-reveal.kx-visible {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+.kx-reveal-left {
+    transform: translateX(-35px);
+}
+
+.kx-reveal-right {
+    transform: translateX(35px);
+}
+
+    .kx-reveal-left.kx-visible,
+    .kx-reveal-right.kx-visible {
+        transform: translateX(0);
+    }
+
+
+/* ============================================================
+   17. SECCIONES 3D
+============================================================ */
+
+.kx-media-frame,
+.kx-promo,
+.kx-mini-card,
+.kx-feature-list > div {
+    position: relative;
+}
+
+    .kx-media-frame::after,
+    .kx-promo::after {
+        content: "";
+        position: absolute;
+        z-index: 4;
+        inset: 0;
+        pointer-events: none;
+        border-radius: inherit;
+        background: linear-gradient( 120deg, transparent 20%, rgba(255, 255, 255, .035) 42%, transparent 62% );
+        transform: translateX(-100%);
+        transition: transform .8s ease;
+    }
+
+@media (hover: hover) {
+
+    .kx-media-frame:hover::after,
+    .kx-promo:hover::after {
+        transform: translateX(100%);
+    }
+
+    .kx-mini-card,
+    .kx-feature-list > div {
+        transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+    }
+
+        .kx-mini-card:hover,
+        .kx-feature-list > div:hover {
+            border-color: rgba(255, 185, 35, .28);
+            box-shadow: 0 15px 28px rgba(0, 0, 0, .28), 0 0 16px rgba(0, 119, 255, .06);
+        }
+}
+
+
+/* ============================================================
+   18. MOBILE MENU
+============================================================ */
+
+.kx-mobile-menu {
+    background: radial-gradient( circle at 80% 10%, rgba(0, 119, 255, .18), transparent 35% ), linear-gradient( 180deg, #07172e, #020713 );
+}
+
+.kx-mobile-brand p {
+    margin-top: 7px;
+    color: #7f90a7;
+    font-size: 7px;
+    letter-spacing: 2px;
+}
+
+.kx-mobile-menu .uk-parent > a {
+    display: flex;
+    justify-content: space-between;
+}
+
+.kx-mobile-menu .uk-nav-sub {
+    padding: 5px 0 8px 17px;
+}
+
+    .kx-mobile-menu .uk-nav-sub a {
+        color: #9caabd;
+        font-size: 12px;
+    }
+
+.kx-mobile-cta {
+    margin-top: 30px;
+    display: grid;
+    gap: 9px;
+}
+
+    .kx-mobile-cta button,
+    .kx-mobile-cta a {
+        min-height: 48px;
+        padding: 0 13px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        border: 1px solid rgba(255, 180, 0, .45);
+        border-radius: 9px;
+        background: linear-gradient( 145deg, rgba(28, 22, 7, .95), rgba(5, 13, 26, .98) );
+        color: white;
+        font-size: 12px;
+        font-weight: 800;
+    }
+
+
+/* ============================================================
+   19. LAPTOP
+============================================================ */
+
+@media (max-width: 1300px) {
+
+    .kx-premium-nav > a,
+    .kx-nav-trigger {
+        padding-inline: 7px;
+        font-size: 10px;
+    }
+
+    .kx-products-dropdown > .kx-mega-menu {
+        width: 680px !important;
+    }
+}
+
+
+/* ============================================================
+   20. TABLET
+============================================================ */
+
+@media (max-width: 1199px) {
+
+    .kx-premium-nav {
+        display: none !important;
+    }
+
+    .kx-premium-header .kx-social {
+        display: none !important;
+    }
+
+    /*
+       Mega menú desktop nunca aparece
+       en tablet/mobile.
+    */
+
+    .kx-products-dropdown > .kx-mega-menu,
+    .kx-dropdown-menu {
+        display: none !important;
+    }
+
+    .kx-hero-character,
+    .kx-empress,
+    .kx-sales-widget,
+    .kx-ai-card {
+        will-change: auto;
+    }
+}
+
+
+/* ============================================================
+   21. MOBILE
+============================================================ */
+
+@media (max-width: 640px) {
+
+    .kx-reveal,
+    .kx-reveal-left,
+    .kx-reveal-right {
+        transform: translateY(18px);
+    }
+
+        .kx-reveal.kx-visible,
+        .kx-reveal-left.kx-visible,
+        .kx-reveal-right.kx-visible {
+            transform: translateY(0);
+        }
+
+    .kx-ai-card,
+    .kx-sales-widget,
+    .kx-media-frame,
+    .kx-promo {
+        transform: none !important;
+    }
+}
+
+
+/* ============================================================
+   22. REDUCED MOTION
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .kx-nav-ai-dot,
+    .kx-robot,
+    .kx-sales-widget::before {
+        animation: none !important;
+    }
+
+    .kx-seller-premium::before {
+        display: none;
+    }
+
+    .kx-reveal,
+    .kx-reveal-left,
+    .kx-reveal-right {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
+/* ============================================================
+   KERNIX SOLUCIONES 3D
+============================================================ */
+
+.kx-solutions-3d {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    padding: 110px 0;
+    background: radial-gradient( circle at 20% 45%, rgba(0, 119, 255, .14), transparent 35% ), radial-gradient( circle at 85% 30%, rgba(255, 174, 0, .08), transparent 30% ), linear-gradient( 135deg, #020711 0%, #06101e 50%, #020711 100% );
+}
+
+
+/* =========================
+   LUCES AMBIENTALES
+========================= */
+
+.kx-solutions-light {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: .22;
+    pointer-events: none;
+}
+
+
+.kx-solutions-light-blue {
+    left: -180px;
+    top: 10%;
+    background: #007cff;
+}
+
+
+.kx-solutions-light-gold {
+    right: -200px;
+    bottom: -100px;
+    background: #ffae00;
+}
+
+
+/* =========================
+   GRID
+========================= */
+
+.kx-solutions-grid {
+    position: relative;
+    z-index: 5;
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(380px, .85fr);
+    align-items: center;
+    gap: 80px;
+}
+
+
+/* ============================================================
+   PANEL IZQUIERDO
+============================================================ */
+
+.kx-solutions-visual {
+    position: relative;
+    min-width: 0;
+    perspective: 1400px;
+}
+
+
+.kx-solutions-stage {
+    position: relative;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* =========================
+   IMAGEN PRINCIPAL
+========================= */
+
+.kx-media-frame-3d {
+    position: relative;
+    width: 100%;
+    max-width: 720px;
+    height: 440px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 174, 255, .55);
+    border-radius: 26px;
+    background: #020916;
+    transform: perspective(1400px) rotateY(5deg) rotateX(1deg);
+    transform-origin: center;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.15), inset 0 0 40px rgba(0,119,255,.08), 0 30px 60px rgba(0,0,0,.55), 0 0 25px rgba(0,119,255,.18);
+    transition: transform .55s cubic-bezier(.2,.8,.2,1), border-color .4s ease, box-shadow .4s ease;
+}
+
+
+    .kx-media-frame-3d:hover {
+        transform: perspective(1400px) rotateY(0deg) rotateX(0deg) translateY(-7px);
+        border-color: rgba(255, 185, 0, .70);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.18), 0 35px 70px rgba(0,0,0,.62), 0 0 25px rgba(0,132,255,.25), 0 0 35px rgba(255,174,0,.10);
+    }
+
+
+    .kx-media-frame-3d > img {
+        position: absolute;
+        inset: 0;
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover;
+        transform: scale(1.035);
+        transition: transform 1s cubic-bezier(.2,.8,.2,1), filter .6s ease;
+        filter: saturate(1.12) contrast(1.05) brightness(.90);
+    }
+
+
+    .kx-media-frame-3d:hover > img {
+        transform: scale(1.08);
+        filter: saturate(1.22) contrast(1.08) brightness(1);
+    }
+
+
+/* =========================
+   OVERLAY
+========================= */
+
+.kx-media-overlay {
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    background: linear-gradient( 90deg, rgba(2,7,17,.45), transparent 45% ), linear-gradient( 0deg, rgba(2,7,17,.72), transparent 45% );
+    pointer-events: none;
+}
+
+
+/* =========================
+   GLOW
+========================= */
+
+.kx-media-glow {
+    position: absolute;
+    z-index: -1;
+    inset: -40px;
+    background: radial-gradient( circle, rgba(0,140,255,.30), transparent 60% );
+    filter: blur(35px);
+}
+
+
+/* =========================
+   REFLEJO ANIMADO
+========================= */
+
+.kx-media-shine {
+    position: absolute;
+    z-index: 4;
+    top: -40%;
+    left: -45%;
+    width: 25%;
+    height: 180%;
+    transform: rotate(20deg);
+    background: linear-gradient( 90deg, transparent, rgba(255,255,255,.14), transparent );
+    animation: kxSolutionShine 6s ease-in-out infinite;
+    pointer-events: none;
+}
+
+
+@keyframes kxSolutionShine {
+
+    0%, 65% {
+        left: -45%;
+        opacity: 0;
+    }
+
+    72% {
+        opacity: 1;
+    }
+
+    100% {
+        left: 130%;
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   BADGE SUPERIOR
+========================= */
+
+.kx-media-badge {
+    position: absolute;
+    z-index: 6;
+    top: 22px;
+    left: 22px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 14px;
+    border: 1px solid rgba(255,185,0,.45);
+    border-radius: 12px;
+    background: rgba(2, 10, 24, .80);
+    backdrop-filter: blur(14px);
+    box-shadow: 0 10px 30px rgba(0,0,0,.35), 0 0 18px rgba(255,174,0,.08);
+}
+
+
+    .kx-media-badge small {
+        display: block;
+        color: #8092aa;
+        font-size: 8px;
+        letter-spacing: 1.6px;
+    }
+
+
+    .kx-media-badge strong {
+        display: block;
+        color: #fff;
+        font-size: 11px;
+        letter-spacing: .5px;
+    }
+
+
+.kx-live-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #00ff86;
+    box-shadow: 0 0 7px #00ff86, 0 0 15px rgba(0,255,134,.55);
+    animation: kxSolutionPulse 1.8s ease-in-out infinite;
+}
+
+
+@keyframes kxSolutionPulse {
+
+    0%, 100% {
+        transform: scale(.8);
+        opacity: .65;
+    }
+
+    50% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+}
+
+
+/* =========================
+   ESTADÍSTICA FLOTANTE
+========================= */
+
+.kx-floating-stat {
+    position: absolute;
+    z-index: 7;
+    right: 20px;
+    bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding: 11px 15px;
+    border: 1px solid rgba(0,174,255,.50);
+    border-radius: 14px;
+    background: linear-gradient( 145deg, rgba(8,36,70,.92), rgba(2,12,28,.95) );
+    backdrop-filter: blur(15px);
+    box-shadow: 0 15px 30px rgba(0,0,0,.40), 0 0 18px rgba(0,132,255,.15);
+    animation: kxSolutionFloat 4s ease-in-out infinite;
+}
+
+
+    .kx-floating-stat > .uk-icon {
+        color: #ffc31d;
+    }
+
+
+    .kx-floating-stat strong {
+        display: block;
+        color: #fff;
+        font-size: 18px;
+        line-height: 1;
+    }
+
+
+    .kx-floating-stat small {
+        color: #8fa3bd;
+        font-size: 10px;
+    }
+
+
+@keyframes kxSolutionFloat {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+
+/* ============================================================
+   TARJETA FLOTANTE ERP
+============================================================ */
+
+.kx-floating-system-card {
+    position: absolute;
+    z-index: 10;
+    left: 30px;
+    bottom: 0;
+    min-width: 260px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 16px;
+    border: 1px solid rgba(255,183,0,.45);
+    border-radius: 16px;
+    background: linear-gradient( 145deg, rgba(10,30,55,.96), rgba(2,9,20,.98) );
+    box-shadow: 0 20px 40px rgba(0,0,0,.55), 0 0 22px rgba(255,174,0,.10);
+    transform: perspective(800px) rotateY(5deg);
+    animation: kxSystemCardFloat 5s ease-in-out infinite;
+}
+
+
+@keyframes kxSystemCardFloat {
+
+    0%, 100% {
+        translate: 0 0;
+    }
+
+    50% {
+        translate: 0 -8px;
+    }
+}
+
+
+.kx-floating-system-icon {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 auto;
+    border: 1px solid rgba(255,185,0,.60);
+    border-radius: 11px;
+    color: #ffc31d;
+    background: rgba(255,174,0,.07);
+    box-shadow: inset 0 0 12px rgba(255,174,0,.06), 0 0 15px rgba(255,174,0,.10);
+}
+
+
+.kx-floating-system-card small {
+    display: block;
+    color: #7e91aa;
+    font-size: 9px;
+    letter-spacing: 1.2px;
+}
+
+
+.kx-floating-system-card strong {
+    display: block;
+    margin-top: 2px;
+    color: #fff;
+    font-size: 12px;
+}
+
+
+.kx-system-online {
+    width: 8px;
+    height: 8px;
+    margin-left: auto;
+    border-radius: 50%;
+    background: #00ff88;
+    box-shadow: 0 0 8px #00ff88;
+}
+
+
+/* ============================================================
+   LÍNEAS TECNOLÓGICAS
+============================================================ */
+
+.kx-tech-line {
+    position: absolute;
+    z-index: -1;
+    height: 1px;
+    background: linear-gradient( 90deg, transparent, rgba(0,174,255,.55), transparent );
+    pointer-events: none;
+}
+
+
+.kx-tech-line-1 {
+    width: 80%;
+    top: 20%;
+    left: 5%;
+    transform: rotate(-7deg);
+}
+
+
+.kx-tech-line-2 {
+    width: 65%;
+    right: 0;
+    bottom: 18%;
+    transform: rotate(8deg);
+    background: linear-gradient( 90deg, transparent, rgba(255,174,0,.35), transparent );
+}
+
+
+/* ============================================================
+   CONTENIDO DERECHO
+============================================================ */
+
+.kx-solutions-content {
+    position: relative;
+    min-width: 0;
+}
+
+
+    .kx-solutions-content .kx-section-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+
+        .kx-solutions-content .kx-section-tag i {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #00eaff;
+            box-shadow: 0 0 8px #00d9ff;
+        }
+
+
+    .kx-solutions-content .kx-content-title {
+        margin-top: 15px;
+        font-size: clamp(37px, 3vw, 54px);
+        line-height: 1.02;
+        letter-spacing: -2px;
+        text-shadow: 0 15px 35px rgba(0,0,0,.45);
+    }
+
+
+        .kx-solutions-content .kx-content-title span {
+            display: block;
+            background: linear-gradient( 90deg, #ffd85a, #ffad00 );
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow( 0 0 12px rgba(255,174,0,.14) );
+        }
+
+
+    .kx-solutions-content .kx-content-text {
+        max-width: 520px;
+        margin-top: 20px;
+        color: #9badc3;
+        font-size: 15px;
+        line-height: 1.75;
+    }
+
+
+/* ============================================================
+   CARDS 3D
+============================================================ */
+
+.kx-feature-list-3d {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-top: 28px;
+    perspective: 900px;
+}
+
+
+.kx-solution-card {
+    position: relative;
+    min-width: 0;
+    min-height: 82px;
+    display: grid;
+    grid-template-columns: 44px minmax(0,1fr) 18px;
+    align-items: center;
+    gap: 11px;
+    padding: 14px;
+    overflow: hidden;
+    border: 1px solid rgba(55,126,201,.30);
+    border-radius: 15px;
+    background: linear-gradient( 145deg, rgba(12,31,55,.86), rgba(3,12,25,.94) );
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.06), 0 12px 25px rgba(0,0,0,.25);
+    transform: perspective(900px) translateZ(0);
+    transition: transform .35s cubic-bezier(.2,.8,.2,1), border-color .35s ease, box-shadow .35s ease, background .35s ease;
+}
+
+
+    .kx-solution-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        opacity: 0;
+        background: linear-gradient( 120deg, rgba(0,174,255,.10), transparent 40%, rgba(255,174,0,.07) );
+        transition: opacity .35s ease;
+        pointer-events: none;
+    }
+
+
+    .kx-solution-card:hover {
+        transform: perspective(900px) translateY(-5px) rotateX(2deg) rotateY(-2deg);
+        border-color: rgba(255,185,0,.50);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.10), 0 20px 35px rgba(0,0,0,.38), 0 0 20px rgba(0,132,255,.09);
+    }
+
+
+        .kx-solution-card:hover::before {
+            opacity: 1;
+        }
+
+
+.kx-solution-icon {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    border: 1px solid rgba(255,185,0,.45);
+    border-radius: 12px;
+    color: #ffc31d;
+    background: radial-gradient( circle, rgba(255,174,0,.12), rgba(255,174,0,.02) );
+    box-shadow: inset 0 0 12px rgba(255,174,0,.05), 0 0 14px rgba(255,174,0,.07);
+}
+
+
+.kx-solution-card strong {
+    display: block;
+    color: #fff;
+    font-size: 13px;
+}
+
+
+.kx-solution-card small {
+    display: block;
+    margin-top: 3px;
+    color: #7f92aa;
+    font-size: 10px;
+}
+
+
+.kx-card-arrow {
+    color: #3c638e;
+    transition: color .3s ease, transform .3s ease;
+}
+
+
+.kx-solution-card:hover .kx-card-arrow {
+    color: #ffc31d;
+    transform: translateX(3px);
+}
+
+
+/* ============================================================
+   STATUS INFERIOR
+============================================================ */
+
+.kx-system-status {
+    margin-top: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 13px 15px;
+    border: 1px solid rgba(0,174,255,.20);
+    border-radius: 14px;
+    background: rgba(4,15,30,.62);
+}
+
+
+    .kx-system-status > div {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+
+.kx-status-pulse {
+    width: 9px;
+    height: 9px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    background: #00ff88;
+    box-shadow: 0 0 8px #00ff88;
+    animation: kxSolutionPulse 1.8s ease-in-out infinite;
+}
+
+
+.kx-system-status small {
+    display: block;
+    color: #637991;
+    font-size: 8px;
+    letter-spacing: 1.4px;
+}
+
+
+.kx-system-status strong {
+    display: block;
+    margin-top: 2px;
+    color: #dce8f7;
+    font-size: 11px;
+}
+
+
+.kx-system-status > .uk-icon {
+    color: #ffc31d;
+}
+
+
+/* ============================================================
+   ANIMACIÓN DE ENTRADA
+============================================================ */
+
+.kx-solutions-3d .kx-solutions-visual,
+.kx-solutions-3d .kx-solutions-content {
+    opacity: 0;
+    transition: opacity .8s ease, transform .9s cubic-bezier(.2,.8,.2,1);
+}
+
+
+.kx-solutions-3d .kx-solutions-visual {
+    transform: translateX(-45px);
+}
+
+
+.kx-solutions-3d .kx-solutions-content {
+    transform: translateX(45px);
+}
+
+
+.kx-solutions-3d.kx-solutions-visible
+.kx-solutions-visual,
+.kx-solutions-3d.kx-solutions-visible
+.kx-solutions-content {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* ============================================================
+   RESPONSIVE
+============================================================ */
+
+@media (max-width: 1199px) {
+
+    .kx-solutions-3d {
+        padding: 85px 0;
+    }
+
+    .kx-solutions-grid {
+        grid-template-columns: 1fr;
+        gap: 55px;
+    }
+
+    .kx-solutions-stage {
+        min-height: 460px;
+    }
+
+    .kx-media-frame-3d {
+        max-width: 760px;
+        margin: 0 auto;
+        transform: none;
+    }
+
+    .kx-solutions-content {
+        max-width: 760px;
+        margin: 0 auto;
+    }
+}
+
+
+@media (max-width: 640px) {
+
+    .kx-solutions-3d {
+        padding: 65px 0;
+    }
+
+    .kx-solutions-stage {
+        min-height: auto;
+        padding-bottom: 65px;
+    }
+
+    .kx-media-frame-3d {
+        height: 310px;
+        border-radius: 18px;
+    }
+
+    .kx-floating-system-card {
+        left: 12px;
+        bottom: 10px;
+        min-width: 220px;
+    }
+
+    .kx-floating-stat {
+        right: 12px;
+        bottom: 78px;
+    }
+
+    .kx-solutions-content .kx-content-title {
+        font-size: 36px;
+        letter-spacing: -1.5px;
+    }
+
+    .kx-feature-list-3d {
+        grid-template-columns: 1fr;
+    }
+
+    .kx-solution-card {
+        min-height: 76px;
+    }
+}
+
+
+/* ============================================================
+   REDUCED MOTION
+============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .kx-media-shine,
+    .kx-floating-stat,
+    .kx-floating-system-card,
+    .kx-live-dot,
+    .kx-status-pulse {
+        animation: none !important;
+    }
+
+    .kx-solutions-3d .kx-solutions-visual,
+    .kx-solutions-3d .kx-solutions-content {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}

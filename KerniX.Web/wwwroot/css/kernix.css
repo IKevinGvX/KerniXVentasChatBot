@@ -1,0 +1,3144 @@
+﻿/* ============================================================
+   KERNIX S.A.C.
+   LANDING PAGE
+   Desktop objetivo: 1600 x 900
+============================================================ */
+
+:root {
+    --bg: #020713;
+    --bg2: #061020;
+    --gold: #ffb400;
+    --gold-light: #ffe279;
+    --blue: #087cff;
+    --cyan: #00d9ff;
+    --white: #ffffff;
+    --text: #d7e1ee;
+    --muted: #91a0b5;
+    --header-height: 76px;
+}
+
+
+/* ============================================================
+   RESET
+============================================================ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100%;
+    min-width: 0;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Inter, "Segoe UI", Arial, sans-serif;
+    overflow-x: clip;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.kx-page {
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+/* ============================================================
+   NAVBAR
+============================================================ */
+
+.kx-header {
+    position: relative;
+    z-index: 100;
+    width: 100%;
+    height: var(--header-height);
+    border-bottom: 1px solid rgba(255, 180, 0, .35);
+    background: linear-gradient( 180deg, rgba(3, 8, 18, .98), rgba(2, 7, 16, .96) );
+    box-shadow: 0 8px 30px rgba(0,0,0,.45);
+}
+
+.kx-navbar {
+    width: min(1540px, calc(100% - 32px));
+    height: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+
+/* LOGO */
+
+.kx-brand {
+    width: 280px;
+    flex: 0 0 280px;
+    color: white;
+    line-height: 1;
+}
+
+.kx-brand-main {
+    white-space: nowrap;
+    font-size: 34px;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+    .kx-brand-main > span {
+        color: var(--gold);
+        text-shadow: 0 0 14px rgba(255,180,0,.45);
+    }
+
+    .kx-brand-main small {
+        margin-left: 5px;
+        color: #e7e7e7;
+        font-size: 17px;
+        font-weight: 800;
+        letter-spacing: 0;
+    }
+
+.kx-brand-sub {
+    margin-top: 7px;
+    color: #f4f4f4;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 4px;
+}
+
+
+/* LINKS */
+
+.kx-nav {
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+    gap: 2px;
+    flex: 1;
+}
+
+    .kx-nav a {
+        position: relative;
+        min-width: max-content;
+        display: flex;
+        align-items: center;
+        padding: 0 13px;
+        color: #e4e8ef;
+        font-size: 13px;
+        font-weight: 700;
+        transition: .2s ease;
+    }
+
+        .kx-nav a:hover,
+        .kx-nav a.active {
+            color: white;
+        }
+
+            .kx-nav a.active::after,
+            .kx-nav a:hover::after {
+                content: "";
+                position: absolute;
+                left: 15px;
+                right: 15px;
+                bottom: 0;
+                height: 3px;
+                border-radius: 10px;
+                background: var(--gold);
+                box-shadow: 0 0 15px rgba(255,180,0,.7);
+            }
+
+
+/* SOCIAL */
+
+.kx-social {
+    display: flex;
+    gap: 7px;
+}
+
+    .kx-social a {
+        width: 32px;
+        height: 32px;
+        display: grid;
+        place-items: center;
+        border: 1px solid rgba(255,255,255,.12);
+        border-radius: 50%;
+        background: rgba(255,255,255,.05);
+        color: white;
+    }
+
+
+/* VENDEDOR */
+
+.kx-seller {
+    min-width: 205px;
+    height: 52px;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid var(--gold);
+    border-radius: 11px;
+    background: linear-gradient( 145deg, rgba(35,24,3,.95), rgba(10,11,15,.98) );
+    color: white;
+    box-shadow: inset 0 1px rgba(255,255,255,.12), 0 0 18px rgba(255,180,0,.25);
+}
+
+.kx-seller-icon {
+    color: #20e870;
+}
+
+.kx-seller > span:nth-child(2) {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.kx-seller small {
+    color: #c8cbd1;
+    font-size: 9px;
+}
+
+.kx-seller strong {
+    color: var(--gold-light);
+    font-size: 14px;
+}
+
+.kx-menu-toggle {
+    display: none;
+    background: transparent;
+    color: white;
+}
+
+
+/* ============================================================
+   HERO
+============================================================ */
+
+.kx-hero {
+    position: relative;
+    width: 100%;
+    background: radial-gradient( circle at 48% 45%, rgba(0,102,255,.18), transparent 35% ), radial-gradient( circle at 32% 45%, rgba(255,155,0,.09), transparent 35% ), linear-gradient( 180deg, #030914, #020713 );
+    overflow: hidden;
+}
+
+.kx-hero-background {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image: linear-gradient( rgba(0,120,255,.04) 1px, transparent 1px ), linear-gradient( 90deg, rgba(0,120,255,.04) 1px, transparent 1px );
+    background-size: 80px 80px;
+    opacity: .35;
+}
+
+
+/* ============================================================
+   HERO GRID
+============================================================ */
+
+.kx-hero-grid {
+    position: relative;
+    z-index: 2;
+    width: min(1540px, calc(100% - 32px));
+    height: 555px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 430px minmax(390px, 1fr) 365px 125px;
+    gap: 12px;
+}
+
+
+/* ============================================================
+   HERO TEXTO
+============================================================ */
+
+.kx-hero-copy {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 18px 0 12px;
+}
+
+.kx-eyebrow {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-bottom: 10px;
+    color: #10d8ff;
+    font-size: 11px;
+    font-weight: 800;
+}
+
+    .kx-eyebrow i {
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: var(--gold);
+    }
+
+.kx-hero-copy h1 {
+    margin: 0;
+    color: white;
+    font-size: 52px;
+    font-weight: 900;
+    line-height: .98;
+    letter-spacing: -3px;
+    text-shadow: 0 7px 20px rgba(0,0,0,.55);
+}
+
+    .kx-hero-copy h1 span {
+        display: block;
+        color: var(--gold-light);
+        background: linear-gradient( #fff4b3, #ffc72c 50%, #ff9800 );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    .kx-hero-copy h1 strong {
+        color: var(--gold);
+        background: linear-gradient( #fff2a0, #ffb000 );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+.kx-hero-description {
+    width: 400px;
+    max-width: 100%;
+    margin: 15px 0 17px;
+    color: #e2e7ee;
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+
+/* BENEFICIOS */
+
+.kx-benefits {
+    width: 390px;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 11px 15px;
+}
+
+    .kx-benefits > div {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        color: white;
+        font-size: 12px;
+        font-weight: 700;
+    }
+
+    .kx-benefits .uk-icon {
+        width: 29px;
+        height: 29px;
+        display: grid;
+        place-items: center;
+        border: 1px solid rgba(255,180,0,.65);
+        border-radius: 50%;
+        color: var(--gold-light);
+        box-shadow: 0 0 10px rgba(255,180,0,.18);
+    }
+
+
+/* ============================================================
+   CTA
+============================================================ */
+
+.kx-hero-buttons {
+    display: flex;
+    gap: 11px;
+    margin-top: 20px;
+}
+
+.kx-button-ai,
+.kx-button-whatsapp {
+    height: 62px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 15px;
+    border-radius: 10px;
+    transition: .2s ease;
+}
+
+.kx-button-ai {
+    min-width: 225px;
+    border: 1px solid #ffe37a;
+    background: linear-gradient( 180deg, #ffe878, #ffb000 );
+    color: #171000;
+    box-shadow: 0 5px 0 #895000, 0 10px 25px rgba(0,0,0,.35), 0 0 20px rgba(255,180,0,.2);
+}
+
+.kx-button-whatsapp {
+    min-width: 185px;
+    border: 1px solid #168bff;
+    background: linear-gradient( 145deg, rgba(10,45,90,.95), rgba(3,14,32,.98) );
+    color: white;
+    box-shadow: 0 5px 0 #02336c, 0 0 20px rgba(0,119,255,.2);
+}
+
+    .kx-button-ai > span:nth-child(2),
+    .kx-button-whatsapp > span:nth-child(2) {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+    }
+
+    .kx-button-ai strong,
+    .kx-button-whatsapp strong {
+        font-size: 13px;
+    }
+
+    .kx-button-ai small,
+    .kx-button-whatsapp small {
+        font-size: 9px;
+        opacity: .8;
+    }
+
+
+/* ============================================================
+   EMPERATRIZ
+============================================================ */
+
+.kx-hero-character {
+    position: relative;
+    height: 555px;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.kx-character-glow {
+    position: absolute;
+    left: 50%;
+    bottom: 20px;
+    width: 420px;
+    height: 420px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: radial-gradient( circle, rgba(0,119,255,.25), rgba(255,170,0,.08) 45%, transparent 70% );
+    filter: blur(20px);
+}
+
+
+/*
+   IMAGEN PRINCIPAL
+   Objetivo desktop 1600x900:
+   alto fijo 570px
+*/
+
+.kx-empress {
+    position: absolute;
+    z-index: 3;
+    left: 50%;
+    bottom: 0;
+    width: auto;
+    height: 570px;
+    max-width: none;
+    transform: translateX(-50%);
+    object-fit: contain;
+    object-position: center bottom;
+    filter: drop-shadow( 0 15px 20px rgba(0,0,0,.5) );
+}
+
+
+/* ROBOT */
+
+.kx-robot {
+    position: absolute;
+    z-index: 6;
+    right: 5px;
+    bottom: 50px;
+    width: 220px;
+    height: auto;
+    max-width: none;
+    object-fit: contain;
+    filter: drop-shadow( 0 15px 18px rgba(0,0,0,.65) ) drop-shadow( 0 0 14px rgba(0,140,255,.45) );
+}
+
+
+/* ============================================================
+   SALES WIDGET
+============================================================ */
+
+.kx-sales-widget {
+    position: absolute;
+    z-index: 8;
+    top: 70px;
+    right: 0;
+    width: 145px;
+    height: 145px;
+    padding: 13px;
+    border: 1px solid #168bff;
+    border-radius: 12px;
+    background: linear-gradient( 145deg, rgba(7,25,55,.88), rgba(3,9,22,.93) );
+    box-shadow: 0 15px 35px rgba(0,0,0,.4), 0 0 25px rgba(0,119,255,.22);
+    transform: perspective(600px) rotateY(-8deg);
+}
+
+    .kx-sales-widget small,
+    .kx-sales-widget strong {
+        display: block;
+    }
+
+    .kx-sales-widget small {
+        color: white;
+        font-size: 10px;
+    }
+
+    .kx-sales-widget strong {
+        color: #cce6ff;
+        font-size: 15px;
+    }
+
+.kx-sales-bars {
+    height: 65px;
+    margin-top: 10px;
+    display: flex;
+    align-items: end;
+    gap: 7px;
+}
+
+    .kx-sales-bars span {
+        flex: 1;
+        border-radius: 2px 2px 0 0;
+        background: linear-gradient( #00e0ff, #087cff );
+        box-shadow: 0 0 8px rgba(0,140,255,.4);
+    }
+
+        .kx-sales-bars span:nth-child(1) {
+            height: 25%;
+        }
+
+        .kx-sales-bars span:nth-child(2) {
+            height: 40%;
+        }
+
+        .kx-sales-bars span:nth-child(3) {
+            height: 55%;
+        }
+
+        .kx-sales-bars span:nth-child(4) {
+            height: 72%;
+        }
+
+        .kx-sales-bars span:nth-child(5) {
+            height: 100%;
+        }
+
+
+/* ============================================================
+   CHAT DEMO
+============================================================ */
+
+.kx-hero-ai {
+    height: 555px;
+    display: flex;
+    align-items: center;
+    min-width: 0;
+}
+
+.kx-ai-card {
+    width: 365px;
+    height: 530px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid #168bff;
+    border-radius: 18px;
+    background: linear-gradient( 145deg, rgba(7,22,47,.98), rgba(2,8,20,.99) );
+    box-shadow: inset 0 1px rgba(255,255,255,.12), 0 18px 45px rgba(0,0,0,.55), 0 0 25px rgba(0,119,255,.22);
+}
+
+
+/* HEADER */
+
+.kx-ai-header {
+    height: 58px;
+    flex: 0 0 58px;
+    padding: 0 13px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(0,119,255,.25);
+    background: linear-gradient( 180deg, #10284a, #07162c );
+}
+
+.kx-ai-title {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.kx-ai-logo,
+.kx-ai-avatar {
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--gold);
+    border-radius: 50%;
+    color: var(--gold);
+    background: #080805;
+    font-weight: 900;
+    box-shadow: 0 0 10px rgba(255,180,0,.2);
+}
+
+.kx-ai-logo {
+    width: 34px;
+    height: 34px;
+    font-size: 17px;
+}
+
+.kx-ai-title strong {
+    color: white;
+    font-size: 18px;
+}
+
+    .kx-ai-title strong span {
+        color: var(--gold);
+    }
+
+.kx-ai-status {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: #38ed91;
+    font-size: 10px;
+}
+
+    .kx-ai-status i {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: #2cff85;
+        box-shadow: 0 0 8px #2cff85;
+    }
+
+
+/* BODY */
+
+.kx-ai-body {
+    flex: 1;
+    min-height: 0;
+    padding: 11px;
+    overflow: hidden;
+}
+
+.kx-ai-message {
+    margin-bottom: 8px;
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+    .kx-ai-message.bot {
+        display: flex;
+        gap: 7px;
+        color: #eaf1fa;
+    }
+
+.kx-ai-avatar {
+    width: 25px;
+    height: 25px;
+    flex: 0 0 25px;
+    font-size: 11px;
+}
+
+.kx-ai-message p {
+    margin: 0 0 3px;
+}
+
+.kx-ai-message small {
+    color: #9daec2;
+    font-size: 9px;
+}
+
+.kx-ai-message.user {
+    width: fit-content;
+    max-width: 85%;
+    margin-left: auto;
+    padding: 8px 10px;
+    border-radius: 10px 10px 2px 10px;
+    background: linear-gradient( 135deg, #087cff, #0755c7 );
+    color: white;
+}
+
+
+/* PRODUCTOS */
+
+.kx-ai-products {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0,1fr));
+    gap: 6px;
+    margin-top: 7px;
+}
+
+    .kx-ai-products article {
+        min-width: 0;
+        padding: 7px;
+        border-radius: 8px;
+        background: linear-gradient( #fff, #e9eef5 );
+        color: #111;
+        text-align: center;
+        box-shadow: 0 4px 0 #a5adba, 0 8px 12px rgba(0,0,0,.3);
+    }
+
+.kx-product-icon {
+    height: 38px;
+    display: grid;
+    place-items: center;
+    font-size: 24px;
+}
+
+.kx-ai-products strong,
+.kx-ai-products b,
+.kx-ai-products small {
+    display: block;
+}
+
+.kx-ai-products strong {
+    font-size: 9px;
+}
+
+.kx-ai-products b {
+    margin-top: 2px;
+    color: #0056ba;
+    font-size: 12px;
+}
+
+.kx-ai-products small {
+    margin: 2px 0 5px;
+    color: #4d5968;
+    font-size: 7px;
+}
+
+.kx-ai-products button {
+    width: 100%;
+    height: 22px;
+    border: 0;
+    border-radius: 5px;
+    background: linear-gradient( #ffd85c, #ffad00 );
+    color: #181000;
+    font-size: 8px;
+    font-weight: 800;
+}
+
+
+/* CHAT ACTIONS */
+
+.kx-ai-actions {
+    flex: 0 0 43px;
+    padding: 5px 8px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    border-top: 1px solid rgba(255,255,255,.07);
+}
+
+    .kx-ai-actions button {
+        min-width: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        border: 1px solid rgba(0,130,255,.5);
+        border-radius: 5px;
+        background: #07152a;
+        color: white;
+        font-size: 8px;
+    }
+
+
+/* INPUT */
+
+.kx-ai-input {
+    flex: 0 0 43px;
+    margin: 0 8px 8px;
+    padding-left: 11px;
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(255,255,255,.14);
+    border-radius: 7px;
+    background: #040b16;
+    color: #68768a;
+    font-size: 9px;
+}
+
+    .kx-ai-input > span {
+        flex: 1;
+    }
+
+    .kx-ai-input button {
+        width: 38px;
+        height: 100%;
+        border: 0;
+        border-radius: 6px;
+        background: linear-gradient( #ffd85c, #ffad00 );
+        color: #111;
+    }
+
+
+/* ============================================================
+   TOOLS DERECHA
+============================================================ */
+
+.kx-tools {
+    width: 125px;
+    height: 400px;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border: 1px solid rgba(255,180,0,.4);
+    border-radius: 12px;
+    background: linear-gradient( #08182d, #030a15 );
+    box-shadow: 0 15px 35px rgba(0,0,0,.4);
+}
+
+    .kx-tools a,
+    .kx-tools button {
+        flex: 1;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+        border: 0;
+        border-bottom: 1px solid rgba(255,255,255,.08);
+        background: transparent;
+        color: white;
+        font-size: 10px;
+    }
+
+    .kx-tools .uk-icon {
+        color: var(--gold);
+    }
+
+
+/* ============================================================
+   BENEFICIOS INFERIORES
+============================================================ */
+
+.kx-bottom-features {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    min-height: 90px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    border-top: 1px solid rgba(255,180,0,.55);
+    border-bottom: 1px solid rgba(255,180,0,.4);
+    background: linear-gradient( 180deg, rgba(5,14,28,.98), rgba(2,8,17,.99) );
+}
+
+    .kx-bottom-features article {
+        min-width: 0;
+        padding: 13px 16px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border-right: 1px solid rgba(255,255,255,.09);
+    }
+
+        .kx-bottom-features article > .uk-icon {
+            flex: 0 0 auto;
+            color: var(--gold);
+            transform: scale(1.35);
+            filter: drop-shadow( 0 0 7px rgba(255,180,0,.4) );
+        }
+
+        .kx-bottom-features article div {
+            min-width: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+    .kx-bottom-features strong {
+        color: white;
+        font-size: 10px;
+        text-transform: uppercase;
+    }
+
+    .kx-bottom-features small {
+        margin-top: 4px;
+        color: #9ba8b8;
+        font-size: 8px;
+        line-height: 1.3;
+    }
+
+
+/* ============================================================
+   DESKTOP MEDIANO
+============================================================ */
+
+@media (max-width: 1450px) {
+
+    .kx-brand {
+        width: 225px;
+        flex-basis: 225px;
+    }
+
+    .kx-brand-main {
+        font-size: 29px;
+    }
+
+    .kx-nav a {
+        padding-inline: 8px;
+        font-size: 11px;
+    }
+
+    .kx-social {
+        display: none;
+    }
+
+    .kx-hero-grid {
+        grid-template-columns: 360px minmax(340px, 1fr) 340px 105px;
+    }
+
+    .kx-hero-copy h1 {
+        font-size: 46px;
+    }
+
+    .kx-empress {
+        height: 540px;
+    }
+
+    .kx-robot {
+        width: 185px;
+    }
+
+    .kx-ai-card {
+        width: 340px;
+    }
+
+    .kx-tools {
+        width: 105px;
+    }
+}
+
+
+/* ============================================================
+   LAPTOP
+============================================================ */
+
+@media (max-width: 1199px) {
+
+    .kx-header {
+        height: 70px;
+    }
+
+    .kx-navbar {
+        width: calc(100% - 30px);
+    }
+
+    .kx-brand {
+        width: 230px;
+        flex-basis: 230px;
+    }
+
+    .kx-nav,
+    .kx-social {
+        display: none;
+    }
+
+    .kx-seller {
+        margin-left: auto;
+    }
+
+    .kx-menu-toggle {
+        width: 45px;
+        height: 45px;
+        display: grid;
+        place-items: center;
+    }
+
+
+    .kx-hero-grid {
+        width: calc(100% - 30px);
+        height: auto;
+        min-height: 560px;
+        grid-template-columns: minmax(280px, .9fr) minmax(300px, 1fr) minmax(320px, .95fr);
+    }
+
+    .kx-tools {
+        display: none;
+    }
+
+    .kx-hero-copy h1 {
+        font-size: 42px;
+    }
+
+    .kx-hero-character,
+    .kx-hero-ai {
+        height: 540px;
+    }
+
+    .kx-empress {
+        height: 525px;
+    }
+
+    .kx-robot {
+        width: 170px;
+    }
+
+    .kx-sales-widget {
+        width: 125px;
+        height: 130px;
+    }
+
+    .kx-ai-card {
+        width: 100%;
+        max-width: 340px;
+    }
+
+    .kx-button-ai,
+    .kx-button-whatsapp {
+        min-width: 0;
+    }
+
+    .kx-bottom-features {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* ============================================================
+   TABLET
+============================================================ */
+
+@media (max-width: 900px) {
+
+    .kx-seller {
+        display: none;
+    }
+
+    .kx-hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 15px;
+        padding-top: 30px;
+    }
+
+    .kx-hero-copy {
+        grid-column: 1 / -1;
+        min-height: auto;
+        padding-bottom: 30px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .kx-hero-description {
+        width: 600px;
+    }
+
+    .kx-benefits {
+        width: 500px;
+    }
+
+        .kx-benefits > div {
+            justify-content: center;
+        }
+
+    .kx-hero-character {
+        height: 500px;
+    }
+
+    .kx-empress {
+        height: 500px;
+    }
+
+    .kx-robot {
+        width: 160px;
+    }
+
+    .kx-hero-ai {
+        height: 500px;
+    }
+
+    .kx-ai-card {
+        height: 475px;
+    }
+
+    .kx-bottom-features {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 640px) {
+
+    .kx-header {
+        height: 64px;
+    }
+
+    .kx-navbar {
+        width: calc(100% - 24px);
+    }
+
+    .kx-brand {
+        width: auto;
+        flex: 1;
+    }
+
+    .kx-brand-main {
+        font-size: 25px;
+    }
+
+        .kx-brand-main small {
+            font-size: 12px;
+        }
+
+    .kx-brand-sub {
+        font-size: 7px;
+        letter-spacing: 2px;
+    }
+
+
+    .kx-hero-grid {
+        width: calc(100% - 24px);
+        display: flex;
+        flex-direction: column;
+        padding-top: 25px;
+    }
+
+
+    /* TEXTO */
+
+    .kx-hero-copy {
+        width: 100%;
+        padding: 0 0 25px;
+        text-align: center;
+    }
+
+    .kx-eyebrow {
+        justify-content: center;
+        font-size: 9px;
+    }
+
+    .kx-hero-copy h1 {
+        font-size: 40px;
+        letter-spacing: -2px;
+    }
+
+    .kx-hero-description {
+        width: 100%;
+        font-size: 13px;
+    }
+
+    .kx-benefits {
+        width: 100%;
+        gap: 9px;
+    }
+
+        .kx-benefits > div {
+            justify-content: flex-start;
+            text-align: left;
+            font-size: 10px;
+        }
+
+    .kx-hero-buttons {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .kx-button-ai,
+    .kx-button-whatsapp {
+        width: 100%;
+    }
+
+
+    /* PERSONAJE */
+
+    .kx-hero-character {
+        width: 100%;
+        height: 480px;
+    }
+
+    .kx-empress {
+        height: 470px;
+    }
+
+    .kx-robot {
+        right: 5px;
+        bottom: 35px;
+        width: 145px;
+    }
+
+    .kx-sales-widget {
+        top: 35px;
+        right: 5px;
+        width: 115px;
+        height: 120px;
+    }
+
+
+    /* CHAT */
+
+    .kx-hero-ai {
+        width: 100%;
+        height: auto;
+        padding: 20px 0 30px;
+    }
+
+    .kx-ai-card {
+        width: 100%;
+        max-width: 430px;
+        height: 520px;
+        margin: 0 auto;
+    }
+
+
+    /* BENEFICIOS */
+
+    .kx-bottom-features {
+        grid-template-columns: 1fr;
+    }
+
+        .kx-bottom-features article {
+            min-height: 70px;
+            padding-inline: 25px;
+        }
+}
+
+
+/* ============================================================
+   OFFCANVAS
+============================================================ */
+
+.kx-offcanvas,
+.kx-mobile-menu {
+    background: linear-gradient( 180deg, #07162c, #020713 );
+}
+
+.kx-mobile-brand {
+    margin: 25px 0 35px;
+    color: white;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+    .kx-mobile-brand span {
+        color: var(--gold);
+    }
+
+    .kx-mobile-brand small {
+        font-size: 12px;
+    }
+
+.kx-mobile-menu .uk-nav a {
+    padding: 13px 0;
+    color: white;
+    font-size: 16px;
+}
+/* ============================================================
+   KERNIX - SECCIONES GENERALES
+============================================================ */
+
+.kx-section {
+    position: relative;
+    width: 100%;
+    padding: 85px 0;
+    overflow: hidden;
+    background: radial-gradient( circle at 20% 50%, rgba(0, 119, 255, .07), transparent 35% ), #020713;
+}
+
+    .kx-section:nth-of-type(even) {
+        background: radial-gradient( circle at 80% 50%, rgba(255, 180, 0, .055), transparent 35% ), #030914;
+    }
+
+    /* UIKIT CONTAINER */
+
+    .kx-section .uk-container {
+        width: min(1380px, calc(100% - 40px));
+        max-width: 1380px;
+        margin: 0 auto;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+
+/* ============================================================
+   TAG
+============================================================ */
+
+.kx-section-tag {
+    display: inline-flex;
+    align-items: center;
+    min-height: 28px;
+    margin-bottom: 14px;
+    padding: 0 13px;
+    border: 1px solid rgba(0, 174, 255, .35);
+    border-radius: 20px;
+    background: rgba(0, 119, 255, .08);
+    color: #19d8ff;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+}
+
+
+/* ============================================================
+   TÍTULOS
+============================================================ */
+
+.kx-content-title {
+    max-width: 540px;
+    margin: 0 0 18px;
+    color: #fff;
+    font-size: 46px;
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -2.3px;
+}
+
+    .kx-content-title span {
+        display: block;
+        background: linear-gradient( 180deg, #fff0a3 0%, #ffc328 48%, #f79400 100% );
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+.kx-content-text {
+    max-width: 530px;
+    margin: 0 0 28px;
+    color: #aeb9c8;
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+
+/* ============================================================
+   MARCO DE IMAGEN
+============================================================ */
+
+.kx-media-frame {
+    position: relative;
+    width: 100%;
+    max-width: 760px;
+    height: 420px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid rgba(0, 136, 255, .40);
+    border-radius: 22px;
+    background: #050d19;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 25px 60px rgba(0,0,0,.45), 0 0 30px rgba(0,119,255,.10);
+}
+
+    /* brillo dorado */
+
+    .kx-media-frame::before {
+        content: "";
+        position: absolute;
+        z-index: 2;
+        left: 0;
+        top: 0;
+        width: 180px;
+        height: 2px;
+        background: linear-gradient( 90deg, #ff9d00, #ffe278, transparent );
+        box-shadow: 0 0 15px rgba(255,180,0,.65);
+    }
+
+    /* IMAGEN */
+
+    .kx-media-frame img {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+        max-height: 420px !important;
+        display: block;
+        object-fit: cover;
+        object-position: center;
+        transition: transform .5s ease;
+    }
+
+@media (hover:hover) {
+
+    .kx-media-frame:hover img {
+        transform: scale(1.035);
+    }
+}
+
+
+/* ============================================================
+   SOLUCIONES
+============================================================ */
+
+.kx-solutions {
+    padding-top: 95px;
+}
+
+    .kx-solutions .uk-grid {
+        align-items: center;
+    }
+
+
+/* ============================================================
+   FEATURE LIST
+============================================================ */
+
+.kx-feature-list {
+    max-width: 520px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+}
+
+    .kx-feature-list > div {
+        min-height: 76px;
+        padding: 13px 14px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border: 1px solid rgba(255,255,255,.08);
+        border-radius: 12px;
+        background: linear-gradient( 145deg, rgba(11, 29, 55, .82), rgba(4, 12, 26, .92) );
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 10px 25px rgba(0,0,0,.20);
+    }
+
+        .kx-feature-list > div > .uk-icon {
+            width: 37px;
+            height: 37px;
+            flex: 0 0 37px;
+            display: grid;
+            place-items: center;
+            border: 1px solid rgba(255,180,0,.50);
+            border-radius: 9px;
+            color: #ffc52f;
+            background: rgba(255,180,0,.06);
+            box-shadow: 0 0 15px rgba(255,180,0,.08);
+        }
+
+    .kx-feature-list strong,
+    .kx-feature-list small {
+        display: block;
+    }
+
+    .kx-feature-list strong {
+        margin-bottom: 3px;
+        color: #fff;
+        font-size: 13px;
+    }
+
+    .kx-feature-list small {
+        color: #8796aa;
+        font-size: 10px;
+    }
+
+
+/* ============================================================
+   VENTAS
+============================================================ */
+
+.kx-sales {
+    border-top: 1px solid rgba(255,255,255,.035);
+    border-bottom: 1px solid rgba(255,255,255,.035);
+}
+
+    /* imagen ventas */
+
+    .kx-sales .kx-media-frame {
+        max-width: 650px;
+        height: 410px;
+        border-color: rgba(255,180,0,.32);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.07), 0 25px 60px rgba(0,0,0,.45), 0 0 35px rgba(255,180,0,.08);
+    }
+
+        .kx-sales .kx-media-frame img {
+            max-height: 410px !important;
+        }
+
+
+/* ============================================================
+   PASOS VENTAS
+============================================================ */
+
+.kx-sales-grid {
+    max-width: 540px;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    gap: 11px;
+}
+
+.kx-mini-card {
+    position: relative;
+    min-height: 88px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    overflow: hidden;
+    border: 1px solid rgba(0, 126, 255, .22);
+    border-radius: 12px;
+    background: linear-gradient( 145deg, rgba(8, 29, 58, .88), rgba(3, 11, 24, .95) );
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.05), 0 10px 25px rgba(0,0,0,.18);
+}
+
+    .kx-mini-card::after {
+        content: "";
+        position: absolute;
+        right: -25px;
+        bottom: -40px;
+        width: 90px;
+        height: 90px;
+        border-radius: 50%;
+        background: rgba(0,119,255,.08);
+        filter: blur(5px);
+    }
+
+    .kx-mini-card strong {
+        position: relative;
+        z-index: 2;
+        color: #ffc429;
+        font-size: 27px;
+        font-weight: 900;
+        line-height: 1;
+    }
+
+    .kx-mini-card span {
+        position: relative;
+        z-index: 2;
+        color: #f1f5fa;
+        font-size: 11px;
+        font-weight: 700;
+        line-height: 1.35;
+    }
+
+
+/* ============================================================
+   PROMOCIONES
+============================================================ */
+
+#promociones {
+    padding-top: 75px;
+    padding-bottom: 90px;
+}
+
+.kx-promo {
+    position: relative;
+    width: 100%;
+    max-width: 1380px;
+    height: 390px;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 1px solid rgba(255,180,0,.50);
+    border-radius: 22px;
+    background: #050b14;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,.08), 0 25px 70px rgba(0,0,0,.50), 0 0 30px rgba(255,180,0,.09);
+}
+
+
+    /* IMPORTANTE:
+   el banner nunca superará 390px
+*/
+
+    .kx-promo > img {
+        position: absolute;
+        inset: 0;
+        width: 100% !important;
+        height: 390px !important;
+        max-width: 100% !important;
+        max-height: 390px !important;
+        object-fit: cover;
+        object-position: center;
+        z-index: 1;
+    }
+
+.kx-promo-overlay {
+    position: absolute;
+    z-index: 2;
+    inset: 0;
+    background: linear-gradient( 90deg, rgba(2,7,17,.98) 0%, rgba(2,7,17,.90) 30%, rgba(2,7,17,.45) 58%, rgba(2,7,17,.10) 100% );
+}
+
+.kx-promo-content {
+    position: relative;
+    z-index: 3;
+    width: 560px;
+    max-width: 55%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+}
+
+    .kx-promo-content h2 {
+        margin: 0 0 14px;
+        color: white;
+        font-size: 42px;
+        font-weight: 900;
+        line-height: 1.05;
+        letter-spacing: -2px;
+    }
+
+        .kx-promo-content h2 span {
+            display: block;
+            color: #ffc226;
+        }
+
+    .kx-promo-content p {
+        max-width: 440px;
+        margin-bottom: 22px;
+        color: #aeb8c7;
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+
+/* BOTÓN DEL HTML ACTUAL */
+
+.kx-btn {
+    width: fit-content;
+    min-height: 47px;
+    padding: 0 20px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    border-radius: 9px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.kx-btn-primary {
+    border: 1px solid #ffe076;
+    background: linear-gradient( 180deg, #ffe477, #ffae00 );
+    color: #171000;
+    box-shadow: 0 4px 0 #805000, 0 10px 25px rgba(0,0,0,.32);
+}
+
+
+/* ============================================================
+   TABLET
+============================================================ */
+
+@media (max-width: 959px) {
+
+    .kx-section {
+        padding: 65px 0;
+    }
+
+        .kx-section .uk-container {
+            width: calc(100% - 32px);
+        }
+
+    .kx-media-frame,
+    .kx-sales .kx-media-frame {
+        max-width: 700px;
+        height: 380px;
+    }
+
+        .kx-media-frame img,
+        .kx-sales .kx-media-frame img {
+            max-height: 380px !important;
+        }
+
+    .kx-content-title {
+        margin-top: 30px;
+        font-size: 39px;
+    }
+
+    .kx-content-text {
+        max-width: 650px;
+    }
+
+    .kx-feature-list,
+    .kx-sales-grid {
+        max-width: 650px;
+    }
+
+    .kx-promo {
+        height: 350px;
+    }
+
+        .kx-promo > img {
+            height: 350px !important;
+            max-height: 350px !important;
+        }
+
+    .kx-promo-content {
+        max-width: 70%;
+        padding: 35px;
+    }
+
+        .kx-promo-content h2 {
+            font-size: 36px;
+        }
+}
+
+
+/* ============================================================
+   MOBILE
+============================================================ */
+
+@media (max-width: 640px) {
+
+    .kx-section {
+        padding: 50px 0;
+    }
+
+        .kx-section .uk-container {
+            width: calc(100% - 28px);
+        }
+
+    .kx-media-frame,
+    .kx-sales .kx-media-frame {
+        width: 100%;
+        height: 230px;
+        border-radius: 15px;
+    }
+
+        .kx-media-frame img,
+        .kx-sales .kx-media-frame img {
+            height: 230px !important;
+            max-height: 230px !important;
+        }
+
+    .kx-content-title {
+        margin-top: 24px;
+        font-size: 32px;
+        letter-spacing: -1.5px;
+    }
+
+    .kx-content-text {
+        font-size: 13px;
+    }
+
+    .kx-feature-list,
+    .kx-sales-grid {
+        grid-template-columns: 1fr;
+    }
+
+        .kx-feature-list > div {
+            min-height: 67px;
+        }
+
+    .kx-mini-card {
+        min-height: 70px;
+    }
+
+    .kx-promo {
+        height: 430px;
+        border-radius: 16px;
+    }
+
+        .kx-promo > img {
+            height: 430px !important;
+            max-height: 430px !important;
+        }
+
+    .kx-promo-overlay {
+        background: linear-gradient( 180deg, rgba(2,7,17,.25), rgba(2,7,17,.90) 48%, rgba(2,7,17,.99) );
+    }
+
+    .kx-promo-content {
+        width: 100%;
+        max-width: 100%;
+        justify-content: flex-end;
+        padding: 25px;
+    }
+
+        .kx-promo-content h2 {
+            font-size: 31px;
+        }
+}
+/* ============================================================
+   KERNIX HERO V5 - CINEMATIC 3D
+   SOLO SOBRESCRIBE EL HERO ACTUAL
+============================================================ */
+
+@media (min-width: 1200px) {
+
+    /* ========================================================
+       HERO - MÁS COLOR / PROFUNDIDAD
+    ======================================================== */
+
+    .kx-hero {
+        min-height: 645px;
+        overflow: hidden;
+        background: radial-gradient( ellipse at 40% 48%, rgba(0, 105, 255, .30) 0%, rgba(0, 74, 190, .12) 28%, transparent 52% ), radial-gradient( ellipse at 31% 45%, rgba(255, 157, 0, .22) 0%, rgba(255, 128, 0, .08) 30%, transparent 53% ), radial-gradient( ellipse at 78% 35%, rgba(0, 136, 255, .16), transparent 42% ), linear-gradient( 110deg, #02050c 0%, #030a17 34%, #06162a 57%, #020712 100% );
+    }
+
+
+    /* GRID LUMINOSO DE FONDO */
+
+    .kx-hero-background {
+        opacity: .75;
+        background-image: linear-gradient( rgba(0, 151, 255, .055) 1px, transparent 1px ), linear-gradient( 90deg, rgba(0, 151, 255, .055) 1px, transparent 1px );
+        background-size: 64px 64px;
+        mask-image: linear-gradient( to bottom, black 0%, rgba(0,0,0,.8) 70%, transparent 100% );
+    }
+
+
+    /* LUZ DORADA IZQUIERDA */
+
+    .kx-hero::before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        width: 620px;
+        height: 620px;
+        left: 23%;
+        top: -160px;
+        border-radius: 50%;
+        background: radial-gradient( circle, rgba(255, 174, 0, .20), rgba(255, 116, 0, .07) 35%, transparent 68% );
+        filter: blur(20px);
+        pointer-events: none;
+    }
+
+
+    /* LUZ AZUL DERECHA */
+
+    .kx-hero::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        width: 700px;
+        height: 600px;
+        right: 5%;
+        top: 0;
+        background: radial-gradient( circle, rgba(0, 132, 255, .19), transparent 66% );
+        filter: blur(24px);
+        pointer-events: none;
+    }
+
+
+    /* ========================================================
+       GRID PRINCIPAL
+    ======================================================== */
+
+    .kx-hero-grid {
+        position: relative;
+        z-index: 3;
+        width: min(1570px, calc(100% - 20px));
+        height: 570px;
+        grid-template-columns: 425px minmax(430px, 1fr) 370px 115px;
+        gap: 8px;
+        perspective: 1500px;
+    }
+
+
+    /* ========================================================
+       TEXTO IZQUIERDO
+    ======================================================== */
+
+    .kx-hero-copy {
+        z-index: 20;
+        padding-left: 3px;
+        transform: translateZ(30px);
+    }
+
+
+    .kx-eyebrow {
+        color: #19e5ff;
+        text-shadow: 0 0 8px rgba(0, 217, 255, .55), 0 0 18px rgba(0, 119, 255, .30);
+    }
+
+
+        .kx-eyebrow i {
+            background: #ffc400;
+            box-shadow: 0 0 5px #ffc400, 0 0 12px rgba(255, 174, 0, .75);
+        }
+
+
+    /* TITULO MÁS CINEMÁTICO */
+
+    .kx-hero-copy h1 {
+        font-size: 53px;
+        line-height: .94;
+        letter-spacing: -3.3px;
+        text-shadow: 0 4px 1px rgba(0,0,0,.55), 0 10px 28px rgba(0,0,0,.65);
+    }
+
+
+        .kx-hero-copy h1 span {
+            background: linear-gradient( 180deg, #fffbd4 0%, #ffe66d 22%, #ffc11d 52%, #ff9300 78%, #c96800 100% );
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow( 0 3px 1px rgba(70,35,0,.7) ) drop-shadow( 0 0 9px rgba(255,174,0,.22) );
+        }
+
+
+        .kx-hero-copy h1 strong {
+            background: linear-gradient( 180deg, #fff7bb, #ffc62b 48%, #f28c00 100% );
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow( 0 0 10px rgba(255,174,0,.25) );
+        }
+
+
+    /* ========================================================
+       BENEFICIOS
+    ======================================================== */
+
+    .kx-benefits .uk-icon {
+        border: 1px solid rgba(255, 192, 26, .90);
+        background: radial-gradient( circle, rgba(255, 183, 0, .15), rgba(255, 183, 0, .025) );
+        box-shadow: inset 0 0 9px rgba(255,200,50,.10), 0 0 8px rgba(255,174,0,.35), 0 0 18px rgba(255,174,0,.10);
+    }
+
+
+    /* ========================================================
+       BOTONES MÁS 3D
+    ======================================================== */
+
+    .kx-button-ai {
+        border: 1px solid #fff0a1;
+        background: linear-gradient( 180deg, #fff08a 0%, #ffd139 35%, #ffad00 76%, #e88700 100% );
+        box-shadow: inset 0 2px 0 rgba(255,255,255,.75), inset 0 -2px 0 rgba(112,59,0,.30), 0 5px 0 #8b5100, 0 10px 18px rgba(0,0,0,.48), 0 0 24px rgba(255,174,0,.25);
+    }
+
+
+    .kx-button-whatsapp {
+        border: 1px solid rgba(0, 158, 255, .95);
+        background: linear-gradient( 145deg, #0d477f 0%, #082a54 42%, #04172f 75%, #020b17 100% );
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.22), inset 0 -2px 0 rgba(0,0,0,.4), 0 5px 0 #01326d, 0 10px 20px rgba(0,0,0,.48), 0 0 25px rgba(0,119,255,.28);
+    }
+
+
+    /* ========================================================
+       PERSONAJE
+    ======================================================== */
+
+    .kx-hero-character {
+        position: relative;
+        z-index: 8;
+        height: 570px;
+        /*
+           IMPORTANTE:
+           ahora permitimos que corona/brazos/robot
+           respiren fuera de la columna.
+        */
+        overflow: visible;
+        isolation: isolate;
+        perspective: 1100px;
+    }
+
+
+    /* RESPLANDOR DETRÁS DE EMPERATRIZ */
+
+    .kx-character-glow {
+        z-index: 0;
+        left: 47%;
+        bottom: -45px;
+        width: 570px;
+        height: 570px;
+        background: radial-gradient( ellipse at 50% 48%, rgba(0, 167, 255, .34) 0%, rgba(0, 103, 255, .18) 30%, rgba(255, 172, 0, .12) 48%, transparent 72% );
+        filter: blur(23px);
+        opacity: 1;
+    }
+
+
+    /* HALO DE CORONA */
+
+    .kx-hero-character::before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        left: 48%;
+        top: -50px;
+        width: 330px;
+        height: 330px;
+        transform: translateX(-50%);
+        border-radius: 50%;
+        background: radial-gradient( circle, rgba(255, 210, 63, .22), rgba(255, 137, 0, .08) 40%, transparent 68% );
+        filter: blur(15px);
+        pointer-events: none;
+    }
+
+
+    /* LUZ INFERIOR */
+
+    .kx-hero-character::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        left: 48%;
+        bottom: -35px;
+        width: 440px;
+        height: 90px;
+        transform: translateX(-50%);
+        border-radius: 50%;
+        background: radial-gradient( ellipse, rgba(255, 173, 0, .38), rgba(0, 119, 255, .20) 38%, transparent 72% );
+        filter: blur(15px);
+        pointer-events: none;
+    }
+
+
+    /* ========================================================
+       EMPERATRIZ
+    ======================================================== */
+
+    .kx-empress {
+        z-index: 4;
+        /*
+           Más cerca del texto como la referencia.
+        */
+        left: 43%;
+        bottom: -4px;
+        width: auto !important;
+        height: 610px !important;
+        max-height: none !important;
+        max-width: none !important;
+        object-fit: contain;
+        object-position: center bottom;
+        transform: translateX(-50%) translateZ(55px) scale(1.02);
+        transform-origin: center bottom;
+        filter: saturate(1.17) contrast(1.08) brightness(1.05) drop-shadow( -13px 15px 16px rgba(0,0,0,.62) ) drop-shadow( 10px 0 18px rgba(0,115,255,.20) ) drop-shadow( -5px -2px 14px rgba(255,167,0,.16) );
+    }
+
+
+    /* ========================================================
+       ROBOT
+    ======================================================== */
+
+    .kx-robot {
+        z-index: 9;
+        right: -15px;
+        bottom: 16px;
+        width: 205px !important;
+        height: auto !important;
+        max-width: none !important;
+        transform: translateZ(95px) rotate(-2deg);
+        transform-origin: center bottom;
+        filter: saturate(1.18) contrast(1.08) drop-shadow( 0 20px 18px rgba(0,0,0,.70) ) drop-shadow( 0 0 11px rgba(0,210,255,.55) ) drop-shadow( 0 0 24px rgba(0,102,255,.25) );
+    }
+
+
+    /* ========================================================
+       WIDGET VENTAS
+    ======================================================== */
+
+    .kx-sales-widget {
+        z-index: 10;
+        top: 55px;
+        right: -8px;
+        width: 155px;
+        height: 150px;
+        border: 1px solid rgba(0, 174, 255, .85);
+        background: linear-gradient( 145deg, rgba(11, 42, 82, .93), rgba(3, 14, 31, .96) );
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.16), inset 0 0 25px rgba(0,119,255,.08), 0 20px 38px rgba(0,0,0,.50), 0 0 12px rgba(0,163,255,.40), 0 0 30px rgba(0,119,255,.15);
+        transform: perspective(700px) rotateY(-11deg) rotateX(2deg) translateZ(55px);
+        backdrop-filter: blur(12px);
+    }
+
+
+        .kx-sales-widget::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: inherit;
+            background: linear-gradient( 120deg, rgba(255,255,255,.10), transparent 27%, transparent 72%, rgba(0,174,255,.07) );
+            pointer-events: none;
+        }
+
+
+    .kx-sales-bars span {
+        background: linear-gradient( 180deg, #20f3ff 0%, #00b8ff 35%, #087cff 100% );
+        box-shadow: 0 0 7px rgba(0,220,255,.60), 0 0 16px rgba(0,119,255,.25);
+    }
+
+
+    /* ========================================================
+       CHAT IA
+    ======================================================== */
+
+    .kx-hero-ai {
+        position: relative;
+        z-index: 15;
+        height: 570px;
+        perspective: 1300px;
+    }
+
+
+    .kx-ai-card {
+        position: relative;
+        width: 370px;
+        height: 540px;
+        border: 1px solid rgba(0, 157, 255, .90);
+        border-radius: 18px;
+        background: radial-gradient( circle at 70% 0%, rgba(0,130,255,.17), transparent 33% ), linear-gradient( 145deg, rgba(8,29,59,.99), rgba(2,9,22,.995) );
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.15), inset 0 0 30px rgba(0,102,255,.06), 0 22px 50px rgba(0,0,0,.62), 0 0 8px rgba(0,184,255,.40), 0 0 27px rgba(0,119,255,.17);
+        transform: perspective(1300px) rotateY(-1.5deg) translateZ(20px);
+        transform-origin: center center;
+    }
+
+
+        /* BORDE DORADO SUPERIOR */
+
+        .kx-ai-card::before {
+            content: "";
+            position: absolute;
+            z-index: 30;
+            left: 20px;
+            right: 35%;
+            top: -1px;
+            height: 1px;
+            background: linear-gradient( 90deg, transparent, #ffb400, #fff09a, transparent );
+            box-shadow: 0 0 9px rgba(255,180,0,.75);
+            pointer-events: none;
+        }
+
+
+    .kx-ai-header {
+        background: linear-gradient( 180deg, #123764 0%, #0b2548 46%, #06182f 100% );
+        box-shadow: inset 0 -1px rgba(0,139,255,.20);
+    }
+
+
+    .kx-ai-logo {
+        box-shadow: 0 0 8px rgba(255,180,0,.55), 0 0 18px rgba(255,180,0,.20);
+    }
+
+
+    /* PRODUCTOS */
+
+    .kx-ai-products article {
+        border: 1px solid rgba(255,255,255,.70);
+        background: linear-gradient( 145deg, #ffffff 0%, #f4f7fb 60%, #dce4ee 100% );
+        box-shadow: inset 0 1px 0 #fff, 0 4px 0 #9da7b5, 0 9px 14px rgba(0,0,0,.35);
+    }
+
+
+    .kx-ai-products button {
+        background: linear-gradient( 180deg, #ffe470, #ffc022 50%, #f5a000 );
+        box-shadow: inset 0 1px rgba(255,255,255,.60), 0 2px 0 #986000;
+    }
+
+
+    /* ========================================================
+       TOOLS DERECHA
+    ======================================================== */
+
+    .kx-tools {
+        position: relative;
+        z-index: 16;
+        width: 115px;
+        height: 410px;
+        border: 1px solid rgba(255, 185, 0, .62);
+        background: linear-gradient( 145deg, rgba(9,31,58,.98), rgba(2,10,22,.99) );
+        box-shadow: inset 0 1px rgba(255,255,255,.10), 0 20px 40px rgba(0,0,0,.50), 0 0 18px rgba(255,174,0,.08);
+        transform: perspective(900px) rotateY(-2deg);
+    }
+
+
+        .kx-tools a,
+        .kx-tools button {
+            transition: background .22s ease, color .22s ease, transform .22s ease;
+        }
+
+
+            .kx-tools a:hover,
+            .kx-tools button:hover {
+                color: #ffe264;
+                background: linear-gradient( 90deg, rgba(255,174,0,.09), rgba(0,119,255,.07) );
+                transform: translateX(-3px);
+            }
+
+
+    /* ========================================================
+       BENEFICIOS INFERIORES
+    ======================================================== */
+
+    .kx-bottom-features {
+        position: relative;
+        z-index: 20;
+        min-height: 82px;
+        border-top: 1px solid rgba(255, 190, 30, .68);
+        border-bottom: 1px solid rgba(255, 174, 0, .42);
+        background: radial-gradient( ellipse at 50% 0%, rgba(0,119,255,.09), transparent 55% ), linear-gradient( 180deg, rgba(8,25,48,.99), rgba(2,8,18,.99) );
+        box-shadow: inset 0 1px rgba(255,255,255,.05), 0 -10px 35px rgba(0,0,0,.22), 0 10px 35px rgba(0,0,0,.30);
+    }
+
+
+        .kx-bottom-features article {
+            position: relative;
+        }
+
+
+            .kx-bottom-features article::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 20%;
+                width: 1px;
+                height: 60%;
+                background: linear-gradient( transparent, rgba(255,180,0,.28), transparent );
+            }
+
+
+            .kx-bottom-features article:first-child::before {
+                display: none;
+            }
+
+
+            .kx-bottom-features article > .uk-icon {
+                color: #ffd54d;
+                filter: drop-shadow( 0 0 5px rgba(255,180,0,.75) ) drop-shadow( 0 0 13px rgba(255,180,0,.25) );
+            }
+}
+
+
+/* ============================================================
+   HERO V5 - 1200 A 1450
+============================================================ */
+
+@media (min-width: 1200px) and (max-width: 1450px) {
+
+    .kx-hero-grid {
+        width: calc(100% - 20px);
+        grid-template-columns: 350px minmax(350px, 1fr) 340px 100px;
+    }
+
+    .kx-hero-copy h1 {
+        font-size: 45px;
+    }
+
+    .kx-empress {
+        left: 45%;
+        height: 555px !important;
+    }
+
+    .kx-robot {
+        right: -5px;
+        width: 175px !important;
+    }
+
+    .kx-sales-widget {
+        right: -5px;
+        width: 135px;
+        height: 140px;
+    }
+
+    .kx-ai-card {
+        width: 340px;
+    }
+
+    .kx-tools {
+        width: 100px;
+    }
+}
+/* ============================================================
+   KERNIX HERO V6
+   AJUSTE FINAL PERSONAJE + CHAT + WIDGET
+   ============================================================ */
+
+@media (min-width: 1200px) {
+
+    /* --------------------------------------------------------
+       GRID
+       -------------------------------------------------------- */
+
+    .kx-hero {
+        min-height: 645px;
+        overflow: hidden;
+    }
+
+    .kx-hero-grid {
+        width: min(1580px, calc(100% - 24px));
+        height: 570px;
+        grid-template-columns: 420px minmax(400px, 1fr) 370px 115px;
+        gap: 10px;
+    }
+
+
+    /* --------------------------------------------------------
+       COLUMNA DEL PERSONAJE
+       -------------------------------------------------------- */
+
+    .kx-hero-character {
+        position: relative;
+        height: 570px;
+        overflow: hidden;
+        isolation: isolate;
+        perspective: 1200px;
+        background: radial-gradient( ellipse at 50% 55%, rgba(0, 116, 255, .18), transparent 48% ), radial-gradient( ellipse at 42% 65%, rgba(255, 169, 0, .12), transparent 50% );
+    }
+
+
+        /* degradado para integrar la imagen con el fondo */
+
+        .kx-hero-character::before {
+            content: "";
+            position: absolute;
+            z-index: 6;
+            inset: 0;
+            pointer-events: none;
+            background: linear-gradient( 90deg, #020713 0%, rgba(2, 7, 19, .75) 4%, transparent 18%, transparent 82%, rgba(2, 7, 19, .55) 96%, #020713 100% );
+        }
+
+
+        /* luz inferior */
+
+        .kx-hero-character::after {
+            content: "";
+            position: absolute;
+            z-index: 7;
+            left: 50%;
+            bottom: -45px;
+            width: 440px;
+            height: 100px;
+            transform: translateX(-50%);
+            border-radius: 50%;
+            background: radial-gradient( ellipse, rgba(255, 183, 0, .38), rgba(0, 128, 255, .22) 38%, transparent 72% );
+            filter: blur(18px);
+            pointer-events: none;
+        }
+
+
+    /* --------------------------------------------------------
+       GLOW
+       -------------------------------------------------------- */
+
+    .kx-character-glow {
+        position: absolute;
+        z-index: 1;
+        left: 50%;
+        bottom: 0;
+        width: 480px;
+        height: 520px;
+        transform: translateX(-50%);
+        border-radius: 50%;
+        background: radial-gradient( ellipse at center, rgba(0, 168, 255, .28) 0%, rgba(0, 105, 255, .14) 35%, rgba(255, 174, 0, .10) 53%, transparent 72% );
+        filter: blur(22px);
+    }
+
+
+    /* --------------------------------------------------------
+       IMAGEN EMPERATRIZ + ROBOT
+       -------------------------------------------------------- */
+
+    .kx-empress {
+        position: absolute;
+        z-index: 4;
+        /*
+           IMPORTANTE:
+           ya NO usamos width:620px + object-fit:cover.
+           Eso era lo que estaba haciendo el zoom gigante.
+        */
+
+        left: 50%;
+        bottom: 0;
+        width: auto !important;
+        height: 570px !important;
+        max-width: none !important;
+        max-height: none !important;
+        object-fit: contain !important;
+        object-position: center bottom !important;
+        transform: translateX(-50%) translateZ(35px) scale(.96);
+        transform-origin: center bottom;
+        filter: saturate(1.13) contrast(1.06) brightness(1.02) drop-shadow( 0 20px 24px rgba(0, 0, 0, .60) ) drop-shadow( 8px 0 15px rgba(0, 119, 255, .18) ) drop-shadow( -6px 0 13px rgba(255, 174, 0, .14) );
+    }
+
+
+    /* --------------------------------------------------------
+       ROBOT SEPARADO
+       --------------------------------------------------------
+
+       Como tu imagen nueva ya contiene robot, ocultamos el
+       antiguo para no tener dos robots.
+    */
+
+    .kx-robot {
+        display: none !important;
+    }
+
+
+    /* --------------------------------------------------------
+       WIDGET IMPULSA TUS VENTAS
+       -------------------------------------------------------- */
+
+    .kx-sales-widget {
+        position: absolute;
+        z-index: 12;
+        top: 52px;
+        right: 14px;
+        width: 150px;
+        height: 150px;
+        padding: 14px;
+        border: 1px solid rgba(0, 190, 255, .95);
+        border-radius: 13px;
+        background: linear-gradient( 145deg, rgba(9, 40, 82, .96), rgba(2, 11, 28, .98) );
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.16), 0 18px 35px rgba(0,0,0,.55), 0 0 10px rgba(0,190,255,.42), 0 0 28px rgba(0,119,255,.20);
+        transform: perspective(800px) rotateY(-8deg) rotateX(2deg);
+        backdrop-filter: blur(10px);
+    }
+
+
+        .kx-sales-widget small {
+            color: #ffffff;
+            font-weight: 800;
+        }
+
+
+        .kx-sales-widget strong {
+            color: #d9edff;
+            font-size: 15px;
+            text-shadow: 0 0 8px rgba(0, 180, 255, .45);
+        }
+
+
+    .kx-sales-bars span {
+        background: linear-gradient( 180deg, #27f4ff 0%, #00c7ff 28%, #087cff 100% );
+        box-shadow: 0 0 7px rgba(0, 220, 255, .70), 0 0 17px rgba(0, 119, 255, .30);
+    }
+
+
+    /* --------------------------------------------------------
+       CHAT IA
+       -------------------------------------------------------- */
+
+    .kx-hero-ai {
+        position: relative;
+        z-index: 20;
+        height: 570px;
+        display: flex;
+        align-items: center;
+        min-width: 0;
+    }
+
+
+    .kx-ai-card {
+        width: 370px;
+        height: 540px;
+        transform: perspective(1300px) rotateY(-1deg);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,.15), 0 22px 50px rgba(0,0,0,.65), 0 0 10px rgba(0,174,255,.40), 0 0 30px rgba(0,119,255,.15);
+    }
+
+
+    /* --------------------------------------------------------
+       TOOLS
+       -------------------------------------------------------- */
+
+    .kx-tools {
+        position: relative;
+        z-index: 21;
+        width: 115px;
+        transform: perspective(900px) rotateY(-2deg);
+    }
+}
+
+
+/* ============================================================
+   1200 - 1450
+   ============================================================ */
+
+@media (min-width: 1200px) and (max-width: 1450px) {
+
+    .kx-hero-grid {
+        grid-template-columns: 350px minmax(355px, 1fr) 340px 100px;
+        gap: 7px;
+    }
+
+    .kx-hero-copy h1 {
+        font-size: 45px;
+    }
+
+    .kx-empress {
+        left: 50%;
+        height: 555px !important;
+        transform: translateX(-50%) translateZ(30px) scale(.94);
+    }
+
+    .kx-sales-widget {
+        top: 48px;
+        right: 5px;
+        width: 135px;
+        height: 140px;
+    }
+
+    .kx-ai-card {
+        width: 340px;
+    }
+
+    .kx-tools {
+        width: 100px;
+    }
+}
+/* ============================================================
+   KERNIX HERO V6 - FINAL CONSOLIDADO
+   Desktop 3D + Emperatriz + IA + Responsive
+   ============================================================ */
+
+
+/* ============================================================
+   DESKTOP
+   ============================================================ */
+
+@media (min-width: 1200px) {
+
+    /* =========================
+       HERO GENERAL
+       ========================= */
+
+    .kx-hero {
+        position: relative;
+        min-height: 645px;
+        overflow: hidden;
+        background: radial-gradient( ellipse at 42% 45%, rgba(0, 119, 255, .28) 0%, rgba(0, 74, 190, .12) 28%, transparent 53% ), radial-gradient( ellipse at 34% 42%, rgba(255, 157, 0, .20) 0%, rgba(255, 128, 0, .07) 30%, transparent 52% ), radial-gradient( ellipse at 78% 35%, rgba(0, 136, 255, .16), transparent 43% ), linear-gradient( 110deg, #02050c 0%, #030a17 34%, #06162a 57%, #020712 100% );
+    }
+
+
+    /* =========================
+       FONDO
+       ========================= */
+
+    .kx-hero-background {
+        position: absolute;
+        inset: 0;
+        opacity: .60;
+        background-image: linear-gradient( rgba(0, 151, 255, .045) 1px, transparent 1px ), linear-gradient( 90deg, rgba(0, 151, 255, .045) 1px, transparent 1px );
+        background-size: 64px 64px;
+        pointer-events: none;
+    }
+
+
+    .kx-hero::before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        width: 620px;
+        height: 620px;
+        left: 25%;
+        top: -170px;
+        border-radius: 50%;
+        background: radial-gradient( circle, rgba(255, 174, 0, .18), rgba(255, 116, 0, .06) 36%, transparent 68% );
+        filter: blur(22px);
+        pointer-events: none;
+    }
+
+
+    .kx-hero::after {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        width: 700px;
+        height: 600px;
+        right: 4%;
+        top: 0;
+        background: radial-gradient( circle, rgba(0, 132, 255, .18), transparent 66% );
+        filter: blur(25px);
+        pointer-events: none;
+    }
+
+
+    /* ========================================================
+       GRID PRINCIPAL
+       ======================================================== */
+
+    .kx-hero-grid {
+        position: relative;
+        z-index: 3;
+        width: min(1540px, calc(100% - 48px));
+        height: 570px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 400px minmax(390px, 1fr) 370px 115px;
+        gap: 10px;
+        align-items: center;
+        perspective: 1500px;
+        box-sizing: border-box;
+    }
+
+
+    /* ========================================================
+       TEXTO IZQUIERDO
+       ======================================================== */
+
+    .kx-hero-copy {
+        position: relative;
+        z-index: 20;
+        width: 100%;
+        min-width: 0;
+        padding-left: 8px;
+        padding-right: 12px;
+        box-sizing: border-box;
+        transform: none !important;
+    }
+
+
+    /* EYEBROW */
+
+    .kx-eyebrow {
+        width: 100%;
+        max-width: 390px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 7px;
+        color: #16e4ff;
+        font-size: 11px;
+        font-weight: 800;
+        white-space: normal;
+        text-shadow: 0 0 8px rgba(0, 217, 255, .55), 0 0 18px rgba(0, 119, 255, .25);
+    }
+
+
+        .kx-eyebrow i {
+            flex: 0 0 auto;
+            background: #ffc400;
+            box-shadow: 0 0 5px #ffc400, 0 0 12px rgba(255, 174, 0, .75);
+        }
+
+
+    /* TITULO */
+
+    .kx-hero-copy h1 {
+        width: 100%;
+        max-width: 390px;
+        margin-left: 0;
+        font-size: 50px;
+        line-height: .96;
+        letter-spacing: -2.8px;
+        text-shadow: 0 4px 1px rgba(0, 0, 0, .55), 0 10px 28px rgba(0, 0, 0, .65);
+    }
+
+
+        .kx-hero-copy h1 span {
+            background: linear-gradient( 180deg, #fffbd4 0%, #ffe66d 22%, #ffc11d 52%, #ff9300 78%, #c96800 100% );
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 3px 1px rgba(70, 35, 0, .7)) drop-shadow(0 0 9px rgba(255, 174, 0, .22));
+        }
+
+
+        .kx-hero-copy h1 strong {
+            background: linear-gradient( 180deg, #fff7bb, #ffc62b 48%, #f28c00 100% );
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 10px rgba(255, 174, 0, .25));
+        }
+
+
+    /* DESCRIPCION */
+
+    .kx-hero-description {
+        width: 100%;
+        max-width: 380px;
+        font-size: 15px;
+        line-height: 1.55;
+    }
+
+
+    /* ========================================================
+       BENEFICIOS
+       ======================================================== */
+
+    .kx-benefits {
+        width: 100%;
+        max-width: 390px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+        column-gap: 15px;
+        box-sizing: border-box;
+    }
+
+
+        .kx-benefits > div {
+            min-width: 0;
+        }
+
+
+        .kx-benefits .uk-icon {
+            border: 1px solid rgba(255, 192, 26, .90);
+            background: radial-gradient( circle, rgba(255, 183, 0, .15), rgba(255, 183, 0, .025) );
+            box-shadow: inset 0 0 9px rgba(255, 200, 50, .10), 0 0 8px rgba(255, 174, 0, .35), 0 0 18px rgba(255, 174, 0, .10);
+        }
+
+
+    /* ========================================================
+       BOTONES
+       ======================================================== */
+
+    .kx-hero-buttons {
+        width: 100%;
+        max-width: 400px;
+        gap: 10px;
+    }
+
+
+    .kx-button-ai,
+    .kx-button-whatsapp {
+        min-width: 0;
+    }
+
+
+    .kx-button-ai {
+        border: 1px solid #fff0a1;
+        background: linear-gradient( 180deg, #fff08a 0%, #ffd139 35%, #ffad00 76%, #e88700 100% );
+        box-shadow: inset 0 2px 0 rgba(255, 255, 255, .75), inset 0 -2px 0 rgba(112, 59, 0, .30), 0 5px 0 #8b5100, 0 10px 18px rgba(0, 0, 0, .48), 0 0 24px rgba(255, 174, 0, .25);
+    }
+
+
+    .kx-button-whatsapp {
+        border: 1px solid rgba(0, 158, 255, .95);
+        background: linear-gradient( 145deg, #0d477f 0%, #082a54 42%, #04172f 75%, #020b17 100% );
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .22), inset 0 -2px 0 rgba(0, 0, 0, .4), 0 5px 0 #01326d, 0 10px 20px rgba(0, 0, 0, .48), 0 0 25px rgba(0, 119, 255, .28);
+    }
+
+
+    /* ========================================================
+       COLUMNA EMPERATRIZ
+       ======================================================== */
+
+    .kx-hero-character {
+        position: relative;
+        z-index: 8;
+        width: 100%;
+        min-width: 0;
+        height: 570px;
+        overflow: hidden;
+        isolation: isolate;
+        perspective: 1200px;
+        background: radial-gradient( ellipse at 50% 55%, rgba(0, 116, 255, .18), transparent 48% ), radial-gradient( ellipse at 42% 65%, rgba(255, 169, 0, .12), transparent 50% );
+    }
+
+
+        /* DEGRADADO PARA INTEGRAR LA IMAGEN */
+
+        .kx-hero-character::before {
+            content: "";
+            position: absolute;
+            z-index: 6;
+            inset: 0;
+            pointer-events: none;
+            background: linear-gradient( 90deg, #020713 0%, rgba(2, 7, 19, .60) 4%, transparent 17%, transparent 84%, rgba(2, 7, 19, .45) 96%, #020713 100% );
+        }
+
+
+        /* LUZ INFERIOR */
+
+        .kx-hero-character::after {
+            content: "";
+            position: absolute;
+            z-index: 7;
+            left: 50%;
+            bottom: -45px;
+            width: 440px;
+            height: 100px;
+            transform: translateX(-50%);
+            border-radius: 50%;
+            background: radial-gradient( ellipse, rgba(255, 183, 0, .38), rgba(0, 128, 255, .22) 38%, transparent 72% );
+            filter: blur(18px);
+            pointer-events: none;
+        }
+
+
+    /* GLOW */
+
+    .kx-character-glow {
+        position: absolute;
+        z-index: 1;
+        left: 50%;
+        bottom: 0;
+        width: 480px;
+        height: 520px;
+        transform: translateX(-50%);
+        border-radius: 50%;
+        background: radial-gradient( ellipse at center, rgba(0, 168, 255, .28) 0%, rgba(0, 105, 255, .14) 35%, rgba(255, 174, 0, .10) 53%, transparent 72% );
+        filter: blur(22px);
+    }
+
+
+    /* ========================================================
+       EMPERATRIZ
+       ======================================================== */
+
+    .kx-empress {
+        position: absolute;
+        z-index: 4;
+        left: 42%;
+        bottom: 0;
+        width: auto !important;
+        height: 540px !important;
+        max-width: none !important;
+        max-height: none !important;
+        object-fit: contain !important;
+        object-position: center bottom !important;
+        transform: translateX(-50%) translateZ(35px) scale(.92);
+        transform-origin: center bottom;
+        filter: saturate(1.13) contrast(1.06) brightness(1.03) drop-shadow( 0 20px 24px rgba(0, 0, 0, .60) ) drop-shadow( 8px 0 15px rgba(0, 119, 255, .18) ) drop-shadow( -6px 0 13px rgba(255, 174, 0, .14) );
+    }
+
+
+    /*
+       La imagen nueva de la emperatriz ya contiene el robot.
+       Ocultamos el robot viejo para evitar duplicarlo.
+    */
+
+    .kx-robot {
+        display: none !important;
+    }
+
+
+    /* ========================================================
+       WIDGET VENTAS
+       ======================================================== */
+
+    .kx-sales-widget {
+        position: absolute;
+        z-index: 12;
+        top: 52px;
+        right: 14px;
+        width: 150px;
+        height: 150px;
+        padding: 14px;
+        border: 1px solid rgba(0, 190, 255, .95);
+        border-radius: 13px;
+        background: linear-gradient( 145deg, rgba(9, 40, 82, .96), rgba(2, 11, 28, .98) );
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .16), 0 18px 35px rgba(0, 0, 0, .55), 0 0 10px rgba(0, 190, 255, .42), 0 0 28px rgba(0, 119, 255, .20);
+        transform: perspective(800px) rotateY(-8deg) rotateX(2deg);
+        backdrop-filter: blur(10px);
+    }
+
+
+        .kx-sales-widget small {
+            color: #ffffff;
+            font-weight: 800;
+        }
+
+
+        .kx-sales-widget strong {
+            color: #d9edff;
+            font-size: 15px;
+            text-shadow: 0 0 8px rgba(0, 180, 255, .45);
+        }
+
+
+    .kx-sales-bars span {
+        background: linear-gradient( 180deg, #27f4ff 0%, #00c7ff 28%, #087cff 100% );
+        box-shadow: 0 0 7px rgba(0, 220, 255, .70), 0 0 17px rgba(0, 119, 255, .30);
+    }
+
+
+    /* ========================================================
+       CHAT IA
+       ======================================================== */
+
+    .kx-hero-ai {
+        position: relative;
+        z-index: 20;
+        width: 100%;
+        min-width: 0;
+        height: 570px;
+        display: flex;
+        align-items: center;
+        perspective: 1300px;
+    }
+
+
+    .kx-ai-card {
+        position: relative;
+        width: 370px;
+        height: 540px;
+        border: 1px solid rgba(0, 157, 255, .90);
+        border-radius: 18px;
+        background: radial-gradient( circle at 70% 0%, rgba(0, 130, 255, .17), transparent 33% ), linear-gradient( 145deg, rgba(8, 29, 59, .99), rgba(2, 9, 22, .995) );
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, .15), inset 0 0 30px rgba(0, 102, 255, .06), 0 22px 50px rgba(0, 0, 0, .65), 0 0 10px rgba(0, 174, 255, .40), 0 0 30px rgba(0, 119, 255, .15);
+        transform: perspective(1300px) rotateY(-1deg);
+        transform-origin: center center;
+    }
+
+
+        .kx-ai-card::before {
+            content: "";
+            position: absolute;
+            z-index: 30;
+            left: 20px;
+            right: 35%;
+            top: -1px;
+            height: 1px;
+            background: linear-gradient( 90deg, transparent, #ffb400, #fff09a, transparent );
+            box-shadow: 0 0 9px rgba(255, 180, 0, .75);
+            pointer-events: none;
+        }
+
+
+    .kx-ai-header {
+        background: linear-gradient( 180deg, #123764 0%, #0b2548 46%, #06182f 100% );
+        box-shadow: inset 0 -1px rgba(0, 139, 255, .20);
+    }
+
+
+    .kx-ai-logo {
+        box-shadow: 0 0 8px rgba(255, 180, 0, .55), 0 0 18px rgba(255, 180, 0, .20);
+    }
+
+
+    .kx-ai-products article {
+        border: 1px solid rgba(255, 255, 255, .70);
+        background: linear-gradient( 145deg, #ffffff 0%, #f4f7fb 60%, #dce4ee 100% );
+        box-shadow: inset 0 1px 0 #fff, 0 4px 0 #9da7b5, 0 9px 14px rgba(0, 0, 0, .35);
+    }
+
+
+    .kx-ai-products button {
+        background: linear-gradient( 180deg, #ffe470, #ffc022 50%, #f5a000 );
+        box-shadow: inset 0 1px rgba(255, 255, 255, .60), 0 2px 0 #986000;
+    }
+
+
+    /* ========================================================
+       MENU DERECHO
+       ======================================================== */
+
+    .kx-tools {
+        position: relative;
+        z-index: 21;
+        width: 115px;
+        height: 410px;
+        border: 1px solid rgba(255, 185, 0, .62);
+        background: linear-gradient( 145deg, rgba(9, 31, 58, .98), rgba(2, 10, 22, .99) );
+        box-shadow: inset 0 1px rgba(255, 255, 255, .10), 0 20px 40px rgba(0, 0, 0, .50), 0 0 18px rgba(255, 174, 0, .08);
+        transform: perspective(900px) rotateY(-2deg);
+    }
+
+
+        .kx-tools a,
+        .kx-tools button {
+            transition: background .22s ease, color .22s ease, transform .22s ease;
+        }
+
+
+            .kx-tools a:hover,
+            .kx-tools button:hover {
+                color: #ffe264;
+                background: linear-gradient( 90deg, rgba(255, 174, 0, .09), rgba(0, 119, 255, .07) );
+                transform: translateX(-3px);
+            }
+
+
+    /* ========================================================
+       BENEFICIOS INFERIORES
+       ======================================================== */
+
+    .kx-bottom-features {
+        position: relative;
+        z-index: 20;
+        min-height: 82px;
+        border-top: 1px solid rgba(255, 190, 30, .68);
+        border-bottom: 1px solid rgba(255, 174, 0, .42);
+        background: radial-gradient( ellipse at 50% 0%, rgba(0, 119, 255, .09), transparent 55% ), linear-gradient( 180deg, rgba(8, 25, 48, .99), rgba(2, 8, 18, .99) );
+        box-shadow: inset 0 1px rgba(255, 255, 255, .05), 0 -10px 35px rgba(0, 0, 0, .22), 0 10px 35px rgba(0, 0, 0, .30);
+    }
+
+
+        .kx-bottom-features article {
+            position: relative;
+        }
+
+
+            .kx-bottom-features article::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 20%;
+                width: 1px;
+                height: 60%;
+                background: linear-gradient( transparent, rgba(255, 180, 0, .28), transparent );
+            }
+
+
+            .kx-bottom-features article:first-child::before {
+                display: none;
+            }
+
+
+            .kx-bottom-features article > .uk-icon {
+                color: #ffd54d;
+                filter: drop-shadow( 0 0 5px rgba(255, 180, 0, .75) ) drop-shadow( 0 0 13px rgba(255, 180, 0, .25) );
+            }
+}
+
+
+/* ============================================================
+   LAPTOP 1200 - 1450
+   ============================================================ */
+
+@media (min-width: 1200px) and (max-width: 1450px) {
+
+    .kx-hero-grid {
+        width: calc(100% - 36px);
+        margin: 0 auto;
+        grid-template-columns: 330px minmax(330px, 1fr) 340px 96px;
+        gap: 7px;
+    }
+
+
+    .kx-hero-copy {
+        padding-left: 4px;
+        padding-right: 8px;
+    }
+
+
+    .kx-eyebrow {
+        max-width: 325px;
+        font-size: 10px;
+        gap: 5px;
+    }
+
+
+    .kx-hero-copy h1 {
+        width: 100%;
+        max-width: 325px;
+        font-size: 43px;
+        line-height: .96;
+        letter-spacing: -2.3px;
+    }
+
+
+    .kx-hero-description {
+        max-width: 320px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+
+    .kx-benefits {
+        max-width: 325px;
+        column-gap: 8px;
+    }
+
+
+        .kx-benefits > div {
+            font-size: 12px;
+            min-width: 0;
+        }
+
+
+    .kx-hero-buttons {
+        max-width: 330px;
+        gap: 8px;
+    }
+
+
+    .kx-empress {
+        left: 43%;
+        height: 525px !important;
+        transform: translateX(-50%) translateZ(30px) scale(.90);
+    }
+
+
+    .kx-sales-widget {
+        top: 48px;
+        right: 4px;
+        width: 130px;
+        height: 138px;
+    }
+
+
+    .kx-ai-card {
+        width: 340px;
+    }
+
+
+    .kx-tools {
+        width: 96px;
+    }
+}
+
+
+/* ============================================================
+   TABLET / MOBILE
+   Dejamos trabajar al responsive original de KerniX.
+   ============================================================ */
+
+@media (max-width: 1199px) {
+
+    /*
+       Evita que reglas desktop de V6 interfieran
+       con los responsive originales.
+    */
+
+    .kx-empress {
+        object-fit: contain;
+    }
+}
+/* ============================================================
+   KERNIX HERO V6 - BLOQUEO DE MOVIMIENTO
+   Mantiene el aspecto 3D pero evita desplazamientos
+   ============================================================ */
+
+@media (min-width: 1200px) {
+
+    /* TEXTO TOTALMENTE FIJO */
+    .kx-hero-copy {
+        transform: none !important;
+        translate: none !important;
+    }
+
+    /* COLUMNA CENTRAL FIJA */
+    .kx-hero-character {
+        transform: none !important;
+        translate: none !important;
+    }
+
+    /* EMPERATRIZ FIJA */
+    .kx-empress {
+        left: 43% !important;
+        bottom: 0 !important;
+        height: 525px !important;
+        transform: translateX(-50%) scale(.90) !important;
+        translate: none !important;
+        transition: filter .25s ease !important;
+    }
+
+    /* WIDGET FIJO */
+    .kx-sales-widget {
+        transform: perspective(800px) rotateY(-8deg) rotateX(2deg) !important;
+        translate: none !important;
+    }
+
+    /* CHAT FIJO */
+    .kx-ai-card {
+        transform: perspective(1300px) rotateY(-1deg) !important;
+        translate: none !important;
+    }
+
+    /* ROBOT ANTIGUO */
+    .kx-robot {
+        display: none !important;
+    }
+}

@@ -1,0 +1,413 @@
+﻿<div id="kernix-chat" class="kxc-chat">
+
+    <!-- =====================================================
+         BOTÓN FLOTANTE
+    ====================================================== -->
+    <button type="button"
+            id="kernix-chat-button"
+            class="kxc-launcher"
+            onclick="toggleKernixChat()"
+            aria-label="Abrir KerniX IA">
+
+        <span class="kxc-launcher-ring"></span>
+        <span class="kxc-launcher-glow"></span>
+
+        <img src="~/images/kernix_robot_mascota.png"
+             alt="KerniX IA" />
+
+        <span class="kxc-launcher-online"></span>
+
+        <span class="kxc-launcher-label">
+            <small>ASISTENTE EMPRESARIAL</small>
+            <strong>KerniX IA</strong>
+        </span>
+
+    </button>
+
+
+    <!-- =====================================================
+         VENTANA PRINCIPAL
+    ====================================================== -->
+    <div id="kernix-chat-window"
+         class="kxc-window">
+
+        <div class="kxc-window-glow"></div>
+        <div class="kxc-window-grid"></div>
+
+
+        <!-- =================================================
+             HEADER
+        ================================================== -->
+        <header class="kxc-header">
+
+            <div class="kxc-agent">
+
+                <div class="kxc-avatar">
+
+                    <span class="kxc-avatar-ring"></span>
+
+                    <img src="~/images/kernix_robot_mascota.png"
+                         alt="KerniX IA" />
+
+                    <i></i>
+
+                </div>
+
+                <div class="kxc-agent-info">
+
+                    <small>KERNIX BUSINESS AI</small>
+
+                    <strong>
+                        KerniX IA
+                        <span>AI</span>
+                    </strong>
+
+                    <div>
+                        <i></i>
+                        En línea · Asistente empresarial
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="kxc-header-actions">
+
+                <div class="kxc-ai-status">
+                    <span uk-icon="bolt"></span>
+                    IA ACTIVA
+                </div>
+
+                <button type="button"
+                        class="kxc-close"
+                        onclick="closeKernixChat()"
+                        aria-label="Cerrar chat">
+
+                    <span uk-icon="close"></span>
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             BARRA DE CAPACIDADES
+        ================================================== -->
+        <div class="kxc-capabilities">
+
+            <div>
+                <span uk-icon="cart"></span>
+                Productos
+            </div>
+
+            <div>
+                <span uk-icon="database"></span>
+                Inventario
+            </div>
+
+            <div>
+                <span uk-icon="file-text"></span>
+                Cotizaciones
+            </div>
+
+            <div>
+                <span uk-icon="receiver"></span>
+                Vendedores
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             BODY
+        ================================================== -->
+        <div id="kernix-chat-body"
+             class="kxc-body">
+
+            <!-- MENSAJE IA -->
+            <div class="kxc-message kxc-message-ai">
+
+                <div class="kxc-message-avatar">
+
+                    <img src="~/images/kernix_icon.png"
+                         alt="KerniX" />
+
+                </div>
+
+                <div class="kxc-message-wrapper">
+
+                    <div class="kxc-message-name">
+                        KerniX IA
+                        <span>ASISTENTE</span>
+                    </div>
+
+                    <div class="kxc-bubble">
+
+                        <p>
+                            👋 Hola, soy <strong>KerniX IA</strong>.
+                        </p>
+
+                        <p>
+                            Puedo ayudarte a encontrar productos,
+                            consultar inventario, solicitar una
+                            cotización o comunicarte con nuestro
+                            equipo comercial.
+                        </p>
+
+                    </div>
+
+                    <small class="kxc-message-time">
+                        Ahora
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 ACCIONES SUGERIDAS
+            ================================================== -->
+            <div class="kxc-section-label">
+                ACCIONES RÁPIDAS
+            </div>
+
+            <div class="kxc-actions">
+
+                <!-- PRODUCTOS -->
+                <a asp-page="/Productos/Index"
+                   class="kxc-action">
+
+                    <div class="kxc-action-icon">
+                        <span uk-icon="cart"></span>
+                    </div>
+
+                    <div>
+                        <strong>Buscar productos</strong>
+                        <span>Explorar catálogo</span>
+                    </div>
+
+                    <span uk-icon="chevron-right"></span>
+
+                </a>
+
+
+                <!-- INVENTARIO -->
+                <button type="button"
+                        class="kxc-action"
+                        data-kernix-action="inventario">
+
+                    <div class="kxc-action-icon kxc-action-blue">
+                        <span uk-icon="database"></span>
+                    </div>
+
+                    <div>
+                        <strong>Inventario</strong>
+                        <span>Consultar disponibilidad</span>
+                    </div>
+
+                    <span uk-icon="chevron-right"></span>
+
+                </button>
+
+
+                <!-- COTIZACIÓN -->
+                <button type="button"
+                        class="kxc-action"
+                        data-kernix-action="cotizacion">
+
+                    <div class="kxc-action-icon kxc-action-gold">
+                        <span uk-icon="file-text"></span>
+                    </div>
+
+                    <div>
+                        <strong>Cotización</strong>
+                        <span>Solicitar propuesta</span>
+                    </div>
+
+                    <span uk-icon="chevron-right"></span>
+
+                </button>
+
+
+                <!-- PROMOCIONES -->
+                <button type="button"
+                        class="kxc-action"
+                        onclick="closeKernixChat();
+                    document.getElementById('promociones')?.scrollIntoView({
+                    behavior: 'smooth'
+                    });">
+
+                    <div class="kxc-action-icon kxc-action-orange">
+                        <span uk-icon="tag"></span>
+                    </div>
+
+                    <div>
+                        <strong>Promociones</strong>
+                        <span>Ver oportunidades</span>
+                    </div>
+
+                    <span uk-icon="chevron-right"></span>
+
+                </button>
+
+            </div>
+            <!-- =================================================
+                 TARJETA IA
+            ================================================== -->
+            <div class="kxc-insight">
+
+                <div class="kxc-insight-icon">
+                    <span uk-icon="bolt"></span>
+                </div>
+
+                <div>
+                    <small>KERNIX INTELLIGENCE</small>
+
+                    <strong>
+                        ¿No sabes qué producto necesitas?
+                    </strong>
+
+                    <p>
+                        Describe lo que buscas y KerniX IA
+                        te ayudará a orientar tu consulta.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 VENDEDORES
+            ================================================== -->
+            <div class="kxc-section-label kxc-seller-label">
+
+                <span>ATENCIÓN HUMANA</span>
+
+                <div>
+                    <i></i>
+                    2 asesores disponibles
+                </div>
+
+            </div>
+
+
+            <div class="kxc-sellers">
+
+                <a href="https://wa.me/51930338447?text=Hola%20KerniX%2C%20vengo%20desde%20KerniX%20IA%20y%20deseo%20hablar%20con%20un%20asesor."
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="kxc-seller">
+
+                    <div class="kxc-seller-avatar">
+                        V1
+                        <span></span>
+                    </div>
+
+                    <div>
+                        <small>ASESOR COMERCIAL</small>
+                        <strong>Vendedor 01</strong>
+                        <span>+51 930 338 447</span>
+                    </div>
+
+                    <div class="kxc-whatsapp">
+                        <span uk-icon="receiver"></span>
+                    </div>
+
+                </a>
+
+
+                <a href="https://wa.me/51937213913?text=Hola%20KerniX%2C%20vengo%20desde%20KerniX%20IA%20y%20deseo%20hablar%20con%20un%20asesor."
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="kxc-seller">
+
+                    <div class="kxc-seller-avatar">
+                        V2
+                        <span></span>
+                    </div>
+
+                    <div>
+                        <small>ASESOR COMERCIAL</small>
+                        <strong>Vendedor 02</strong>
+                        <span>+51 937 213 913</span>
+                    </div>
+
+                    <div class="kxc-whatsapp">
+                        <span uk-icon="receiver"></span>
+                    </div>
+
+                </a>
+
+            </div>
+
+
+            <!-- Los mensajes nuevos aparecerán aquí -->
+
+        </div>
+
+
+        <!-- =================================================
+             INDICADOR ESCRIBIENDO
+        ================================================== -->
+        <div id="kernix-chat-typing"
+             class="kxc-typing">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+            <small>KerniX IA está analizando...</small>
+
+        </div>
+
+
+        <!-- =================================================
+             INPUT
+        ================================================== -->
+        <div class="kxc-input-area">
+
+            <div class="kxc-input-box">
+
+                <div class="kxc-input-ai">
+                    K
+                </div>
+
+                <input type="text"
+                       id="kernix-chat-message"
+                       autocomplete="off"
+                       placeholder="Pregunta a KerniX IA..." />
+
+                <button type="button"
+                        id="kernix-send"
+                        class="kxc-send"
+                        aria-label="Enviar mensaje">
+
+                    <span uk-icon="arrow-right"></span>
+
+                </button>
+
+            </div>
+
+
+            <div class="kxc-input-footer">
+
+                <div>
+                    <span uk-icon="lock"></span>
+                    Conversación segura
+                </div>
+
+                <span>
+                    Powered by <strong>KerniX IA</strong>
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
