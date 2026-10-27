@@ -1,440 +1,160 @@
-﻿<section class="kx-hero">
+﻿<section class="kx-home-hero">
 
-    <div class="kx-hero-background"></div>
+    <!-- =====================================================
+         FONDO
+    ====================================================== -->
+    <div class="kx-home-scene"></div>
+    <div class="kx-home-overlay"></div>
+    <div class="kx-home-grid"></div>
+    <div class="kx-home-gold-floor"></div>
 
-    <div class="kx-hero-grid">
 
-        <!-- =============================================
-             IZQUIERDA
-        ============================================== -->
+    <!-- =====================================================
+         CONTENIDO
+    ====================================================== -->
+    <div class="kx-home-container">
 
-        <div class="kx-hero-copy">
+        <div class="kx-home-copy">
 
-            <div class="kx-eyebrow">
-                ERP INTELIGENTE
+            <!-- ETIQUETAS SUPERIORES -->
+            <div class="kx-home-eyebrow">
+                <span>ERP INTELIGENTE</span>
                 <i></i>
-                IA
+                <span>VENTAS</span>
                 <i></i>
-                VENTAS
+                <span>INVENTARIO</span>
                 <i></i>
-                GESTIÓN
+                <span>GESTIÓN</span>
                 <i></i>
-                CRECIMIENTO
+                <span>CRECIMIENTO</span>
             </div>
 
+
+            <!-- TITULO -->
             <h1>
                 Haz crecer
                 <span>tu empresa</span>
                 con <strong>KerniX</strong>
             </h1>
 
-            <p class="kx-hero-description">
-                Un ERP con Inteligencia Artificial que impulsa
-                tus ventas, automatiza tus procesos y te ayuda
-                a tomar decisiones más rápidas y rentables.
+
+            <!-- DESCRIPCION -->
+            <p class="kx-home-description">
+                Soluciones tecnológicas que integran tus procesos
+                empresariales, optimizan tus ventas e inventario y te ayudan
+                a tomar decisiones más rápidas, seguras y rentables.
             </p>
 
 
-            <!-- BENEFICIOS -->
+            <!-- =====================================================
+                 BENEFICIOS
+            ====================================================== -->
+            <div class="kx-home-benefits">
 
-            <div class="kx-benefits">
+                <div class="kx-home-benefit">
+                    <span class="kx-home-benefit-icon"
+                          uk-icon="cart"></span>
 
-                <div>
-                    <span uk-icon="trending-up"></span>
-                    Más ventas
+                    <strong>Más ventas</strong>
                 </div>
 
-                <div>
-                    <span uk-icon="clock"></span>
-                    Menos tiempo
+
+                <div class="kx-home-benefit">
+                    <span class="kx-home-benefit-icon"
+                          uk-icon="clock"></span>
+
+                    <strong>Menos tiempo</strong>
                 </div>
 
-                <div>
-                    <span uk-icon="settings"></span>
-                    Más control
+
+                <div class="kx-home-benefit">
+                    <span class="kx-home-benefit-icon"
+                          uk-icon="settings"></span>
+
+                    <strong>Más control</strong>
                 </div>
 
-                <div>
-                    <span uk-icon="bolt"></span>
-                    Procesos automáticos
+
+                <div class="kx-home-benefit">
+                    <span class="kx-home-benefit-icon"
+                          uk-icon="bolt"></span>
+
+                    <strong>Procesos automatizados</strong>
                 </div>
 
-                <div>
-                    <span uk-icon="users"></span>
-                    Más clientes
+
+                <div class="kx-home-benefit">
+                    <span class="kx-home-benefit-icon"
+                          uk-icon="users"></span>
+
+                    <strong>Más clientes</strong>
                 </div>
 
-                <div>
-                    <span uk-icon="database"></span>
-                    Decisiones con IA
+
+                <div class="kx-home-benefit">
+                    <span class="kx-home-benefit-icon"
+                          uk-icon="database"></span>
+
+                    <strong>Decisiones con datos</strong>
                 </div>
 
             </div>
 
 
-            <!-- CTA -->
+            <!-- =====================================================
+                 BOTONES
+            ====================================================== -->
+            <div class="kx-home-actions">
 
-            <div class="kx-hero-buttons">
-
-                <button type="button"
-                        class="kx-button-ai"
-                        onclick="openKernixChat()">
-
-                    <span uk-icon="comment"></span>
-
-                    <span>
-                        <strong>Habla con KerniX IA</strong>
-                        <small>Consulta, cotiza y compra</small>
-                    </span>
-
-                    <span uk-icon="arrow-right"></span>
-
-                </button>
-
-
+                <!-- DEMOSTRACION -->
                 <a href="#contacto"
-                   class="kx-button-whatsapp"
+                   class="kx-home-primary"
                    uk-scroll>
 
-                    <span uk-icon="receiver"></span>
+                    <span class="kx-home-action-icon"
+                          uk-icon="desktop"></span>
 
-                    <span>
-                        <strong>WhatsApp</strong>
-                        <small>Habla con un vendedor</small>
+                    <span class="kx-home-action-text">
+                        <strong>
+                            Solicita una demostración
+                        </strong>
+
+                        <small>
+                            Conoce cómo podemos ayudarte
+                        </small>
                     </span>
 
-                    <span uk-icon="arrow-right"></span>
+                    <span class="kx-home-action-arrow"
+                          uk-icon="arrow-right"></span>
+
+                </a>
+
+
+                <!-- PRODUCTOS -->
+                <a asp-page="/Productos/Index"
+                   class="kx-home-secondary">
+
+                    <span class="kx-home-action-icon"
+                          uk-icon="file-text"></span>
+
+                    <span class="kx-home-action-text">
+                        <strong>
+                            Conoce nuestros productos
+                        </strong>
+
+                        <small>
+                            Soluciones para cada negocio
+                        </small>
+                    </span>
+
+                    <span class="kx-home-action-arrow"
+                          uk-icon="arrow-right"></span>
 
                 </a>
 
             </div>
 
         </div>
-
-
-        <!-- =============================================
-             EMPERATRIZ
-        ============================================== -->
-
-        <div class="kx-hero-character">
-
-            <div class="kx-character-glow"></div>
-
-            <img src="~/images/kernix_emperatriz.png"
-                 class="kx-empress"
-                 alt="KerniX" />
-
-            <img src="~/images/kernix_robot_mascota.png"
-                 class="kx-robot"
-                 alt="KerniX IA" />
-
-
-            <!-- TARJETA VENTAS -->
-
-            <div class="kx-sales-widget">
-
-                <small>IMPULSA</small>
-
-                <strong>TUS VENTAS</strong>
-
-                <div class="kx-sales-bars">
-
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- =============================================
-             IA
-        ============================================== -->
-
-        <div class="kx-hero-ai">
-
-            <div class="kx-ai-card">
-
-                <!-- HEADER -->
-
-                <div class="kx-ai-header">
-
-                    <div class="kx-ai-title">
-
-                        <div class="kx-ai-logo">
-                            K
-                        </div>
-
-                        <strong>
-                            Kerni<span>X</span> IA
-                        </strong>
-
-                    </div>
-
-                    <div class="kx-ai-status">
-                        <i></i>
-                        En línea
-                    </div>
-
-                </div>
-
-
-                <!-- BODY -->
-
-                <div class="kx-ai-body">
-
-                    <div class="kx-ai-message bot">
-
-                        <div class="kx-ai-avatar">
-                            K
-                        </div>
-
-                        <div>
-
-                            <p>
-                                ¡Hola! 👋 Soy KerniX IA,
-                                tu asistente comercial.
-                            </p>
-
-                            <small>
-                                Te ayudo a encontrar productos,
-                                verificar stock y crear cotizaciones.
-                            </small>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="kx-ai-message user">
-
-                        Necesito 5 laptops para mi empresa
-
-                    </div>
-
-
-                    <div class="kx-ai-message bot">
-
-                        <div class="kx-ai-avatar">
-                            K
-                        </div>
-
-                        <div>
-                            ¡Claro! Encontré estas opciones:
-                        </div>
-
-                    </div>
-
-
-                    <!-- PRODUCTOS -->
-
-                    <div class="kx-ai-products">
-
-                        <article>
-
-                            <div class="kx-product-icon">
-                                💻
-                            </div>
-
-                            <strong>ASUS</strong>
-
-                            <b>S/ 3,199</b>
-
-                            <small>Stock: 18</small>
-
-                            <button type="button">
-                                Cotizar
-                            </button>
-
-                        </article>
-
-
-                        <article>
-
-                            <div class="kx-product-icon">
-                                💻
-                            </div>
-
-                            <strong>Lenovo</strong>
-
-                            <b>S/ 2,899</b>
-
-                            <small>Stock: 25</small>
-
-                            <button type="button">
-                                Cotizar
-                            </button>
-
-                        </article>
-
-
-                        <article>
-
-                            <div class="kx-product-icon">
-                                💻
-                            </div>
-
-                            <strong>HP</strong>
-
-                            <b>S/ 3,450</b>
-
-                            <small>Stock: 12</small>
-
-                            <button type="button">
-                                Cotizar
-                            </button>
-
-                        </article>
-
-                    </div>
-
-                </div>
-
-
-                <!-- ACCIONES -->
-
-                <div class="kx-ai-actions">
-
-                    <button>
-                        <span uk-icon="file-edit"></span>
-                        Cotización
-                    </button>
-
-                    <button>
-                        <span uk-icon="cart"></span>
-                        Productos
-                    </button>
-
-                    <button>
-                        <span uk-icon="receiver"></span>
-                        Vendedor
-                    </button>
-
-                </div>
-
-
-                <!-- INPUT -->
-
-                <div class="kx-ai-input">
-
-                    <span>
-                        Escribe tu mensaje...
-                    </span>
-
-                    <button type="button"
-                            onclick="openKernixChat()">
-
-                        <span uk-icon="arrow-right"></span>
-
-                    </button>
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- =============================================
-             MENU DERECHO
-        ============================================== -->
-
-        <aside class="kx-tools">
-
-            <a asp-page="/Productos/Index">
-                <span uk-icon="grid"></span>
-                <small>Productos</small>
-            </a>
-
-            <button>
-                <span uk-icon="file-edit"></span>
-                <small>Cotizaciones</small>
-            </button>
-
-            <button>
-                <span uk-icon="cart"></span>
-                <small>Pedidos</small>
-            </button>
-
-            <a href="#promociones" uk-scroll>
-                <span uk-icon="tag"></span>
-                <small>Promociones</small>
-            </a>
-
-            <a href="#contacto" uk-scroll>
-                <span uk-icon="receiver"></span>
-                <small>Soporte</small>
-            </a>
-
-        </aside>
-
-    </div>
-
-
-    <!-- =============================================
-         BENEFICIOS INFERIORES
-    ============================================== -->
-
-    <div class="kx-bottom-features">
-
-        <article>
-            <span uk-icon="users"></span>
-
-            <div>
-                <strong>Soluciones para tu empresa</strong>
-                <small>Comercio, distribución y servicios.</small>
-            </div>
-        </article>
-
-        <article>
-            <span uk-icon="trending-up"></span>
-
-            <div>
-                <strong>Impulsa tus ventas</strong>
-                <small>Convierte oportunidades en clientes.</small>
-            </div>
-        </article>
-
-        <article>
-            <span uk-icon="settings"></span>
-
-            <div>
-                <strong>Automatiza tus procesos</strong>
-                <small>Ahorra tiempo y reduce errores.</small>
-            </div>
-        </article>
-
-        <article>
-            <span uk-icon="lifesaver"></span>
-
-            <div>
-                <strong>Soporte especializado</strong>
-                <small>Un equipo siempre contigo.</small>
-            </div>
-        </article>
-
-        <article>
-            <span uk-icon="lock"></span>
-
-            <div>
-                <strong>Información segura</strong>
-                <small>Protección empresarial.</small>
-            </div>
-        </article>
-
-        <article>
-            <span uk-icon="bolt"></span>
-
-            <div>
-                <strong>Tecnología empresarial</strong>
-                <small>Innovación constante.</small>
-            </div>
-        </article>
 
     </div>
 
